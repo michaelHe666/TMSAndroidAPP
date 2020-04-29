@@ -1,0 +1,46 @@
+ext {
+    // Attention:please make sure only one module wanted is set true
+    isBuildingApp = true
+    isBuildingEntranceModule = false
+    isBuildingMainModule = false
+
+    tmsResourcePrefixs = [
+            app           : "",
+            entranceModule: "em_",
+            mainModule    : "mm_",
+            myBaseLibrary : "mbl_"
+    ]
+
+    tmsIdsConfigs = [
+            app           : "cn.edu.zust.dmt.hsy.tms",
+            entranceModule: "cn.edu.zust.dmt.hsy.tms.em",
+            mainModule    : "cn.edu.zust.dmt.hsy.tms.main"
+    ]
+
+    tmsAndroidConfigs = [
+            compileSdkVersion: 28,
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    tmsJavaConfigs = [
+            sourceCompatibility: "8",
+            targetCompatibility: "8"
+    ]
+}
+
+static def addTmsShellDependencies(final DependencyHandler dependencyHandler) {
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':entrancemodule'))
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':mainmodule'))
+}
+
+static def addTmsModuleDependencies(final DependencyHandler dependencyHandler) {
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':mybaselibrary'))
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':myannotationslibrary'))
+    dependencyHandler.add("annotationProcessor", dependencyHandler.project(path: ':myprocessorslibrary'))
+}
+
+ext.addTmsShellDependencies = this.&addTmsShellDependencies
+ext.addTmsModuleDependencies = this.&addTmsModuleDependencies

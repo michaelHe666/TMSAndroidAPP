@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--dimens for MyFormBar-->
+    <dimen name="em_dimen_universe_my_form_bar_margin_top">20dp</dimen>
+    <dimen name="em_dimen_universe_my_form_bar_button_margin_top">40dp</dimen>
+    <dimen name="em_dimen_universe_my_form_bar_text_size">20sp</dimen>
+</resources>

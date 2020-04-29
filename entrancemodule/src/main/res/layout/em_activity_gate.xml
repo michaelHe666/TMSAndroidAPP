@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mbl_color_universe_background">
+
+    <Button
+        android:id="@+id/em_fragment_gate_login_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/em_fragment_gate_register_button"
+        app:layout_constraintVertical_bias="0.9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="5:2"
+        android:text="@string/em_string_universe_login"
+        android:background="@color/mbl_color_universe_app_theme_color"
+        android:textColor="@color/mbl_color_universe_foreground"
+        style="@style/mbl_style_universe_button_normal"/>
+
+    <Button
+        android:id="@+id/em_fragment_gate_register_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/em_fragment_gate_login_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="5:2"
+        android:text="@string/em_string_universe_register"
+        android:background="@color/mbl_color_universe_foreground"
+        android:textColor="@color/mbl_color_universe_app_theme_color"
+        style="@style/mbl_style_universe_button_normal"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

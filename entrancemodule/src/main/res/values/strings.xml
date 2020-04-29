@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="em_string_universe_login">登录</string>
+    <string name="em_string_universe_register">注册</string>
+    <string name="em_string_universe_voucher">凭证</string>
+    <string name="em_string_universe_voucher_hint">请输入工号/邮箱</string>
+    <string name="em_string_universe_token">令牌</string>
+    <string name="em_string_universe_token_hint">请输入凭证的合法令牌</string>
+</resources>
