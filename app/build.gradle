@@ -1,0 +1,47 @@
+if (isBuildingApp) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+android {
+    compileSdkVersion tmsAndroidConfigs.compileSdkVersion
+
+    resourcePrefix tmsResourcePrefixs.app
+
+    defaultConfig {
+        if (isBuildingApp) {
+            applicationId tmsIdsConfigs.app
+        }
+        minSdkVersion tmsAndroidConfigs.minSdkVersion
+        targetSdkVersion tmsAndroidConfigs.targetSdkVersion
+        versionCode tmsAndroidConfigs.versionCode
+        versionName tmsAndroidConfigs.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = tmsJavaConfigs.sourceCompatibility
+        targetCompatibility = tmsJavaConfigs.targetCompatibility
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    if (isBuildingApp) {
+        addTmsShellDependencies(dependencies)
+    }
+}
