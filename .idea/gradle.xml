@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/common_module" />
             <option value="$PROJECT_DIR$/entrancemodule" />
             <option value="$PROJECT_DIR$/mainmodule" />
             <option value="$PROJECT_DIR$/myannotationslibrary" />
