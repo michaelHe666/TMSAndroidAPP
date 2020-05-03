@@ -18,7 +18,7 @@ import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterSettings;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.interfaces.IMyRouterRecorder;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyAPTUtils;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.activities.BaseActivity;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
 
 /**
  * @author MR.M

@@ -4,7 +4,7 @@
     <application>
 
         <activity
-            android:name=".views.activities.GateActivity"
+            android:name=".containers.activities.GateActivity"
             android:launchMode="singleInstance">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -13,7 +13,7 @@
         </activity>
 
         <activity
-            android:name=".views.activities.IdentityActivity"
+            android:name=".containers.activities.IdentityActivity"
             android:launchMode="singleTop" />
     </application>
 </manifest>

@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <cn.edu.zust.dmt.hsy.mybaselibrary.views.widgets.combined.mbl_MyTopBar
-        android:id="@+id/mbl_activity_identity_my_top_bar"
+    <cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyTopBar
+        android:id="@+id/em_activity_identity_my_top_bar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -15,8 +15,8 @@
         android:layout_height="0dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/mbl_activity_identity_container_constraint_layout"
-        app:layout_constraintTop_toBottomOf="@id/mbl_activity_identity_my_top_bar"
+        android:id="@+id/em_activity_identity_container_constraint_layout"
+        app:layout_constraintTop_toBottomOf="@id/em_activity_identity_my_top_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

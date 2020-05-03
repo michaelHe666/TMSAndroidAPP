@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.views.activities;
+package cn.edu.zust.dmt.hsy.entrancemodule.containers.activities;
 
 import android.view.View;
 
@@ -9,7 +9,7 @@ import cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners.GateDirectorListen
 import cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors.GateDirector;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.activities.BaseActivity;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
 
 /**
  * @author MR.M
@@ -32,13 +32,13 @@ public final class GateActivity extends BaseActivity {
         @NonNull
         @Override
         public View getLoginRouterView() {
-            return getWeakReferenceView(R.id.em_fragment_gate_login_button);
+            return getSafeView(R.id.em_activity_gate_login_button);
         }
 
         @NonNull
         @Override
         public View getRegisterRouterView() {
-            return getWeakReferenceView(R.id.em_fragment_gate_register_button);
+            return getSafeView(R.id.em_activity_gate_register_button);
         }
     }
 

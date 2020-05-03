@@ -1,18 +1,16 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.views.dialogs;
+package cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -23,18 +21,20 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseExtrasListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.activities.BaseActivity;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.fragments.BaseFragment;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.BaseDialog;
 
 /**
  * @author MR.M
  * @version 1.0
  * @projectName TMS
  * @description $
- * @since 4/19/2020 14:17
+ * @since 4/6/2020 13:53
  **/
-public abstract class BaseDialog extends DialogFragment {
-
+public abstract class BaseFragment extends Fragment {
+    /**
+     * @description this field should only be initialized once in {@link #onAttach(Context)}
+     */
     private BaseViewListener mBaseViewListener = null;
 
     private final ArrayList<BaseExtrasListener> mExtrasParserList = new ArrayList<>();
@@ -42,20 +42,20 @@ public abstract class BaseDialog extends DialogFragment {
     /**
      * @description innerClass to avoid cache leak
      */
-    protected static abstract class BaseDialogDirectorListener {
+    protected static abstract class BaseFragmentDirectorListener {
         private final WeakReference<BaseActivity> mActivityWeakReference;
-        private final WeakReference<BaseDialog> mWeakReference;
+        private final WeakReference<BaseFragment> mWeakReference;
 
         /**
-         * @param baseDialog initialize {@link #mActivityWeakReference,#mWeakReference}
+         * @param baseFragment initialize {@link #mActivityWeakReference,#mWeakReference}
          */
-        protected BaseDialogDirectorListener(@NonNull final BaseDialog baseDialog) {
-            final Context context = baseDialog.getContext();
+        protected BaseFragmentDirectorListener(@NonNull final BaseFragment baseFragment) {
+            final Context context = baseFragment.getContext();
             if (context instanceof BaseActivity) {
                 mActivityWeakReference = new WeakReference<>((BaseActivity) context);
-                mWeakReference = new WeakReference<>(baseDialog);
+                mWeakReference = new WeakReference<>(baseFragment);
             } else {
-                throw new IllegalArgumentException("BaseDialog only allow BaseActivity attach!");
+                throw new IllegalArgumentException("BaseFragment only allow BaseActivity attach!");
             }
         }
 
@@ -65,57 +65,57 @@ public abstract class BaseDialog extends DialogFragment {
          * @return targetView
          */
         protected final <T extends View> T getWeakReferenceView(@IdRes int viewRId) {
-            final BaseDialog baseDialog = mWeakReference.get();
-            if (mActivityWeakReference.get() != null && baseDialog != null) {
-                final View view = baseDialog.getView();
+            final BaseFragment baseFragment = mWeakReference.get();
+            if (mActivityWeakReference.get() != null && baseFragment != null) {
+                final View view = baseFragment.getView();
                 if (view != null) {
-                    return baseDialog.getView().findViewById(viewRId);
+                    return baseFragment.getView().findViewById(viewRId);
                 } else {
-                    throw new NullPointerException("BaseDialog has no layout");
+                    throw new NullPointerException("BaseFragment has no layout");
                 }
             } else {
-                throw new NullPointerException("BaseDialog or BaseActivity no longer exist!");
+                throw new NullPointerException("BaseFragment or BaseActivity no longer exist!");
             }
         }
     }
 
     /**
-     * @description this inner class should only be initialized to {@link #mBaseViewListener}
+     * @description initialization of {@link BaseViewListener}
      */
-    private static final class BaseDialogListener implements BaseViewListener {
+    private static final class BaseFragmentListener implements BaseViewListener {
         /**
          * @description parent holder with {@link WeakReference} to avoid cache leak
          */
         private final WeakReference<BaseActivity> mActivityWeakReference;
-        private final WeakReference<BaseDialog> mWeakReference;
+        private final WeakReference<BaseFragment> mWeakReference;
 
         /**
          * @param baseActivity attach {@link #mActivityWeakReference} to {@link BaseActivity}
-         * @param baseDialog   attach {@link #mWeakReference} to {@link BaseDialog}
+         * @param baseFragment attach {@link #mWeakReference} to {@link BaseFragment}
          */
-        private BaseDialogListener(@NonNull final BaseActivity baseActivity
-                , @NonNull final BaseDialog baseDialog) {
+        private BaseFragmentListener(@NonNull final BaseActivity baseActivity
+                , @NonNull final BaseFragment baseFragment) {
             mActivityWeakReference = new WeakReference<>(baseActivity);
-            mWeakReference = new WeakReference<>(baseDialog);
+            mWeakReference = new WeakReference<>(baseFragment);
         }
 
         private BaseActivity getBaseActivity() {
             final BaseActivity baseActivity = mActivityWeakReference.get();
-            final BaseDialog baseDialog = mWeakReference.get();
-            if (baseActivity == null && baseDialog == null) {
+            final BaseFragment baseFragment = mWeakReference.get();
+            if (baseActivity == null && baseFragment == null) {
                 throw new NullPointerException("BaseActivity or BaseFragment no longer exist!");
             } else {
                 return baseActivity;
             }
         }
 
-        private BaseDialog getBaseDialog() {
+        private BaseFragment getBaseFragment() {
             final BaseActivity baseActivity = mActivityWeakReference.get();
-            final BaseDialog baseDialog = mWeakReference.get();
-            if (baseActivity == null && baseDialog == null) {
+            final BaseFragment baseFragment = mWeakReference.get();
+            if (baseActivity == null && baseFragment == null) {
                 throw new NullPointerException("BaseActivity or BaseFragment no longer exist!");
             } else {
-                return baseDialog;
+                return baseFragment;
             }
         }
 
@@ -164,7 +164,7 @@ public abstract class BaseDialog extends DialogFragment {
          */
         @Override
         public final void addMyExtrasParser(@NonNull final BaseExtrasListener myExtrasParser) {
-            getBaseDialog().mExtrasParserList.add(myExtrasParser);
+            getBaseFragment().mExtrasParserList.add(myExtrasParser);
         }
 
         /**
@@ -177,15 +177,15 @@ public abstract class BaseDialog extends DialogFragment {
     }
 
     /**
-     * @description ensure {@link BaseDialog} is attached to {@link BaseActivity} and initialize itself
+     * @description ensure {@link BaseFragment} is attached to {@link BaseActivity} and initialize itself
      */
     @Override
     public final void onAttach(@NonNull Context context) {
         super.onAttach(context);
         if (context instanceof BaseActivity) {
-            mBaseViewListener = new BaseDialogListener((BaseActivity) context, this);
+            mBaseViewListener = new BaseFragmentListener((BaseActivity) context, this);
         } else {
-            MyErrorUtils.showMyArgumentException("BaseDialog only support BaseActivity!");
+            MyErrorUtils.showMyArgumentException("BaseFragment only support BaseActivity!");
         }
     }
 
@@ -195,7 +195,7 @@ public abstract class BaseDialog extends DialogFragment {
     @Override
     public final View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container
             , @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(getViewRId(), container);
+        return inflater.inflate(getViewRId(), container, false);
     }
 
     /**
@@ -209,25 +209,6 @@ public abstract class BaseDialog extends DialogFragment {
         if (myExtras != null) {
             for (BaseExtrasListener myExtrasParser : mExtrasParserList) {
                 myExtrasParser.parseMyExtras(myExtras);
-            }
-        }
-    }
-
-    /**
-     * @description reset RootWindow LayoutParams
-     */
-    @Override
-    public final void onStart() {
-        super.onStart();
-        final Dialog dialog = getDialog();
-        if (dialog == null) {
-            MyErrorUtils.showMyNullPointerException("Dialog of BaseDialog is not initialized!");
-        } else {
-            final Window window = dialog.getWindow();
-            if (window == null) {
-                MyErrorUtils.showMyNullPointerException("Dialog of BaseDialog not attached to window!");
-            } else {
-                window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             }
         }
     }

@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.views.activities;
+package cn.edu.zust.dmt.hsy.entrancemodule.containers.activities;
 
 import android.view.ViewGroup;
 
@@ -9,8 +9,8 @@ import cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners.IdentityDirectorLi
 import cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors.IdentityDirector;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.activities.BaseActivity;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.widgets.combined.mbl_MyTopBar;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
+import cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyTopBar;
 
 /**
  * @author MR.M
@@ -33,13 +33,13 @@ public final class IdentityActivity extends BaseActivity {
         @NonNull
         @Override
         public ViewGroup getIdentityFragmentContainer() {
-            return getWeakReferenceView(R.id.mbl_activity_identity_container_constraint_layout);
+            return getSafeView(R.id.em_activity_identity_container_constraint_layout);
         }
 
         @NonNull
         @Override
         public mbl_MyTopBar getMyTopBar() {
-            return getWeakReferenceView(R.id.mbl_activity_identity_my_top_bar);
+            return getSafeView(R.id.em_activity_identity_my_top_bar);
         }
     }
 

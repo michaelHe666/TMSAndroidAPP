@@ -3,7 +3,7 @@ package cn.edu.zust.dmt.hsy.mainmodule.views.activities;
 import cn.edu.zust.dmt.hsy.mainmodule.R;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.activities.BaseActivity;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
 
 /**
  * @author MR.M

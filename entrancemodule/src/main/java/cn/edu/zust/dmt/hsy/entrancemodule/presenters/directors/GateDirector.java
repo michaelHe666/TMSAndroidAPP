@@ -48,7 +48,7 @@ public final class GateDirector extends BaseDirector<GateDirectorListener> {
                 new MyRegisterRouterViewListener(baseViewListener, gateDirectorListener));
     }
 
-    private static final class MyLoginRouterViewListener extends SafeDirectorListener<GateDirectorListener>
+    private static final class MyLoginRouterViewListener extends SafeDirectorInnerClass<GateDirectorListener>
             implements View.OnClickListener {
         private MyLoginRouterViewListener(@NonNull final BaseViewListener baseViewListener
                 , @NonNull final GateDirectorListener baseDirectorListener) {
@@ -64,7 +64,7 @@ public final class GateDirector extends BaseDirector<GateDirectorListener> {
         }
     }
 
-    private static final class MyRegisterRouterViewListener extends SafeDirectorListener<GateDirectorListener>
+    private static final class MyRegisterRouterViewListener extends SafeDirectorInnerClass<GateDirectorListener>
             implements View.OnClickListener {
         private MyRegisterRouterViewListener(@NonNull final BaseViewListener baseViewListener
                 , @NonNull final GateDirectorListener baseDirectorListener) {

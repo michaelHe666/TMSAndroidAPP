@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.views.fragments;
+package cn.edu.zust.dmt.hsy.entrancemodule.containers.fragments;
 
 import android.view.View;
 
@@ -7,8 +7,8 @@ import androidx.annotation.NonNull;
 import cn.edu.zust.dmt.hsy.entrancemodule.R;
 import cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners.LoginDirectorListener;
 import cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors.LoginDirector;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.fragments.BaseFragment;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.widgets.combined.mbl_MyFormBar;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
+import cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyFormBar;
 
 /**
  * @author MR.M

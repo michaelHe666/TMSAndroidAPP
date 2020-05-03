@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.views.activities;
+package cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -23,8 +23,8 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyRouterHelper;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.dialogs.BaseDialog;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.fragments.BaseFragment;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.BaseDialog;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
 
 /**
  * @author MR.M
@@ -57,7 +57,7 @@ public abstract class BaseActivity extends AppCompatActivity {
          * @param <T>     type of view
          * @return targetView
          */
-        protected final <T extends View> T getWeakReferenceView(@IdRes int viewRId) {
+        protected final <T extends View> T getSafeView(@IdRes int viewRId) {
             final BaseActivity baseActivity = mWeakReference.get();
             if (baseActivity != null) {
                 return baseActivity.findViewById(viewRId);

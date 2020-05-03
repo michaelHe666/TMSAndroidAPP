@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.views.dialogs;
+package cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs;
 
 import android.widget.TextView;
 

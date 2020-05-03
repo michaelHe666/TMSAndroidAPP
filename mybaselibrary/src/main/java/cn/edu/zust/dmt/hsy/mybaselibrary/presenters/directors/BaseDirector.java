@@ -19,11 +19,11 @@ public abstract class BaseDirector<T extends BaseDirectorListener> {
      * @param <K> type of {@link BaseDirectorListener} of {@link BaseDirector}
      * @description help child to create a cache-safe class
      */
-    protected static abstract class SafeDirectorListener<K extends BaseDirectorListener> {
+    protected static abstract class SafeDirectorInnerClass<K extends BaseDirectorListener> {
         private final WeakReference<BaseViewListener> mViewWeakReference;
         private final WeakReference<K> mDirectorWeakReference;
 
-        protected SafeDirectorListener(@NonNull final BaseViewListener baseViewListener
+        protected SafeDirectorInnerClass(@NonNull final BaseViewListener baseViewListener
                 , @NonNull final K baseDirectorListener) {
             mViewWeakReference = new WeakReference<>(baseViewListener);
             mDirectorWeakReference = new WeakReference<>(baseDirectorListener);

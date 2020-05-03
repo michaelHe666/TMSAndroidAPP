@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.views.widgets.combined;
+package cn.edu.zust.dmt.hsy.mybaselibrary.views.combined;
 
 import android.content.Context;
 import android.content.res.TypedArray;

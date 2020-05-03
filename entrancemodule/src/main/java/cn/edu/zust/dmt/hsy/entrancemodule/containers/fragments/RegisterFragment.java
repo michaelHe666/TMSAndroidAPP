@@ -1,7 +1,7 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.views.fragments;
+package cn.edu.zust.dmt.hsy.entrancemodule.containers.fragments;
 
 import cn.edu.zust.dmt.hsy.entrancemodule.R;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.fragments.BaseFragment;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
 
 /**
  * @author MR.M

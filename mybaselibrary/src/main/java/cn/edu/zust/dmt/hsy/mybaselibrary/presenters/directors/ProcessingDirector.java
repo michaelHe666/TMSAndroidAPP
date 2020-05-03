@@ -29,7 +29,7 @@ public final class ProcessingDirector extends BaseDirector<ProcessingDirectorLis
         baseViewListener.addMyExtrasParser(new MyExtrasParser(baseViewListener, currentDirectorListener));
     }
 
-    private static final class MyExtrasParser extends SafeDirectorListener<ProcessingDirectorListener>
+    private static final class MyExtrasParser extends SafeDirectorInnerClass<ProcessingDirectorListener>
             implements BaseExtrasListener {
         private MyExtrasParser(@NonNull final BaseViewListener baseViewListener
                 , @NonNull final ProcessingDirectorListener baseDirectorListener) {

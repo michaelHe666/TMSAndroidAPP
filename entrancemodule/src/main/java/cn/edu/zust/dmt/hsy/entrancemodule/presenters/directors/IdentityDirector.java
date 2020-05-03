@@ -7,14 +7,14 @@ import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.entrancemodule.R;
 import cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners.IdentityDirectorListener;
-import cn.edu.zust.dmt.hsy.entrancemodule.views.fragments.LoginFragment;
-import cn.edu.zust.dmt.hsy.entrancemodule.views.fragments.RegisterFragment;
+import cn.edu.zust.dmt.hsy.entrancemodule.containers.fragments.LoginFragment;
+import cn.edu.zust.dmt.hsy.entrancemodule.containers.fragments.RegisterFragment;
 import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtraConstants;
 import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseExtrasListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.widgets.combined.mbl_MyTopBar;
+import cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyTopBar;
 
 /**
  * @author MR.M
@@ -42,7 +42,7 @@ public final class IdentityDirector extends BaseDirector<IdentityDirectorListene
         baseViewListener.addMyExtrasParser(new MyExtrasParser(baseViewListener, identityDirectorListener));
     }
 
-    private static final class MyExtrasParser extends SafeDirectorListener<IdentityDirectorListener>
+    private static final class MyExtrasParser extends SafeDirectorInnerClass<IdentityDirectorListener>
             implements BaseExtrasListener {
         private MyExtrasParser(@NonNull BaseViewListener baseViewListener
                 , @NonNull IdentityDirectorListener baseDirectorListener) {

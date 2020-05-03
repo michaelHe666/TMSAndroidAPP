@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.listeners.BaseDirectorListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.widgets.combined.mbl_MyFormBar;
+import cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyFormBar;
 
 /**
  * @author MR.M

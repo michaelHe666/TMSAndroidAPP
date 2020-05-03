@@ -8,10 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.listeners.BaseDirectorListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.activities.BaseActivity;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.dialogs.BaseDialog;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.fragments.BaseFragment;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.BaseDialog;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
 
 /**
  * @author MR.M

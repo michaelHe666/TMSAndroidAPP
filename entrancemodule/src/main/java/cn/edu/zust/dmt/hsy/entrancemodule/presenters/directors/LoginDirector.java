@@ -16,7 +16,7 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtraConstants;
 import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseFairCallback;
 import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
-import cn.edu.zust.dmt.hsy.mybaselibrary.views.dialogs.ProcessingDialog;
+import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.ProcessingDialog;
 
 /**
  * @author MR.M
@@ -64,7 +64,7 @@ public final class LoginDirector extends BaseDirector<LoginDirectorListener> {
                 new MyLoginRequestListener(baseViewListener, loginDirectorListener));
     }
 
-    private static final class MyVoucherTextWatcher extends SafeDirectorListener<LoginDirectorListener>
+    private static final class MyVoucherTextWatcher extends SafeDirectorInnerClass<LoginDirectorListener>
             implements TextWatcher {
         private MyVoucherTextWatcher(@NonNull final BaseViewListener baseViewListener
                 , @NonNull final LoginDirectorListener baseDirectorListener) {
@@ -87,7 +87,7 @@ public final class LoginDirector extends BaseDirector<LoginDirectorListener> {
         }
     }
 
-    private static final class MyTokenTextWatcher extends SafeDirectorListener<LoginDirectorListener>
+    private static final class MyTokenTextWatcher extends SafeDirectorInnerClass<LoginDirectorListener>
             implements TextWatcher {
         private MyTokenTextWatcher(@NonNull final BaseViewListener baseViewListener
                 , @NonNull final LoginDirectorListener baseDirectorListener) {
@@ -110,7 +110,7 @@ public final class LoginDirector extends BaseDirector<LoginDirectorListener> {
         }
     }
 
-    private static final class MyLoginRequestListener extends SafeDirectorListener<LoginDirectorListener>
+    private static final class MyLoginRequestListener extends SafeDirectorInnerClass<LoginDirectorListener>
             implements View.OnClickListener {
         private MyLoginRequestListener(@NonNull final BaseViewListener baseViewListener
                 , @NonNull final LoginDirectorListener baseDirectorListener) {
