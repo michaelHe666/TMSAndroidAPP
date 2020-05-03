@@ -4,8 +4,8 @@ import androidx.annotation.NonNull;
 
 import java.lang.ref.WeakReference;
 
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.listeners.BaseDirectorListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.listeners.BaseDirectorListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
 
 /**
  * @author MR.M

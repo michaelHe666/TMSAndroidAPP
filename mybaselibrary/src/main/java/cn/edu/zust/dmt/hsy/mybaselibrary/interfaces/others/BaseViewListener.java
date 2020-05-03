@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others;
+package cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others;
 
 import android.app.Activity;
 import android.os.Bundle;

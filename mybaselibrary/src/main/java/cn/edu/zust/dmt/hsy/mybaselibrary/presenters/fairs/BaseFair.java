@@ -4,9 +4,9 @@ import androidx.annotation.NonNull;
 
 import java.lang.ref.WeakReference;
 
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseFairCallback;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseNetworkCallback;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.suppliers.BaseFairSupplier;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseFairCallback;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseNetworkCallback;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.suppliers.BaseFairSupplier;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.response.BaseResponseModel;
 
 /**

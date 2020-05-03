@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.entrancemodule.R;
-import cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners.GateDirectorListener;
+import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.GateDirectorListener;
 import cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors.GateDirector;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;

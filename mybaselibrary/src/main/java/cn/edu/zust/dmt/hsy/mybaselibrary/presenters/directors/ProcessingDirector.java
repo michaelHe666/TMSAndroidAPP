@@ -5,9 +5,9 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtraConstants;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.listeners.ProcessingDirectorListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseExtrasListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.listeners.ProcessingDirectorListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
 
 /**

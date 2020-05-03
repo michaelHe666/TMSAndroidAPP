@@ -19,8 +19,8 @@ import java.util.ArrayList;
 
 import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseExtrasListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;

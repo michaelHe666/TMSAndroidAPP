@@ -2,12 +2,12 @@ package cn.edu.zust.dmt.hsy.entrancemodule.presenters.fairs;
 
 import androidx.annotation.NonNull;
 
-import cn.edu.zust.dmt.hsy.entrancemodule.contracts.suppliers.LoginFairSupplier;
+import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.suppliers.LoginFairSupplier;
 import cn.edu.zust.dmt.hsy.entrancemodule.models.remote.RemoteConstants;
 import cn.edu.zust.dmt.hsy.entrancemodule.models.remote.request.LoginRequestModel;
 import cn.edu.zust.dmt.hsy.entrancemodule.models.remote.response.LoginResponseModel;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseFairCallback;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseNetworkCallback;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseFairCallback;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseNetworkCallback;
 import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyNetworkHelper;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.request.BaseNetworkRequest;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.response.BaseNetworkResponse;

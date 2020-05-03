@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mainmodule.views.activities;
+package cn.edu.zust.dmt.hsy.mainmodule.containers.activities;
 
 import cn.edu.zust.dmt.hsy.mainmodule.R;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;

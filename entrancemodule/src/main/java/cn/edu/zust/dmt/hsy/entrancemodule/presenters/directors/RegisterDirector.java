@@ -2,8 +2,8 @@ package cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors;
 
 import androidx.annotation.NonNull;
 
-import cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners.RegisterDirectorListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.RegisterDirectorListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 
 /**

@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.contracts.listeners;
+package cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.listeners;
 
 /**
  * @author MR.M

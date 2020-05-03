@@ -7,14 +7,14 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners.LoginDirectorListener;
-import cn.edu.zust.dmt.hsy.entrancemodule.contracts.suppliers.LoginFairSupplier;
+import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.LoginDirectorListener;
+import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.suppliers.LoginFairSupplier;
 import cn.edu.zust.dmt.hsy.entrancemodule.models.remote.response.LoginResponseModel;
 import cn.edu.zust.dmt.hsy.entrancemodule.presenters.fairs.LoginFair;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtraConstants;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseFairCallback;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseFairCallback;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.ProcessingDialog;
 

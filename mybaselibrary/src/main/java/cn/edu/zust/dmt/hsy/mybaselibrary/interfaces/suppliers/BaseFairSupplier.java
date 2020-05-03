@@ -1,8 +1,8 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.contracts.suppliers;
+package cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.suppliers;
 
 import androidx.annotation.NonNull;
 
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseFairCallback;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseFairCallback;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.BaseModel;
 
 /**

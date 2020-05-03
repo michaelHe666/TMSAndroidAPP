@@ -2,7 +2,7 @@
     package="cn.edu.zust.dmt.hsy.mainmodule" >
 
     <application>
-        <activity android:name=".views.activities.HomeActivity"/>
+        <activity android:name=".containers.activities.HomeActivity"/>
 
     </application>
 </manifest>

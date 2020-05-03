@@ -5,10 +5,10 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners.GateDirectorListener;
+import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.GateDirectorListener;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtraConstants;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 
 /**

@@ -6,12 +6,12 @@ import android.view.View;
 import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.entrancemodule.R;
-import cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners.IdentityDirectorListener;
+import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.IdentityDirectorListener;
 import cn.edu.zust.dmt.hsy.entrancemodule.containers.fragments.LoginFragment;
 import cn.edu.zust.dmt.hsy.entrancemodule.containers.fragments.RegisterFragment;
 import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtraConstants;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseExtrasListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
 import cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyTopBar;

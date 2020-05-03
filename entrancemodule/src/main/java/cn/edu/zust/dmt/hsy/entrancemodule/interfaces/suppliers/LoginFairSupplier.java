@@ -1,8 +1,8 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.contracts.suppliers;
+package cn.edu.zust.dmt.hsy.entrancemodule.interfaces.suppliers;
 
 import androidx.annotation.NonNull;
 
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.suppliers.BaseFairSupplier;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.suppliers.BaseFairSupplier;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.BaseModel;
 
 /**

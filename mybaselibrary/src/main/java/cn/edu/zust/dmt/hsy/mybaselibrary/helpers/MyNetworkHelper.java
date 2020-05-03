@@ -10,7 +10,7 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.others.BaseNetworkCallback;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseNetworkCallback;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.request.BaseNetworkRequest;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.request.BaseRequestModel;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.response.BaseNetworkResponse;

@@ -1,10 +1,10 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.contracts.listeners;
+package cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners;
 
 import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import cn.edu.zust.dmt.hsy.mybaselibrary.contracts.listeners.BaseDirectorListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.listeners.BaseDirectorListener;
 
 /**
  * @author MR.M
