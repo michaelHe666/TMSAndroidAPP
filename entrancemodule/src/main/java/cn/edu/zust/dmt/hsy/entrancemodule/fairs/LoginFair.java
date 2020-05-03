@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.presenters.fairs;
+package cn.edu.zust.dmt.hsy.entrancemodule.fairs;
 
 import androidx.annotation.NonNull;
 
@@ -11,7 +11,7 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseNetworkCallback;
 import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyNetworkHelper;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.request.BaseNetworkRequest;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.response.BaseNetworkResponse;
-import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.fairs.BaseFair;
+import cn.edu.zust.dmt.hsy.mybaselibrary.fairs.BaseFair;
 
 /**
  * @author MR.M
@@ -53,7 +53,7 @@ public final class LoginFair extends BaseFair<LoginFairSupplier<LoginResponseMod
 
         @Override
         public void onResult(@NonNull BaseNetworkResponse<LoginResponseModel> response) {
-            getBaseFairCallBack().onModel(response.getData());
+            getBaseFairCallBack().onReturnModel(response.getData());
         }
     }
 }

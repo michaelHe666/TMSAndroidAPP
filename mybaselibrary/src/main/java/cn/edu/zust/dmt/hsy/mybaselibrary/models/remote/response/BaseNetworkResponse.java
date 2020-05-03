@@ -7,7 +7,7 @@ package cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.response;
  * @description $
  * @since 4/23/2020 16:16
  **/
-public class BaseNetworkResponse<T extends BaseResponseModel> {
+public final class BaseNetworkResponse<T extends BaseResponseModel> {
     private int returnCode;
     private String message;
     private T data;

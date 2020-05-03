@@ -21,8 +21,8 @@ import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
-import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
+import cn.edu.zust.dmt.hsy.mybaselibrary.directors.BaseDirector;
+import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyErrorHelper;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
 
@@ -185,7 +185,7 @@ public abstract class BaseDialog extends DialogFragment {
         if (context instanceof BaseActivity) {
             mBaseContainerListener = new BaseDialogListener((BaseActivity) context, this);
         } else {
-            MyErrorUtils.showMyArgumentException("BaseDialog only support BaseActivity!");
+            MyErrorHelper.showMyArgumentException("BaseDialog only support BaseActivity!");
         }
     }
 
@@ -221,11 +221,11 @@ public abstract class BaseDialog extends DialogFragment {
         super.onStart();
         final Dialog dialog = getDialog();
         if (dialog == null) {
-            MyErrorUtils.showMyNullPointerException("Dialog of BaseDialog is not initialized!");
+            MyErrorHelper.showMyNullPointerException("Dialog of BaseDialog is not initialized!");
         } else {
             final Window window = dialog.getWindow();
             if (window == null) {
-                MyErrorUtils.showMyNullPointerException("Dialog of BaseDialog not attached to window!");
+                MyErrorHelper.showMyNullPointerException("Dialog of BaseDialog not attached to window!");
             } else {
                 window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             }

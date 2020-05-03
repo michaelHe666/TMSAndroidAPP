@@ -19,8 +19,8 @@ import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
-import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
+import cn.edu.zust.dmt.hsy.mybaselibrary.directors.BaseDirector;
+import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyErrorHelper;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.BaseDialog;
 
@@ -185,7 +185,7 @@ public abstract class BaseFragment extends Fragment {
         if (context instanceof BaseActivity) {
             mBaseContainerListener = new BaseFragmentListener((BaseActivity) context, this);
         } else {
-            MyErrorUtils.showMyArgumentException("BaseFragment only support BaseActivity!");
+            MyErrorHelper.showMyArgumentException("BaseFragment only support BaseActivity!");
         }
     }
 

@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.utils;
+package cn.edu.zust.dmt.hsy.mybaselibrary.helpers;
 
 import androidx.annotation.NonNull;
 
@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
  * @description $
  * @since 4/12/2020 14:53
  **/
-public final class MyErrorUtils {
+public final class MyErrorHelper {
     /**
-     * @description ensure {@link MyErrorUtils} should not be instantiated
+     * @description ensure {@link MyErrorHelper} should not be instantiated
      */
-    private MyErrorUtils() {
+    private MyErrorHelper() {
         throw new AssertionError();
     }
 

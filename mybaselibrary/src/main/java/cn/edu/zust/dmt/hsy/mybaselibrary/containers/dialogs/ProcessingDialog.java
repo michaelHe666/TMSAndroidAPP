@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.mybaselibrary.R;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.listeners.ProcessingDirectorListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.ProcessingDirector;
+import cn.edu.zust.dmt.hsy.mybaselibrary.directors.ProcessingDirector;
 
 /**
  * @author MR.M

@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.entrancemodule.R;
 import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.IdentityDirectorListener;
-import cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors.IdentityDirector;
+import cn.edu.zust.dmt.hsy.entrancemodule.directors.IdentityDirector;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
@@ -26,7 +26,7 @@ public final class IdentityActivity extends BaseActivity {
      */
     private static final class MyIdentityDirectorListener extends BaseActivitySafeDirectorListener
             implements IdentityDirectorListener {
-        private MyIdentityDirectorListener(@NonNull BaseActivity baseActivity) {
+        private MyIdentityDirectorListener(@NonNull final BaseActivity baseActivity) {
             super(baseActivity);
         }
 

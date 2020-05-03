@@ -1,10 +1,10 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors;
+package cn.edu.zust.dmt.hsy.entrancemodule.directors;
 
 import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.RegisterDirectorListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
+import cn.edu.zust.dmt.hsy.mybaselibrary.directors.BaseDirector;
 
 /**
  * @author MR.M

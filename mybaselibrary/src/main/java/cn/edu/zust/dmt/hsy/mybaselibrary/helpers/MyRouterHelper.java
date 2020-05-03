@@ -17,7 +17,6 @@ import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterSettings;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.interfaces.IMyRouterRecorder;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyAPTUtils;
-import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
 
 /**
@@ -61,9 +60,9 @@ public enum MyRouterHelper {
                     mRouterMap.put(key, Objects.requireNonNull(mapTemp.get(key)));
                 }
             } catch (ClassNotFoundException e) {
-                MyErrorUtils.showMyArgumentException("MyAPTUtils returns illegal className set!");
+                MyErrorHelper.showMyArgumentException("MyAPTUtils returns illegal className set!");
             } catch (NullPointerException e) {
-                MyErrorUtils.showMyNullPointerException("MyRouterRecorders returns illegal map!");
+                MyErrorHelper.showMyNullPointerException("MyRouterRecorders returns illegal map!");
             }
         }
     }
@@ -78,7 +77,7 @@ public enum MyRouterHelper {
             , @Nullable final Bundle extras) {
         final String targetBaseActivityClassString = mRouterMap.get(path);
         if (targetBaseActivityClassString == null) {
-            MyErrorUtils.showMyArgumentException("Invalid path for MyRouter!");
+            MyErrorHelper.showMyArgumentException("Invalid path for MyRouter!");
         } else {
             try {
                 Class<?> unknownClass = Class.forName(targetBaseActivityClassString);
@@ -89,7 +88,7 @@ public enum MyRouterHelper {
                 }
                 context.startActivity(intent);
             } catch (ClassNotFoundException e) {
-                MyErrorUtils.showMyArgumentException("MyRouter lead to an invalid target class!");
+                MyErrorHelper.showMyArgumentException("MyRouter lead to an invalid target class!");
             }
         }
     }

@@ -15,15 +15,15 @@ public interface BaseFairCallback<T extends BaseModel> {
     /**
      * @param response data returned by fair
      */
-    void onModel(@NonNull T response);
+    void onReturnModel(@NonNull T response);
 
     /**
      * @param e possible error throw by fair
      */
-    void onError(@NonNull Throwable e);
+    void onReturnError(@NonNull Throwable e);
 
     /**
      * @description final action for callback
      */
-    void onComplete();
+    void onTheEnd();
 }

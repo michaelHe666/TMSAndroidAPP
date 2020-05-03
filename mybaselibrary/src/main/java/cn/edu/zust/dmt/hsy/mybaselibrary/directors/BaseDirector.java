@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors;
+package cn.edu.zust.dmt.hsy.mybaselibrary.directors;
 
 import androidx.annotation.NonNull;
 
@@ -29,7 +29,7 @@ public abstract class BaseDirector<T extends BaseDirectorListener> {
             mDirectorWeakReference = new WeakReference<>(baseDirectorListener);
         }
 
-        protected final BaseContainerListener getViewWeakReference() {
+        protected final BaseContainerListener getSafeContainer() {
             final BaseContainerListener baseContainerListener = mViewWeakReference.get();
             final K baseDirectorListener = mDirectorWeakReference.get();
             if (baseContainerListener == null || baseDirectorListener == null) {
@@ -39,7 +39,7 @@ public abstract class BaseDirector<T extends BaseDirectorListener> {
             }
         }
 
-        protected final K getDirectorWeakReference() {
+        protected final K getSafeDirector() {
             final BaseContainerListener baseContainerListener = mViewWeakReference.get();
             final K baseDirectorListener = mDirectorWeakReference.get();
             if (baseContainerListener == null || baseDirectorListener == null) {

@@ -9,7 +9,7 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.response.BaseResponseMode
  * @description $
  * @since 4/24/2020 10:51
  **/
-public class LoginResponseModel implements BaseResponseModel {
+public final class LoginResponseModel implements BaseResponseModel {
     private String username;
     private String permission;
 

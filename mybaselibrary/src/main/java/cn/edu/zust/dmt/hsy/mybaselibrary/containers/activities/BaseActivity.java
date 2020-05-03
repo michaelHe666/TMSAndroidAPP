@@ -21,8 +21,8 @@ import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyRouterHelper;
-import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
-import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
+import cn.edu.zust.dmt.hsy.mybaselibrary.directors.BaseDirector;
+import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyErrorHelper;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.BaseDialog;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
 
@@ -125,7 +125,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                             .addToBackStack(tag)
                             .commit();
                 } catch (IllegalAccessException | InstantiationException e) {
-                    MyErrorUtils.showMyArgumentException("Illegal argument for showBaseFragment()");
+                    MyErrorHelper.showMyArgumentException("Illegal argument for showBaseFragment()");
                 }
             }
         }
@@ -149,7 +149,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                     }
                     baseDialog.show(fragmentManager, tag);
                 } catch (IllegalAccessException | InstantiationException e) {
-                    MyErrorUtils.showMyArgumentException("Illegal argument for showBaseDialog()!");
+                    MyErrorHelper.showMyArgumentException("Illegal argument for showBaseDialog()!");
                 }
             }
         }
@@ -164,7 +164,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             if (targetFragment != null) {
                 ((BaseDialog) targetFragment).dismiss();
             } else {
-                MyErrorUtils.showMyNullPointerException("Dismiss an non-exist BaseDialogFragment!");
+                MyErrorHelper.showMyNullPointerException("Dismiss an non-exist BaseDialogFragment!");
             }
         }
 
@@ -218,16 +218,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         try {
             final ComponentName componentName = intent.getComponent();
             if (componentName == null) {
-                MyErrorUtils.showMyNullPointerException("TargetClass for this method is empty!");
+                MyErrorHelper.showMyNullPointerException("TargetClass for this method is empty!");
             } else {
                 if (BaseActivity.class.isAssignableFrom(Class.forName(componentName.getClassName()))) {
                     super.startActivity(intent, options);
                 } else {
-                    MyErrorUtils.showMyNullPointerException("Illegal targetClass for this method!");
+                    MyErrorHelper.showMyNullPointerException("Illegal targetClass for this method!");
                 }
             }
         } catch (ClassNotFoundException e) {
-            MyErrorUtils.showMyNullPointerException("TargetClass for this method not found!");
+            MyErrorHelper.showMyNullPointerException("TargetClass for this method not found!");
         }
     }
 

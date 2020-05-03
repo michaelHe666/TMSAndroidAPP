@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.presenters.fairs;
+package cn.edu.zust.dmt.hsy.mybaselibrary.fairs;
 
 import androidx.annotation.NonNull;
 
@@ -36,12 +36,12 @@ public abstract class BaseFair<T extends BaseFairSupplier<?>> {
 
         @Override
         public final void onError(@NonNull Throwable e) {
-            getBaseFairCallBack().onError(e);
+            getBaseFairCallBack().onReturnError(e);
         }
 
         @Override
         public final void onComplete() {
-            getBaseFairCallBack().onComplete();
+            getBaseFairCallBack().onTheEnd();
         }
     }
 

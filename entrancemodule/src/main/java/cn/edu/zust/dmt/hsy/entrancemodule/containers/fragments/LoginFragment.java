@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.entrancemodule.R;
 import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.LoginDirectorListener;
-import cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors.LoginDirector;
+import cn.edu.zust.dmt.hsy.entrancemodule.directors.LoginDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
 import cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyFormBar;
 

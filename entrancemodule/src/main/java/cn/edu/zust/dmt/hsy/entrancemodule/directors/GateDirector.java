@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors;
+package cn.edu.zust.dmt.hsy.entrancemodule.directors;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +9,7 @@ import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.GateDirectorListe
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtrasConstants;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
+import cn.edu.zust.dmt.hsy.mybaselibrary.directors.BaseDirector;
 
 /**
  * @author MR.M
@@ -60,7 +60,7 @@ public final class GateDirector extends BaseDirector<GateDirectorListener> {
             Bundle bundle = new Bundle();
             bundle.putString(String.valueOf(MyExtrasConstants.TAG_UNIVERSE_FRAGMENT)
                     , String.valueOf(MyExtrasConstants.VALUE_IDENTITY_LOGIN));
-            getViewWeakReference().callMyRouter(MyRouterPaths.IDENTITY_PATH, bundle);
+            getSafeContainer().callMyRouter(MyRouterPaths.IDENTITY_PATH, bundle);
         }
     }
 
@@ -76,7 +76,7 @@ public final class GateDirector extends BaseDirector<GateDirectorListener> {
             Bundle bundle = new Bundle();
             bundle.putString(String.valueOf(MyExtrasConstants.TAG_UNIVERSE_FRAGMENT)
                     , String.valueOf(MyExtrasConstants.VALUE_IDENTITY_REGISTER));
-            getViewWeakReference().callMyRouter(MyRouterPaths.IDENTITY_PATH, bundle);
+            getSafeContainer().callMyRouter(MyRouterPaths.IDENTITY_PATH, bundle);
         }
     }
 }

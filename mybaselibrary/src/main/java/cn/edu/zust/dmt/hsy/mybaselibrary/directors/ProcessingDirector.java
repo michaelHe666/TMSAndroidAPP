@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors;
+package cn.edu.zust.dmt.hsy.mybaselibrary.directors;
 
 import android.os.Bundle;
 
@@ -8,7 +8,7 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtrasConstants;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.listeners.ProcessingDirectorListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
+import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyErrorHelper;
 
 /**
  * @author MR.M
@@ -41,9 +41,9 @@ public final class ProcessingDirector extends BaseDirector<ProcessingDirectorLis
         public void parseMyExtras(@NonNull Bundle myExtras) {
             final String hintString = myExtras.getString(String.valueOf(MyExtrasConstants.TAG_PROCESSING_HINT));
             if (hintString == null) {
-                MyErrorUtils.showMyNullPointerException("Hint string no longer exist!");
+                MyErrorHelper.showMyNullPointerException("Hint string no longer exist!");
             } else {
-                getDirectorWeakReference().getHintTextView().setText(hintString);
+                getSafeDirector().getHintTextView().setText(hintString);
             }
         }
     }

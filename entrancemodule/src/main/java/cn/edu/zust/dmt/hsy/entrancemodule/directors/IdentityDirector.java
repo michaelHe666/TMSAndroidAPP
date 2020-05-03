@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors;
+package cn.edu.zust.dmt.hsy.entrancemodule.directors;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +12,8 @@ import cn.edu.zust.dmt.hsy.entrancemodule.containers.fragments.RegisterFragment;
 import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtrasConstants;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
-import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
+import cn.edu.zust.dmt.hsy.mybaselibrary.directors.BaseDirector;
+import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyErrorHelper;
 import cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyTopBar;
 
 /**
@@ -53,31 +53,31 @@ public final class IdentityDirector extends BaseDirector<IdentityDirectorListene
         public void parseMyExtras(@NonNull Bundle myExtras) {
             final String route = myExtras.getString(String.valueOf(MyExtrasConstants.TAG_UNIVERSE_FRAGMENT));
             if (route == null) {
-                MyErrorUtils.showMyNullPointerException("No target extra for identityFair!");
+                MyErrorHelper.showMyNullPointerException("No target extra for identityFair!");
             } else {
-                final mbl_MyTopBar myTopBar = getDirectorWeakReference().getMyTopBar();
+                final mbl_MyTopBar myTopBar = getSafeDirector().getMyTopBar();
                 if (route.equals(String.valueOf(MyExtrasConstants.VALUE_IDENTITY_LOGIN))) {
                     myTopBar.setTitle(R.string.em_string_universe_login);
                     myTopBar.showLeftButton(R.drawable.mbl_icon_universe_back);
                     myTopBar.setLeftButtonOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            getViewWeakReference().triggerBackPressedEvent();
+                            getSafeContainer().triggerBackPressedEvent();
                         }
                     });
-                    getViewWeakReference().showBaseFragment(LoginFragment.class
-                            , getDirectorWeakReference().getIdentityFragmentContainer().getId(), null);
+                    getSafeContainer().showBaseFragment(LoginFragment.class
+                            , getSafeDirector().getIdentityFragmentContainer().getId(), null);
                 } else if (route.equals(String.valueOf(MyExtrasConstants.VALUE_IDENTITY_REGISTER))) {
                     myTopBar.setTitle(R.string.em_string_universe_register);
                     myTopBar.showLeftButton(R.drawable.mbl_icon_universe_back);
                     myTopBar.setLeftButtonOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            getViewWeakReference().triggerBackPressedEvent();
+                            getSafeContainer().triggerBackPressedEvent();
                         }
                     });
-                    getViewWeakReference().showBaseFragment(RegisterFragment.class
-                            , getDirectorWeakReference().getIdentityFragmentContainer().getId(), null);
+                    getSafeContainer().showBaseFragment(RegisterFragment.class
+                            , getSafeDirector().getIdentityFragmentContainer().getId(), null);
                 }
             }
         }

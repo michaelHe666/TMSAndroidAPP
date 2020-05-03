@@ -17,7 +17,7 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.BuildConfig;
  * @description $
  * @since 4/23/2020 16:29
  **/
-public class BaseNetworkRequest<T extends BaseRequestModel> {
+public final class BaseNetworkRequest<T extends BaseRequestModel> {
     private final JsonElement args;
     private final JsonElement deviceInfo;
 

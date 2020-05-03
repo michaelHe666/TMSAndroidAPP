@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors;
+package cn.edu.zust.dmt.hsy.entrancemodule.directors;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,12 +10,12 @@ import androidx.annotation.NonNull;
 import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.LoginDirectorListener;
 import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.suppliers.LoginFairSupplier;
 import cn.edu.zust.dmt.hsy.entrancemodule.models.remote.response.LoginResponseModel;
-import cn.edu.zust.dmt.hsy.entrancemodule.presenters.fairs.LoginFair;
+import cn.edu.zust.dmt.hsy.entrancemodule.fairs.LoginFair;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtrasConstants;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseFairCallback;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
+import cn.edu.zust.dmt.hsy.mybaselibrary.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.ProcessingDialog;
 
 /**
@@ -121,18 +121,18 @@ public final class LoginDirector extends BaseDirector<LoginDirectorListener> {
         public void onClick(View v) {
             Bundle bundle = new Bundle();
             bundle.putString(String.valueOf(MyExtrasConstants.TAG_PROCESSING_HINT), "login");
-            getViewWeakReference().showBaseDialog(ProcessingDialog.class, bundle);
+            getSafeContainer().showBaseDialog(ProcessingDialog.class, bundle);
             new LoginFair().loadFair(new LoginFairSupplier<LoginResponseModel>() {
                 @NonNull
                 @Override
                 public String getVoucher() {
-                    return getDirectorWeakReference().getVoucherBar().getBarContent();
+                    return getSafeDirector().getVoucherBar().getBarContent();
                 }
 
                 @NonNull
                 @Override
                 public String getToken() {
-                    return getDirectorWeakReference().getTokenBar().getBarContent();
+                    return getSafeDirector().getTokenBar().getBarContent();
                 }
 
                 @NonNull
@@ -140,19 +140,19 @@ public final class LoginDirector extends BaseDirector<LoginDirectorListener> {
                 public BaseFairCallback<LoginResponseModel> getBaseFairCallback() {
                     return new BaseFairCallback<LoginResponseModel>() {
                         @Override
-                        public void onModel(@NonNull LoginResponseModel response) {
+                        public void onReturnModel(@NonNull final LoginResponseModel response) {
 
                         }
 
                         @Override
-                        public void onError(@NonNull Throwable e) {
+                        public void onReturnError(@NonNull final Throwable e) {
 
                         }
 
                         @Override
-                        public void onComplete() {
-                            getViewWeakReference().dismissBaseDialog(ProcessingDialog.class);
-                            getViewWeakReference().callMyRouter(MyRouterPaths.HOME_PATH, null);
+                        public void onTheEnd() {
+                            getSafeContainer().dismissBaseDialog(ProcessingDialog.class);
+                            getSafeContainer().callMyRouter(MyRouterPaths.HOME_PATH, null);
                         }
                     };
                 }

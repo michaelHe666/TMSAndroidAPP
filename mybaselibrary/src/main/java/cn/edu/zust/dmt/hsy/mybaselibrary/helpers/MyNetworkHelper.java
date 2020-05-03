@@ -15,7 +15,6 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.request.BaseNetworkReques
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.request.BaseRequestModel;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.response.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.mybaselibrary.models.remote.response.BaseResponseModel;
-import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyHttpUtils;
 
 import static java.lang.Thread.sleep;
@@ -27,7 +26,7 @@ import static java.lang.Thread.sleep;
  * @description $
  * @since 4/23/2020 16:18
  **/
-public class MyNetworkHelper {
+public final class MyNetworkHelper {
     /**
      * @description this method should only used for {@link MyNetworkHelperHolder#INSTANCE}
      */
@@ -62,9 +61,9 @@ public class MyNetworkHelper {
         if (type instanceof ParameterizedType) {
             final Class clazz = (Class) ((ParameterizedType) type).getActualTypeArguments()[0];
             if (BaseResponseModel.class.isAssignableFrom(clazz)) {
-                final Class<K> modelClass = clazz;
+                final Class<K> modelClass = (Class<K>) clazz;
                 MyThreadHelper.INSTANCE.runMyTask(new MyNetworkRunnable<>(path, baseNetworkRequest,
-                        new MyNetworkHandler<>(baseNetworkCallback), new MyNetworkResponseType(modelClass)));
+                        new MyNetworkHandler<>(baseNetworkCallback), new MyNetworkResponseType<>(modelClass)));
             }
         }
     }
@@ -82,7 +81,7 @@ public class MyNetworkHelper {
         private void handleResponse(@NonNull final BaseNetworkResponse<T> response) {
             final BaseNetworkCallback<T> callback = mCallbackWeakReference.get();
             if (callback == null) {
-                MyErrorUtils.showMyNullPointerException("BaseNetworkCallback instance no longer exist!");
+                MyErrorHelper.showMyNullPointerException("BaseNetworkCallback instance no longer exist!");
             } else {
                 callback.onResult(response);
                 callback.onComplete();
@@ -98,12 +97,12 @@ public class MyNetworkHelper {
         private final String mPath;
         private final BaseNetworkRequest<T> mBaseNetworkRequest;
         private final WeakReference<MyNetworkHandler<K>> mHandlerWeakReference;
-        private final MyNetworkResponseType mResponseType;
+        private final MyNetworkResponseType<K> mResponseType;
 
         private MyNetworkRunnable(@NonNull final String path
                 , @NonNull final BaseNetworkRequest<T> baseNetworkRequest
                 , @NonNull final MyNetworkHandler<K> handlerWeakReference
-                , @NonNull final MyNetworkResponseType responseType) {
+                , @NonNull final MyNetworkResponseType<K> responseType) {
             mPath = path;
             mBaseNetworkRequest = baseNetworkRequest;
             mHandlerWeakReference = new WeakReference<>(handlerWeakReference);
@@ -128,21 +127,24 @@ public class MyNetworkHelper {
                 if (baseNetworkResponse != null) {
                     handler.handleResponse(baseNetworkResponse);
                 } else {
-                    MyErrorUtils.showMyNullPointerException("MyNetworkPostCallbackHandler get empty msg!");
+                    MyErrorHelper.showMyNullPointerException("MyNetworkPostCallbackHandler get empty msg!");
                 }
             } else {
-                MyErrorUtils.showMyNullPointerException("MyNetworkPostCallbackHandler no longer exist!");
+                MyErrorHelper.showMyNullPointerException("MyNetworkPostCallbackHandler no longer exist!");
             }
         }
     }
 
+    //todo:build my error&exception process framework
+
     /**
      * @description type builder for {@link BaseNetworkResponse}
      */
-    private static final class MyNetworkResponseType implements ParameterizedType {
-        private final Class<? extends BaseResponseModel> mModelClass;
+    private static final class MyNetworkResponseType<T extends BaseResponseModel>
+            implements ParameterizedType {
+        private final Class<T> mModelClass;
 
-        private MyNetworkResponseType(@NonNull final Class<? extends BaseResponseModel> clazz) {
+        private MyNetworkResponseType(@NonNull final Class<T> clazz) {
             mModelClass = clazz;
         }
 
