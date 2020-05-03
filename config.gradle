@@ -32,14 +32,14 @@ ext {
 }
 
 static def addTmsShellDependencies(final DependencyHandler dependencyHandler) {
-    dependencyHandler.add("implementation", dependencyHandler.project(path: ':entrancemodule'))
-    dependencyHandler.add("implementation", dependencyHandler.project(path: ':mainmodule'))
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':entrance_module'))
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':main_module'))
 }
 
 static def addTmsModuleDependencies(final DependencyHandler dependencyHandler) {
-    dependencyHandler.add("implementation", dependencyHandler.project(path: ':mybaselibrary'))
-    dependencyHandler.add("implementation", dependencyHandler.project(path: ':myannotationslibrary'))
-    dependencyHandler.add("annotationProcessor", dependencyHandler.project(path: ':myprocessorslibrary'))
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':my_base_library'))
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':my_annotations_library'))
+    dependencyHandler.add("annotationProcessor", dependencyHandler.project(path: ':my_processors_library'))
 }
 
 ext.addTmsShellDependencies = this.&addTmsShellDependencies
