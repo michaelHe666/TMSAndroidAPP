@@ -4,10 +4,10 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
-import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtraConstants;
+import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtrasConstants;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.listeners.ProcessingDirectorListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
 
 /**
@@ -19,30 +19,31 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
  **/
 public final class ProcessingDirector extends BaseDirector<ProcessingDirectorListener> {
     @Override
-    public void loadActors(@NonNull final BaseViewListener baseViewListener
+    public void loadActors(@NonNull final BaseContainerListener baseContainerListener
             , @NonNull final ProcessingDirectorListener currentDirectorListener) {
-        setMyExtrasParser(baseViewListener, currentDirectorListener);
+        setMyExtrasParser(baseContainerListener, currentDirectorListener);
     }
 
-    private void setMyExtrasParser(@NonNull final BaseViewListener baseViewListener
+    private void setMyExtrasParser(@NonNull final BaseContainerListener baseContainerListener
             , @NonNull final ProcessingDirectorListener currentDirectorListener) {
-        baseViewListener.addMyExtrasParser(new MyExtrasParser(baseViewListener, currentDirectorListener));
+        baseContainerListener.addMyExtrasParser(
+                new MyExtrasParser(baseContainerListener, currentDirectorListener));
     }
 
     private static final class MyExtrasParser extends SafeDirectorInnerClass<ProcessingDirectorListener>
             implements BaseExtrasListener {
-        private MyExtrasParser(@NonNull final BaseViewListener baseViewListener
+        private MyExtrasParser(@NonNull final BaseContainerListener baseContainerListener
                 , @NonNull final ProcessingDirectorListener baseDirectorListener) {
-            super(baseViewListener, baseDirectorListener);
+            super(baseContainerListener, baseDirectorListener);
         }
 
         @Override
         public void parseMyExtras(@NonNull Bundle myExtras) {
-            final String hintString = myExtras.getString(String.valueOf(MyExtraConstants.TAG_PROCESSING_HINT));
+            final String hintString = myExtras.getString(String.valueOf(MyExtrasConstants.TAG_PROCESSING_HINT));
             if (hintString == null) {
                 MyErrorUtils.showMyNullPointerException("Hint string no longer exist!");
             } else {
-                getDirectorWeakReference().getHintPresenter().setText(hintString);
+                getDirectorWeakReference().getHintTextView().setText(hintString);
             }
         }
     }

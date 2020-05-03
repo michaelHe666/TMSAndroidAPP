@@ -12,9 +12,9 @@ import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.suppliers.LoginFairSupplier
 import cn.edu.zust.dmt.hsy.entrancemodule.models.remote.response.LoginResponseModel;
 import cn.edu.zust.dmt.hsy.entrancemodule.presenters.fairs.LoginFair;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtraConstants;
+import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtrasConstants;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseFairCallback;
-import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.ProcessingDialog;
 
@@ -27,48 +27,48 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.containers.dialogs.ProcessingDialog;
  **/
 public final class LoginDirector extends BaseDirector<LoginDirectorListener> {
     /**
-     * @param baseViewListener      base view listener
+     * @param baseContainerListener      base view listener
      * @param loginDirectorListener current specialized view listener
      */
-    public void loadActors(@NonNull final BaseViewListener baseViewListener
+    public void loadActors(@NonNull final BaseContainerListener baseContainerListener
             , @NonNull final LoginDirectorListener loginDirectorListener) {
-        setLoginVoucherBar(baseViewListener, loginDirectorListener);
-        setLoginTokenBar(baseViewListener, loginDirectorListener);
-        setLoginRequestView(baseViewListener, loginDirectorListener);
+        setLoginVoucherBar(baseContainerListener, loginDirectorListener);
+        setLoginTokenBar(baseContainerListener, loginDirectorListener);
+        setLoginRequestView(baseContainerListener, loginDirectorListener);
     }
 
     /**
      * @description help check whether voucher input is illegal or not
      */
-    private void setLoginVoucherBar(@NonNull final BaseViewListener baseViewListener
+    private void setLoginVoucherBar(@NonNull final BaseContainerListener baseContainerListener
             , @NonNull final LoginDirectorListener loginDirectorListener) {
         loginDirectorListener.getVoucherBar().setBarContentWatcher(
-                new MyVoucherTextWatcher(baseViewListener, loginDirectorListener));
+                new MyVoucherTextWatcher(baseContainerListener, loginDirectorListener));
     }
 
     /**
      * @description help check whether token input is illegal or not
      */
-    private void setLoginTokenBar(@NonNull final BaseViewListener baseViewListener
+    private void setLoginTokenBar(@NonNull final BaseContainerListener baseContainerListener
             , @NonNull final LoginDirectorListener loginDirectorListener) {
         loginDirectorListener.getTokenBar().setBarContentWatcher(
-                new MyTokenTextWatcher(baseViewListener, loginDirectorListener));
+                new MyTokenTextWatcher(baseContainerListener, loginDirectorListener));
     }
 
     /**
      * @description set action possibly triggered by login request view
      */
-    private void setLoginRequestView(@NonNull final BaseViewListener baseViewListener
+    private void setLoginRequestView(@NonNull final BaseContainerListener baseContainerListener
             , @NonNull final LoginDirectorListener loginDirectorListener) {
         loginDirectorListener.getLoginRequestView().setOnClickListener(
-                new MyLoginRequestListener(baseViewListener, loginDirectorListener));
+                new MyLoginRequestListener(baseContainerListener, loginDirectorListener));
     }
 
     private static final class MyVoucherTextWatcher extends SafeDirectorInnerClass<LoginDirectorListener>
             implements TextWatcher {
-        private MyVoucherTextWatcher(@NonNull final BaseViewListener baseViewListener
+        private MyVoucherTextWatcher(@NonNull final BaseContainerListener baseContainerListener
                 , @NonNull final LoginDirectorListener baseDirectorListener) {
-            super(baseViewListener, baseDirectorListener);
+            super(baseContainerListener, baseDirectorListener);
         }
 
         @Override
@@ -89,9 +89,9 @@ public final class LoginDirector extends BaseDirector<LoginDirectorListener> {
 
     private static final class MyTokenTextWatcher extends SafeDirectorInnerClass<LoginDirectorListener>
             implements TextWatcher {
-        private MyTokenTextWatcher(@NonNull final BaseViewListener baseViewListener
+        private MyTokenTextWatcher(@NonNull final BaseContainerListener baseContainerListener
                 , @NonNull final LoginDirectorListener baseDirectorListener) {
-            super(baseViewListener, baseDirectorListener);
+            super(baseContainerListener, baseDirectorListener);
         }
 
         @Override
@@ -112,15 +112,15 @@ public final class LoginDirector extends BaseDirector<LoginDirectorListener> {
 
     private static final class MyLoginRequestListener extends SafeDirectorInnerClass<LoginDirectorListener>
             implements View.OnClickListener {
-        private MyLoginRequestListener(@NonNull final BaseViewListener baseViewListener
+        private MyLoginRequestListener(@NonNull final BaseContainerListener baseContainerListener
                 , @NonNull final LoginDirectorListener baseDirectorListener) {
-            super(baseViewListener, baseDirectorListener);
+            super(baseContainerListener, baseDirectorListener);
         }
 
         @Override
         public void onClick(View v) {
             Bundle bundle = new Bundle();
-            bundle.putString(String.valueOf(MyExtraConstants.TAG_PROCESSING_HINT), "login");
+            bundle.putString(String.valueOf(MyExtrasConstants.TAG_PROCESSING_HINT), "login");
             getViewWeakReference().showBaseDialog(ProcessingDialog.class, bundle);
             new LoginFair().loadFair(new LoginFairSupplier<LoginResponseModel>() {
                 @NonNull

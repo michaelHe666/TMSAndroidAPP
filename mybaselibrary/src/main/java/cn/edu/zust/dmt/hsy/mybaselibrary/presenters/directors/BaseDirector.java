@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import java.lang.ref.WeakReference;
 
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.listeners.BaseDirectorListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
 
 /**
  * @author MR.M
@@ -20,29 +20,29 @@ public abstract class BaseDirector<T extends BaseDirectorListener> {
      * @description help child to create a cache-safe class
      */
     protected static abstract class SafeDirectorInnerClass<K extends BaseDirectorListener> {
-        private final WeakReference<BaseViewListener> mViewWeakReference;
+        private final WeakReference<BaseContainerListener> mViewWeakReference;
         private final WeakReference<K> mDirectorWeakReference;
 
-        protected SafeDirectorInnerClass(@NonNull final BaseViewListener baseViewListener
+        protected SafeDirectorInnerClass(@NonNull final BaseContainerListener baseContainerListener
                 , @NonNull final K baseDirectorListener) {
-            mViewWeakReference = new WeakReference<>(baseViewListener);
+            mViewWeakReference = new WeakReference<>(baseContainerListener);
             mDirectorWeakReference = new WeakReference<>(baseDirectorListener);
         }
 
-        protected final BaseViewListener getViewWeakReference() {
-            final BaseViewListener baseViewListener = mViewWeakReference.get();
+        protected final BaseContainerListener getViewWeakReference() {
+            final BaseContainerListener baseContainerListener = mViewWeakReference.get();
             final K baseDirectorListener = mDirectorWeakReference.get();
-            if (baseViewListener == null || baseDirectorListener == null) {
+            if (baseContainerListener == null || baseDirectorListener == null) {
                 throw new NullPointerException("BaseViewListener or BaseDirectorListener no longer exist!");
             } else {
-                return baseViewListener;
+                return baseContainerListener;
             }
         }
 
         protected final K getDirectorWeakReference() {
-            final BaseViewListener baseViewListener = mViewWeakReference.get();
+            final BaseContainerListener baseContainerListener = mViewWeakReference.get();
             final K baseDirectorListener = mDirectorWeakReference.get();
-            if (baseViewListener == null || baseDirectorListener == null) {
+            if (baseContainerListener == null || baseDirectorListener == null) {
                 throw new NullPointerException("BaseViewListener or BaseDirectorListener no longer exist!");
             } else {
                 return baseDirectorListener;
@@ -51,9 +51,9 @@ public abstract class BaseDirector<T extends BaseDirectorListener> {
     }
 
     /**
-     * @param baseViewListener        base view listener
+     * @param baseContainerListener        base view listener
      * @param currentDirectorListener specialized view listener
      */
-    public abstract void loadActors(@NonNull BaseViewListener baseViewListener
+    public abstract void loadActors(@NonNull BaseContainerListener baseContainerListener
             , @NonNull T currentDirectorListener);
 }

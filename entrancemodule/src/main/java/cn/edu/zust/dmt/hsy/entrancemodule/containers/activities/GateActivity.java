@@ -49,6 +49,6 @@ public final class GateActivity extends BaseActivity {
 
     @Override
     protected void loadDirectorsToView() {
-        new GateDirector().loadActors(getBaseViewListener(), new MyGateDirectorListener(this));
+        new GateDirector().loadActors(getBaseContainerListener(), new MyGateDirectorListener(this));
     }
 }

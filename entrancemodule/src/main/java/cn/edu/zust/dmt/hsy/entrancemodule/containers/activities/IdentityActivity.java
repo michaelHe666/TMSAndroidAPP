@@ -50,7 +50,7 @@ public final class IdentityActivity extends BaseActivity {
 
     @Override
     protected void loadDirectorsToView() {
-        new IdentityDirector().loadActors(getBaseViewListener()
+        new IdentityDirector().loadActors(getBaseContainerListener()
                 , new MyIdentityDirectorListener(this));
     }
 }

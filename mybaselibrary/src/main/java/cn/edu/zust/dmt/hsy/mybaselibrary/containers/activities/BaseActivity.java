@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.helpers.MyRouterHelper;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
@@ -35,7 +35,7 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
  **/
 public abstract class BaseActivity extends AppCompatActivity {
 
-    private final BaseViewListener mBaseViewListener = new BaseActivityListener(this);
+    private final BaseContainerListener mBaseContainerListener = new BaseActivityListener(this);
 
     private final ArrayList<BaseExtrasListener> mExtrasParserList = new ArrayList<>();
 
@@ -68,9 +68,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * @description this inner class should only be initialized to {@link #mBaseViewListener}
+     * @description this inner class should only be initialized to {@link #mBaseContainerListener}
      */
-    private static final class BaseActivityListener implements BaseViewListener {
+    private static final class BaseActivityListener implements BaseContainerListener {
         /**
          * @description parent holder with {@link WeakReference} to avoid cache leak
          */
@@ -248,8 +248,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * @description public for {@link BaseFragment} and {@link BaseDialog}
      */
-    public final BaseViewListener getBaseViewListener() {
-        return mBaseViewListener;
+    public final BaseContainerListener getBaseContainerListener() {
+        return mBaseContainerListener;
     }
 
     /**

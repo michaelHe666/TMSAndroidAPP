@@ -24,7 +24,7 @@ public final class ProcessingDialog extends BaseDialog {
 
         @NonNull
         @Override
-        public TextView getHintPresenter() {
+        public TextView getHintTextView() {
             return getWeakReferenceView(R.id.mbl_dialog_processing_text);
         }
     }
@@ -36,7 +36,7 @@ public final class ProcessingDialog extends BaseDialog {
 
     @Override
     protected void loadDirectorsToView() {
-        new ProcessingDirector().loadActors(getBaseViewListener()
+        new ProcessingDirector().loadActors(getBaseContainerListener()
                 , new MyProcessingDirectorListener(this));
     }
 }

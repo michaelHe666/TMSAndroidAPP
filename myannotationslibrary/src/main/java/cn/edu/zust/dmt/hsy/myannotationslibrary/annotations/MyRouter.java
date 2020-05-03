@@ -15,7 +15,7 @@ import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
  * @time 4/10/2020 20:42
  **/
 @Target(ElementType.TYPE)
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.SOURCE)
 public @interface MyRouter {
     /**
      * @description url path in router list

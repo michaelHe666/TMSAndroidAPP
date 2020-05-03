@@ -9,9 +9,9 @@ import cn.edu.zust.dmt.hsy.entrancemodule.R;
 import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.IdentityDirectorListener;
 import cn.edu.zust.dmt.hsy.entrancemodule.containers.fragments.LoginFragment;
 import cn.edu.zust.dmt.hsy.entrancemodule.containers.fragments.RegisterFragment;
-import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtraConstants;
+import cn.edu.zust.dmt.hsy.mybaselibrary.constants.MyExtrasConstants;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
 import cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyTopBar;
@@ -25,38 +25,38 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.views.combined.mbl_MyTopBar;
  **/
 public final class IdentityDirector extends BaseDirector<IdentityDirectorListener> {
     /**
-     * @param baseViewListener         base view listener
+     * @param baseContainerListener         base view listener
      * @param identityDirectorListener current specialized view listener
      * @description load actors to view holder
      */
-    public void loadActors(@NonNull final BaseViewListener baseViewListener
+    public void loadActors(@NonNull final BaseContainerListener baseContainerListener
             , @NonNull final IdentityDirectorListener identityDirectorListener) {
-        addMyExtrasParser(baseViewListener, identityDirectorListener);
+        addMyExtrasParser(baseContainerListener, identityDirectorListener);
     }
 
     /**
      * @description add login/register {@link BaseExtrasListener}  to Listener holder
      */
-    private void addMyExtrasParser(@NonNull final BaseViewListener baseViewListener
+    private void addMyExtrasParser(@NonNull final BaseContainerListener baseContainerListener
             , @NonNull final IdentityDirectorListener identityDirectorListener) {
-        baseViewListener.addMyExtrasParser(new MyExtrasParser(baseViewListener, identityDirectorListener));
+        baseContainerListener.addMyExtrasParser(new MyExtrasParser(baseContainerListener, identityDirectorListener));
     }
 
     private static final class MyExtrasParser extends SafeDirectorInnerClass<IdentityDirectorListener>
             implements BaseExtrasListener {
-        private MyExtrasParser(@NonNull BaseViewListener baseViewListener
+        private MyExtrasParser(@NonNull BaseContainerListener baseContainerListener
                 , @NonNull IdentityDirectorListener baseDirectorListener) {
-            super(baseViewListener, baseDirectorListener);
+            super(baseContainerListener, baseDirectorListener);
         }
 
         @Override
         public void parseMyExtras(@NonNull Bundle myExtras) {
-            final String route = myExtras.getString(String.valueOf(MyExtraConstants.TAG_UNIVERSE_FRAGMENT));
+            final String route = myExtras.getString(String.valueOf(MyExtrasConstants.TAG_UNIVERSE_FRAGMENT));
             if (route == null) {
                 MyErrorUtils.showMyNullPointerException("No target extra for identityFair!");
             } else {
                 final mbl_MyTopBar myTopBar = getDirectorWeakReference().getMyTopBar();
-                if (route.equals(String.valueOf(MyExtraConstants.VALUE_IDENTITY_LOGIN))) {
+                if (route.equals(String.valueOf(MyExtrasConstants.VALUE_IDENTITY_LOGIN))) {
                     myTopBar.setTitle(R.string.em_string_universe_login);
                     myTopBar.showLeftButton(R.drawable.mbl_icon_universe_back);
                     myTopBar.setLeftButtonOnClickListener(new View.OnClickListener() {
@@ -67,7 +67,7 @@ public final class IdentityDirector extends BaseDirector<IdentityDirectorListene
                     });
                     getViewWeakReference().showBaseFragment(LoginFragment.class
                             , getDirectorWeakReference().getIdentityFragmentContainer().getId(), null);
-                } else if (route.equals(String.valueOf(MyExtraConstants.VALUE_IDENTITY_REGISTER))) {
+                } else if (route.equals(String.valueOf(MyExtrasConstants.VALUE_IDENTITY_REGISTER))) {
                     myTopBar.setTitle(R.string.em_string_universe_register);
                     myTopBar.showLeftButton(R.drawable.mbl_icon_universe_back);
                     myTopBar.setLeftButtonOnClickListener(new View.OnClickListener() {

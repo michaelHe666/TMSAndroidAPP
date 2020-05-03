@@ -53,6 +53,6 @@ public final class LoginFragment extends BaseFragment {
 
     @Override
     protected void loadDirectorsToView() {
-        new LoginDirector().loadActors(getBaseViewListener(), new MyLoginDirectorListener(this));
+        new LoginDirector().loadActors(getBaseContainerListener(), new MyLoginDirectorListener(this));
     }
 }

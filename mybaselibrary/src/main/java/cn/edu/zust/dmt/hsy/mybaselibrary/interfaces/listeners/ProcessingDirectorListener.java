@@ -13,5 +13,5 @@ import androidx.annotation.NonNull;
  **/
 public interface ProcessingDirectorListener extends BaseDirectorListener {
     @NonNull
-    TextView getHintPresenter();
+    TextView getHintTextView();
 }

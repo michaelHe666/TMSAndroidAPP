@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.myannotationslibrary.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseExtrasListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 import cn.edu.zust.dmt.hsy.mybaselibrary.utils.MyErrorUtils;
 import cn.edu.zust.dmt.hsy.mybaselibrary.containers.activities.BaseActivity;
@@ -35,7 +35,7 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
  **/
 public abstract class BaseDialog extends DialogFragment {
 
-    private BaseViewListener mBaseViewListener = null;
+    private BaseContainerListener mBaseContainerListener = null;
 
     private final ArrayList<BaseExtrasListener> mExtrasParserList = new ArrayList<>();
 
@@ -80,9 +80,9 @@ public abstract class BaseDialog extends DialogFragment {
     }
 
     /**
-     * @description this inner class should only be initialized to {@link #mBaseViewListener}
+     * @description this inner class should only be initialized to {@link #mBaseContainerListener}
      */
-    private static final class BaseDialogListener implements BaseViewListener {
+    private static final class BaseDialogListener implements BaseContainerListener {
         /**
          * @description parent holder with {@link WeakReference} to avoid cache leak
          */
@@ -126,7 +126,7 @@ public abstract class BaseDialog extends DialogFragment {
          */
         @Override
         public final void callMyRouter(@NonNull final MyRouterPaths path, @Nullable final Bundle myExtras) {
-            getBaseActivity().getBaseViewListener().callMyRouter(path, myExtras);
+            getBaseActivity().getBaseContainerListener().callMyRouter(path, myExtras);
         }
 
         /**
@@ -138,7 +138,7 @@ public abstract class BaseDialog extends DialogFragment {
         @Override
         public void showBaseFragment(@NonNull final Class<? extends BaseFragment> targetClass
                 , final int containerViewRId, final @Nullable Bundle myExtras) {
-            getBaseActivity().getBaseViewListener().showBaseFragment(targetClass, containerViewRId, myExtras);
+            getBaseActivity().getBaseContainerListener().showBaseFragment(targetClass, containerViewRId, myExtras);
         }
 
         /**
@@ -148,7 +148,7 @@ public abstract class BaseDialog extends DialogFragment {
         @Override
         public void showBaseDialog(@NonNull final Class<? extends BaseDialog> targetClass
                 , final @Nullable Bundle myExtras) {
-            getBaseActivity().getBaseViewListener().showBaseDialog(targetClass, myExtras);
+            getBaseActivity().getBaseContainerListener().showBaseDialog(targetClass, myExtras);
         }
 
         /**
@@ -156,7 +156,7 @@ public abstract class BaseDialog extends DialogFragment {
          */
         @Override
         public void dismissBaseDialog(@NonNull final Class<? extends BaseDialog> targetClass) {
-            getBaseActivity().getBaseViewListener().dismissBaseDialog(targetClass);
+            getBaseActivity().getBaseContainerListener().dismissBaseDialog(targetClass);
         }
 
         /**
@@ -172,7 +172,7 @@ public abstract class BaseDialog extends DialogFragment {
          */
         @Override
         public void triggerBackPressedEvent() {
-            getBaseActivity().getBaseViewListener().triggerBackPressedEvent();
+            getBaseActivity().getBaseContainerListener().triggerBackPressedEvent();
         }
     }
 
@@ -183,7 +183,7 @@ public abstract class BaseDialog extends DialogFragment {
     public final void onAttach(@NonNull Context context) {
         super.onAttach(context);
         if (context instanceof BaseActivity) {
-            mBaseViewListener = new BaseDialogListener((BaseActivity) context, this);
+            mBaseContainerListener = new BaseDialogListener((BaseActivity) context, this);
         } else {
             MyErrorUtils.showMyArgumentException("BaseDialog only support BaseActivity!");
         }
@@ -243,8 +243,8 @@ public abstract class BaseDialog extends DialogFragment {
     /**
      * @description supposed to be call only in child class
      */
-    protected final BaseViewListener getBaseViewListener() {
-        return mBaseViewListener;
+    protected final BaseContainerListener getBaseContainerListener() {
+        return mBaseContainerListener;
     }
 
     /**

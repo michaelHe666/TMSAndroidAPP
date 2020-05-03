@@ -20,7 +20,7 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.containers.fragments.BaseFragment;
  * @time 4/6/2020 10:05
  * copyright(c) all rights reserved by MR.M
  **/
-public interface BaseViewListener {
+public interface BaseContainerListener {
     /**
      * @param path     enum path in {@link MyRouterPaths}
      * @param myExtras extra info for path targetClass
@@ -51,7 +51,7 @@ public interface BaseViewListener {
      */
     void addMyExtrasParser(@NonNull BaseExtrasListener myExtrasParser);
 
-    //todo:whether can I remove following ugly using?
+    //todo:whether can I remove following ugly codes?
 
     /**
      * @description use this method to trigger {@link Activity#onBackPressed()}

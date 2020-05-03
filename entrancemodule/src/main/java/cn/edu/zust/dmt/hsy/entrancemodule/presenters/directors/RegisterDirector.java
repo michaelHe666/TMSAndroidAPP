@@ -3,7 +3,7 @@ package cn.edu.zust.dmt.hsy.entrancemodule.presenters.directors;
 import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.entrancemodule.interfaces.listeners.RegisterDirectorListener;
-import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseViewListener;
+import cn.edu.zust.dmt.hsy.mybaselibrary.interfaces.others.BaseContainerListener;
 import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
 
 /**
@@ -15,7 +15,7 @@ import cn.edu.zust.dmt.hsy.mybaselibrary.presenters.directors.BaseDirector;
  **/
 public final class RegisterDirector extends BaseDirector<RegisterDirectorListener> {
     @Override
-    public void loadActors(@NonNull final BaseViewListener baseViewListener
+    public void loadActors(@NonNull final BaseContainerListener baseContainerListener
             , @NonNull final RegisterDirectorListener currentDirectorListener) {
 
     }
