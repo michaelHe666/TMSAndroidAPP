@@ -8,13 +8,14 @@ ext {
             app           : "",
             entranceModule: "em_",
             mainModule    : "mm_",
+            commonModule  : "cm_",
             myBaseLibrary : "mbl_"
     ]
 
     tmsIdsConfigs = [
             app           : "cn.edu.zust.dmt.hsy.tms",
             entranceModule: "cn.edu.zust.dmt.hsy.tms.em",
-            mainModule    : "cn.edu.zust.dmt.hsy.tms.main"
+            mainModule    : "cn.edu.zust.dmt.hsy.tms.main",
     ]
 
     tmsAndroidConfigs = [
@@ -37,6 +38,7 @@ static def addTmsShellDependencies(final DependencyHandler dependencyHandler) {
 }
 
 static def addTmsModuleDependencies(final DependencyHandler dependencyHandler) {
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':common_module'))
     dependencyHandler.add("implementation", dependencyHandler.project(path: ':my_base_library'))
     dependencyHandler.add("implementation", dependencyHandler.project(path: ':my_annotations_library'))
     dependencyHandler.add("annotationProcessor", dependencyHandler.project(path: ':my_processors_library'))

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--dimens for title-->
+    <dimen name="cm_dimen_universe_title_large">22sp</dimen>
+    <dimen name="cm_dimen_universe_title_middle">20sp</dimen>
+    <dimen name="cm_dimen_universe_title_small">18sp</dimen>
+    
+    <!--dimens for text-->
+    <dimen name="cm_dimen_universe_text_large">20sp</dimen>
+    <dimen name="cm_dimen_universe_text_middle">18sp</dimen>
+    <dimen name="cm_dimen_universe_text_small">16sp</dimen>
+</resources>

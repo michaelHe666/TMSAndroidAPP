@@ -1,17 +1,24 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion tmsAndroidConfigs.compileSdkVersion
 
+    resourcePrefix tmsResourcePrefixs.commonModule
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion tmsAndroidConfigs.minSdkVersion
+        targetSdkVersion tmsAndroidConfigs.targetSdkVersion
+        versionCode tmsAndroidConfigs.versionCode
+        versionName tmsAndroidConfigs.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [modulePrefix: tmsResourcePrefixs.commonModule]
+            }
+        }
     }
 
     buildTypes {
@@ -19,6 +26,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility = tmsJavaConfigs.sourceCompatibility
+        targetCompatibility = tmsJavaConfigs.targetCompatibility
     }
 
 }
@@ -30,4 +41,9 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation project(path: ':my_annotations_library')
+    implementation project(path: ':my_base_library')
+    annotationProcessor project(path: ':my_processors_library')
+
 }

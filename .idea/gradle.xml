@@ -10,13 +10,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/common_module" />
             <option value="$PROJECT_DIR$/entrance_module" />
             <option value="$PROJECT_DIR$/main_module" />
             <option value="$PROJECT_DIR$/my_annotations_library" />
             <option value="$PROJECT_DIR$/my_base_library" />
             <option value="$PROJECT_DIR$/my_processors_library" />
-            <option value="$PROJECT_DIR$/project_shell" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

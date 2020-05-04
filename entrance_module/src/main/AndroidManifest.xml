@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.edu.zust.dmt.hsy.entrancemodule">
+    package="cn.edu.zust.dmt.hsy.entrance_module">
 
     <application>
 
         <activity
-            android:name=".containers.activities.GateActivity"
+            android:name="cn.edu.zust.dmt.hsy.entrance_module.containers.activities.GateActivity"
             android:launchMode="singleInstance">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -13,7 +13,7 @@
         </activity>
 
         <activity
-            android:name=".containers.activities.IdentityActivity"
+            android:name="cn.edu.zust.dmt.hsy.entrance_module.containers.activities.IdentityActivity"
             android:launchMode="singleTop" />
     </application>
 </manifest>
