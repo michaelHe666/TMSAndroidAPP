@@ -152,6 +152,8 @@ public final class MyRouterProcessor extends AbstractProcessor {
         generateRecorderFile(mRouterMetaMap);
     }
 
+    //todo:solve singleton-pattern of routerRecorder ,enum can not be finalized
+
     /**
      * @param pathToTargetMap for creating path java file
      */
