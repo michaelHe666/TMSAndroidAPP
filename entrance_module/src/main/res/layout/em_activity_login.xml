@@ -12,7 +12,7 @@
         app:layout_constraintDimensionRatio="8:1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:cm_myTopBarTitle="@string/em_string_universe_login"
+        app:cm_myTopBarTitle="@string/em_string_universal_login"
         app:cm_myTopBarLeftIcon="@drawable/cm_icon_universe_back"/>
 
     <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar
@@ -20,40 +20,40 @@
         app:layout_constraintTop_toBottomOf="@id/em_activity_login_my_top_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="@dimen/em_dimen_universe_my_form_bar_margin_top"
+        android:layout_marginTop="@dimen/em_dimen_universal_form_margin_top"
         app:layout_constraintDimensionRatio="8:1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cm_myFormBarTextSize="18dp"
-        app:cm_myFormBarTitle="@string/em_string_universe_voucher"
-        app:cm_myFormBarHint="@string/em_string_universe_voucher_hint"/>
+        app:cm_myFormBarTitle="@string/em_string_universal_voucher"
+        app:cm_myFormBarHint="@string/em_string_universal_voucher_hint"/>
 
     <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar
         android:id="@+id/em_activity_login_token_my_form_bar"
         app:layout_constraintTop_toBottomOf="@id/em_activity_login_voucher_my_form_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="@dimen/em_dimen_universe_my_form_bar_margin_top"
+        android:layout_marginTop="@dimen/em_dimen_universal_form_margin_top"
         app:layout_constraintDimensionRatio="8:1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cm_myFormBarTextSize="18sp"
-        app:cm_myFormBarTitle="@string/em_string_universe_token"
-        app:cm_myFormBarHint="@string/em_string_universe_token_hint"/>
+        app:cm_myFormBarTitle="@string/em_string_universal_password"
+        app:cm_myFormBarHint="@string/em_string_universal_password_hint"/>
 
     <Button
         android:id="@+id/em_activity_login_confirm_button"
         app:layout_constraintTop_toBottomOf="@id/em_activity_login_token_my_form_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="@dimen/em_dimen_universe_my_form_bar_button_margin_top"
+        android:layout_marginTop="@dimen/em_dimen_universal_form_button_margin_top"
         android:layout_marginHorizontal="20dp"
         app:layout_constraintDimensionRatio="8:1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        style="@style/cm_style_universe_button_normal"
-        android:background="@color/cm_color_universe_app_theme_color"
-        android:text="@string/em_string_universe_login"
-        android:textColor="@color/cm_color_universe_foreground"/>
+        style="@style/cm_style_universal_button_normal"
+        android:background="@color/cm_color_universal_app_theme_color"
+        android:text="@string/em_string_universal_login"
+        android:textColor="@color/cm_color_universal_foreground"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

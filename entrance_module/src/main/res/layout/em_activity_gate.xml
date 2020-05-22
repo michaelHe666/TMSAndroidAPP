@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cm_color_universe_background">
+    android:background="@color/cm_color_universal_background">
 
     <Button
         android:id="@+id/em_activity_gate_login_button"
@@ -17,10 +17,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintDimensionRatio="5:2"
-        android:text="@string/em_string_universe_login"
-        android:background="@color/cm_color_universe_app_theme_color"
-        android:textColor="@color/cm_color_universe_foreground"
-        style="@style/cm_style_universe_button_normal"/>
+        android:text="@string/em_string_universal_login"
+        android:background="@color/cm_color_universal_app_theme_color"
+        android:textColor="@color/cm_color_universal_foreground"
+        style="@style/cm_style_universal_button_normal"/>
 
     <Button
         android:id="@+id/em_activity_gate_register_button"
@@ -32,9 +32,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintDimensionRatio="5:2"
-        android:text="@string/em_string_universe_register"
-        android:background="@color/cm_color_universe_foreground"
-        android:textColor="@color/cm_color_universe_app_theme_color"
-        style="@style/cm_style_universe_button_normal"/>
+        android:text="@string/em_string_universal_register"
+        android:background="@color/cm_color_universal_foreground"
+        android:textColor="@color/cm_color_universal_app_theme_color"
+        style="@style/cm_style_universal_button_normal"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

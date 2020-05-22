@@ -10,7 +10,9 @@ package cn.edu.zust.dmt.hsy.my_annotations_library.constants;
 public enum MyRouterPaths {
     //router path for entranceModule
     GATE_PATH,
-    IDENTITY_PATH,
+    LOGIN_PATH,
+    REGISTER_PATH,
+    RESET_PATH,
 
     //router path for mainModule
     HOME_PATH,

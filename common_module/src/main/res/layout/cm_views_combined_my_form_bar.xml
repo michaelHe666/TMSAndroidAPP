@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cm_color_universe_foreground">
+    android:background="@color/cm_color_universal_foreground">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cm_widgets_my_form_bar_left_guideline"
@@ -35,8 +35,8 @@
         app:layout_constraintLeft_toLeftOf="@id/cm_widgets_my_form_bar_left_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/cm_style_universe_title_small"
-        tools:text="@string/cm_string_universe_loading"/>
+        style="@style/cm_style_universal_title_small"
+        tools:text="@string/cm_string_universal_loading"/>
 
 <!--todo: solve the background repeat with style!!! -->
     <EditText
@@ -47,7 +47,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        style="@style/cm_style_universe_edit_text_single_normal"
-        tools:hint="@string/cm_string_universe_loading" />
+        style="@style/cm_style_universal_edit_text_single_normal"
+        tools:hint="@string/cm_string_universal_loading" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

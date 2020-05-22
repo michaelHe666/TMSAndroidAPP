@@ -17,13 +17,13 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import cn.edu.zust.dmt.hsy.common_module.R;
 
 /**
- * @projectName TMS
  * @author MR.M
- * @since 4/6/2020 12:20
  * @version 1.0
+ * @projectName TMS
  * @description $
- *
+ * <p>
  * copyright(c) all rights reserved by MR.M
+ * @since 4/6/2020 12:20
  **/
 public final class cm_MyTopBar extends ConstraintLayout {
 
@@ -72,17 +72,19 @@ public final class cm_MyTopBar extends ConstraintLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.cm_MyTopBar);
 
         final String titleString = typedArray.getString(R.styleable.cm_MyTopBar_cm_myTopBarTitle);
-        mLeftButtonRID = typedArray.getResourceId(R.styleable.cm_MyTopBar_cm_myTopBarLeftIcon, 0);
-        mRightButtonRID = typedArray.getResourceId(R.styleable.cm_MyTopBar_cm_myTopBarRightIcon, 0);
+        final int leftButtonRID = typedArray
+                .getResourceId(R.styleable.cm_MyTopBar_cm_myTopBarLeftIcon, 0);
+        final int rightButtonRID = typedArray
+                .getResourceId(R.styleable.cm_MyTopBar_cm_myTopBarRightIcon, 0);
 
-        if (mRightButtonRID != 0) {
-            showRightButton(mRightButtonRID);
+        if (rightButtonRID != 0) {
+            showRightButton(rightButtonRID);
         } else {
             hideRightButton();
         }
 
-        if (mLeftButtonRID != 0) {
-            showLeftButton(mLeftButtonRID);
+        if (leftButtonRID != 0) {
+            showLeftButton(leftButtonRID);
         } else {
             hideLeftButton();
         }

@@ -1,12 +1,9 @@
 package cn.edu.zust.dmt.hsy.entrance_module.containers.activities;
 
+import android.os.Bundle;
 import android.view.View;
 
-import androidx.annotation.NonNull;
-
 import cn.edu.zust.dmt.hsy.entrance_module.R;
-import cn.edu.zust.dmt.hsy.entrance_module.interfaces.listeners.GateDirectorListener;
-import cn.edu.zust.dmt.hsy.entrance_module.directors.GateDirector;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.activities.BaseActivity;
@@ -20,35 +17,37 @@ import cn.edu.zust.dmt.hsy.my_base_library.containers.activities.BaseActivity;
  **/
 @MyRouter(path = MyRouterPaths.GATE_PATH)
 public final class GateActivity extends BaseActivity {
+
     /**
-     * @description cache-safe implementation for {@link GateDirectorListener}
+     * @description member views needed for {@link #findViews()}
      */
-    private static final class MyGateDirectorListener extends BaseActivitySafeDirectorListener
-            implements GateDirectorListener {
-        private MyGateDirectorListener(@NonNull final BaseActivity baseActivity) {
-            super(baseActivity);
-        }
-
-        @NonNull
-        @Override
-        public View getLoginRouterView() {
-            return getSafeView(R.id.em_activity_gate_login_button);
-        }
-
-        @NonNull
-        @Override
-        public View getRegisterRouterView() {
-            return getSafeView(R.id.em_activity_gate_register_button);
-        }
-    }
+    private View mLoginView = null;
+    private View mRegisterView = null;
 
     @Override
-    protected int getViewRId() {
+    protected int getLayoutRId() {
         return R.layout.em_activity_gate;
     }
 
     @Override
-    protected void loadDirectorsToView() {
-        new GateDirector().loadActors(getBaseContainerListener(), new MyGateDirectorListener(this));
+    protected void findViews() {
+        mLoginView = findViewById(R.id.em_activity_gate_login_button);
+        mRegisterView = findViewById(R.id.em_activity_gate_register_button);
+
+//        Bundle bundle = new Bundle();
+//        bundle.putString(String.valueOf(MyExtrasConstants.TAG_UNIVERSE_FRAGMENT)
+//                , String.valueOf(MyExtrasConstants.VALUE_IDENTITY_LOGIN));
+//        getSafeContainer().callMyRouter(MyRouterPaths.IDENTITY_PATH, bundle);
+    }
+
+    @Override
+    protected void loadActorsToViews() {
+        mLoginView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                callMyRouter(MyRouterPaths.LOGIN_PATH, bundle);
+            }
+        });
     }
 }

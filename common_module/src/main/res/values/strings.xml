@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--universe strings-->
-    <string name="cm_string_universe_app_name">TMS</string>
-    <string name="cm_string_universe_loading">加载中</string>
-    <string name="cm_string_universe_load_fail">加载失败</string>
+    <string name="cm_string_universal_app_name">TMS</string>
+    <string name="cm_string_universal_loading">加载中</string>
+    <string name="cm_string_universal_load_fail">加载失败</string>
 </resources>

@@ -2,88 +2,88 @@
 <resources>
     <!--styles for app-->
     <style name="cm_style_app" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/cm_color_universe_app_theme_color</item>
+        <item name="colorPrimary">@color/cm_color_universal_app_theme_color</item>
         <item name="colorPrimaryDark">#3F7500</item>
-        <item name="colorAccent">@color/cm_color_universe_app_theme_color</item>
+        <item name="colorAccent">@color/cm_color_universal_app_theme_color</item>
     </style>
 
     <!--styles for textView-->
-    <style name="cm_style_universe_title">
+    <style name="cm_style_universal_title">
         <item name="android:includeFontPadding">false</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/cm_color_universe_title</item>
+        <item name="android:textColor">@color/cm_color_universal_title</item>
         <item name="android:singleLine">true</item>
         <item name="android:ellipsize">end</item>
         <item name="android:padding">0dp</item>
     </style>
-    <style name="cm_style_universe_title_large" parent="cm_style_universe_title">
-        <item name="android:textSize">@dimen/cm_dimen_universe_title_large</item>
+    <style name="cm_style_universal_title_large" parent="cm_style_universal_title">
+        <item name="android:textSize">@dimen/cm_dimen_universal_title_large</item>
     </style>
-    <style name="cm_style_universe_title_normal" parent="cm_style_universe_title">
-        <item name="android:textSize">@dimen/cm_dimen_universe_title_middle</item>
+    <style name="cm_style_universal_title_normal" parent="cm_style_universal_title">
+        <item name="android:textSize">@dimen/cm_dimen_universal_title_middle</item>
     </style>
-    <style name="cm_style_universe_title_small" parent="cm_style_universe_title">
-        <item name="android:textSize">@dimen/cm_dimen_universe_title_small</item>
+    <style name="cm_style_universal_title_small" parent="cm_style_universal_title">
+        <item name="android:textSize">@dimen/cm_dimen_universal_title_small</item>
     </style>
-    <style name="cm_style_universe_text">
+    <style name="cm_style_universal_text">
         <item name="android:includeFontPadding">false</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/cm_color_universe_text</item>
+        <item name="android:textColor">@color/cm_color_universal_text</item>
         <item name="android:singleLine">true</item>
         <item name="android:ellipsize">end</item>
         <item name="android:layout_margin">0dp</item>
         <item name="android:padding">0dp</item>
     </style>
-    <style name="cm_style_universe_text_large" parent="cm_style_universe_title">
-        <item name="android:textSize">@dimen/cm_dimen_universe_text_large</item>
+    <style name="cm_style_universal_text_large" parent="cm_style_universal_title">
+        <item name="android:textSize">@dimen/cm_dimen_universal_text_large</item>
     </style>
-    <style name="cm_style_universe_text_normal" parent="cm_style_universe_title">
-        <item name="android:textSize">@dimen/cm_dimen_universe_text_middle</item>
+    <style name="cm_style_universal_text_normal" parent="cm_style_universal_title">
+        <item name="android:textSize">@dimen/cm_dimen_universal_text_middle</item>
     </style>
-    <style name="cm_style_universe_text_small" parent="cm_style_universe_title">
-        <item name="android:textSize">@dimen/cm_dimen_universe_text_small</item>
+    <style name="cm_style_universal_text_small" parent="cm_style_universal_title">
+        <item name="android:textSize">@dimen/cm_dimen_universal_text_small</item>
     </style>
 
     <!--styles for editText-->
-    <style name="cm_style_universe_edit_text_single">
+    <style name="cm_style_universal_edit_text_single">
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/cm_color_universe_text</item>
-        <item name="android:textColorHint">@color/cm_color_universe_hint</item>
+        <item name="android:textColor">@color/cm_color_universal_text</item>
+        <item name="android:textColorHint">@color/cm_color_universal_hint</item>
         <item name="android:singleLine">true</item>
         <item name="background">@android:color/transparent</item>
         <item name="android:layout_margin">0dp</item>
         <item name="android:padding">0dp</item>
     </style>
-    <style name="cm_style_universe_edit_text_single_large" parent="cm_style_universe_edit_text_single">
-        <item name="android:textSize">@dimen/cm_dimen_universe_text_large</item>
+    <style name="cm_style_universal_edit_text_single_large" parent="cm_style_universal_edit_text_single">
+        <item name="android:textSize">@dimen/cm_dimen_universal_text_large</item>
     </style>
-    <style name="cm_style_universe_edit_text_single_normal" parent="cm_style_universe_edit_text_single">
-        <item name="android:textSize">@dimen/cm_dimen_universe_text_middle</item>
+    <style name="cm_style_universal_edit_text_single_normal" parent="cm_style_universal_edit_text_single">
+        <item name="android:textSize">@dimen/cm_dimen_universal_text_middle</item>
     </style>
-    <style name="cm_style_universe_edit_text_single_small" parent="cm_style_universe_edit_text_single">
-        <item name="android:textSize">@dimen/cm_dimen_universe_text_small</item>
+    <style name="cm_style_universal_edit_text_single_small" parent="cm_style_universal_edit_text_single">
+        <item name="android:textSize">@dimen/cm_dimen_universal_text_small</item>
     </style>
-    <style name="cm_style_universe_edit_text_multiline">
+    <style name="cm_style_universal_edit_text_multiline">
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/cm_color_universe_text</item>
-        <item name="android:textColorHint">@color/cm_color_universe_hint</item>
+        <item name="android:textColor">@color/cm_color_universal_text</item>
+        <item name="android:textColorHint">@color/cm_color_universal_hint</item>
         <item name="android:singleLine">false</item>
         <item name="background">@android:color/transparent</item>
         <item name="android:layout_margin">0dp</item>
         <item name="android:padding">0dp</item>
     </style>
-    <style name="cm_style_universe_edit_text_multiline_large" parent="cm_style_universe_edit_text_multiline">
-        <item name="android:textSize">@dimen/cm_dimen_universe_text_large</item>
+    <style name="cm_style_universal_edit_text_multiline_large" parent="cm_style_universal_edit_text_multiline">
+        <item name="android:textSize">@dimen/cm_dimen_universal_text_large</item>
     </style>
-    <style name="cm_style_universe_edit_text_multiline_normal" parent="cm_style_universe_edit_text_multiline">
-        <item name="android:textSize">@dimen/cm_dimen_universe_text_middle</item>
+    <style name="cm_style_universal_edit_text_multiline_normal" parent="cm_style_universal_edit_text_multiline">
+        <item name="android:textSize">@dimen/cm_dimen_universal_text_middle</item>
     </style>
-    <style name="cm_style_universe_edit_text_multiline_small" parent="cm_style_universe_edit_text_multiline">
-        <item name="android:textSize">@dimen/cm_dimen_universe_text_small</item>
+    <style name="cm_style_universal_edit_text_multiline_small" parent="cm_style_universal_edit_text_multiline">
+        <item name="android:textSize">@dimen/cm_dimen_universal_text_small</item>
     </style>
 
     <!--styles for button-->
-    <style name="cm_style_universe_button_normal" parent="cm_style_universe_title_normal">
+    <style name="cm_style_universal_button_normal" parent="cm_style_universal_title_normal">
         <item name="android:stateListAnimator">@null</item>
     </style>
 

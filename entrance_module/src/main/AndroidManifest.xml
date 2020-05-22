@@ -11,9 +11,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name="cn.edu.zust.dmt.hsy.entrance_module.containers.activities.IdentityActivity"
-            android:launchMode="singleTop" />
+        <activity android:name=".containers.activities.LoginActivity" />
     </application>
 </manifest>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--color for universe-->
-    <color name="cm_color_universe_app_theme_color">#8BC34A</color>
-    <color name="cm_color_universe_icon">#000000</color>
-    <color name="cm_color_universe_background">#F2F2F2</color>
-    <color name="cm_color_universe_foreground">#FFFFFF</color>
+    <color name="cm_color_universal_app_theme_color">#8BC34A</color>
+    <color name="cm_color_universal_icon">#000000</color>
+    <color name="cm_color_universal_background">#F2F2F2</color>
+    <color name="cm_color_universal_foreground">#FFFFFF</color>
 <!--    <color name="color_cm_universe_edit_text_underline_unfocused">#52979797</color>-->
 <!--    <color name="color_cm_universe_text_hint">#999999</color>-->
-    <color name="cm_color_universe_title">#1F1F1F</color>
-    <color name="cm_color_universe_text">#333333</color>
-    <color name="cm_color_universe_hint">#999999</color>
+    <color name="cm_color_universal_title">#1F1F1F</color>
+    <color name="cm_color_universal_text">#333333</color>
+    <color name="cm_color_universal_hint">#999999</color>
 </resources>

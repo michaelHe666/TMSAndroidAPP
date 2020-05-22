@@ -2,6 +2,6 @@
     package="cn.edu.zust.dmt.hsy.common_module">
     
     <application
-        android:label="@string/cm_string_universe_app_name"
+        android:label="@string/cm_string_universal_app_name"
         android:theme="@style/cm_style_app"/>
 </manifest>

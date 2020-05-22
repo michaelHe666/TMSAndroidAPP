@@ -14,7 +14,7 @@
         <rotate android:fromDegrees="45">
             <shape android:shape="rectangle">
                 <size android:width="64dp" android:height="8dp"/>
-                <solid android:color="@color/cm_color_universe_icon"/>
+                <solid android:color="@color/cm_color_universal_icon"/>
             </shape>
         </rotate>
     </item>
@@ -26,7 +26,7 @@
         <rotate android:fromDegrees="-45">
             <shape android:shape="rectangle">
                 <size android:width="64dp" android:height="8dp"/>
-                <solid android:color="@color/cm_color_universe_icon"/>
+                <solid android:color="@color/cm_color_universal_icon"/>
             </shape>
         </rotate>
     </item>

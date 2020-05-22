@@ -10,25 +10,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="@dimen/em_dimen_universe_my_form_bar_margin_top"
+        android:layout_marginTop="@dimen/em_dimen_universal_form_margin_top"
         app:layout_constraintDimensionRatio="8:1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cm_myFormBarTextSize="18dp"
-        app:cm_myFormBarTitle="@string/em_string_universe_voucher"
-        app:cm_myFormBarHint="@string/em_string_universe_voucher_hint"/>
+        app:cm_myFormBarTitle="@string/em_string_universal_voucher"
+        app:cm_myFormBarHint="@string/em_string_universal_voucher_hint"/>
 
     <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar
         android:id="@+id/em_fragment_register_token_my_form_bar"
         app:layout_constraintTop_toBottomOf="@id/em_fragment_register_voucher_my_form_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="@dimen/em_dimen_universe_my_form_bar_margin_top"
+        android:layout_marginTop="@dimen/em_dimen_universal_form_margin_top"
         app:layout_constraintDimensionRatio="8:1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cm_myFormBarTextSize="18sp"
-        app:cm_myFormBarTitle="@string/em_string_universe_token"
-        app:cm_myFormBarHint="@string/em_string_universe_token_hint"/>
+        app:cm_myFormBarTitle="@string/em_string_universal_password"
+        app:cm_myFormBarHint="@string/em_string_universal_password_hint"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

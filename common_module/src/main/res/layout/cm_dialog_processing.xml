@@ -15,9 +15,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="6:1"
-        android:background="@color/cm_color_universe_foreground"
-        android:text="@string/cm_string_universe_loading"
-        style="@style/cm_style_universe_title_normal"/>
+        android:background="@color/cm_color_universal_foreground"
+        android:text="@string/cm_string_universal_loading"
+        style="@style/cm_style_universal_title_normal"/>
 
     <ProgressBar
         android:id="@+id/cm_dialog_processing_progress_bar"
