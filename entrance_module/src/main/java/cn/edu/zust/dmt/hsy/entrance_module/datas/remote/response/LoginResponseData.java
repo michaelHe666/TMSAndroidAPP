@@ -1,6 +1,6 @@
-package cn.edu.zust.dmt.hsy.entrance_module.models.remote.response;
+package cn.edu.zust.dmt.hsy.entrance_module.datas.remote.response;
 
-import cn.edu.zust.dmt.hsy.my_base_library.models.remote.response.BaseResponseModel;
+import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseResponseData;
 
 /**
  * @author MR.M
@@ -9,11 +9,11 @@ import cn.edu.zust.dmt.hsy.my_base_library.models.remote.response.BaseResponseMo
  * @description $
  * @since 4/24/2020 10:51
  **/
-public final class LoginResponseModel implements BaseResponseModel {
+public final class LoginResponseData implements BaseResponseData {
     private String username;
     private String permission;
 
-    public LoginResponseModel(String username, String permission) {
+    public LoginResponseData(String username, String permission) {
         this.username = username;
         this.permission = permission;
     }

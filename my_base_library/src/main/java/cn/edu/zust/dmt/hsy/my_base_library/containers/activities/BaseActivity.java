@@ -5,17 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyErrorHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyRouterHelper;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelListener;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseExtrasListener;
 
 /**
@@ -39,6 +42,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutRId());
         findViews();
         loadActorsToViews();
+        refreshViewModelListener();
         final Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             for (BaseExtrasListener myExtrasParser : mExtrasParserList) {
@@ -120,4 +124,9 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @description load actors to views to ensure its motion attributes
      */
     protected abstract void loadActorsToViews();
+
+    /**
+     * @description ensure link of models to views is correct
+     */
+    protected abstract void refreshViewModelListener();
 }

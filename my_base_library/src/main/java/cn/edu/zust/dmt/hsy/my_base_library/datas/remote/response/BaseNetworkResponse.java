@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.my_base_library.models.remote.response;
+package cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response;
 
 /**
  * @author MR.M
@@ -7,7 +7,7 @@ package cn.edu.zust.dmt.hsy.my_base_library.models.remote.response;
  * @description $
  * @since 4/23/2020 16:16
  **/
-public final class BaseNetworkResponse<T extends BaseResponseModel> {
+public final class BaseNetworkResponse<T extends BaseResponseData> {
     private int returnCode;
     private String message;
     private T data;

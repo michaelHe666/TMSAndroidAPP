@@ -16,7 +16,7 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cm_widgets_my_form_bar_middle_guideline"
-        app:layout_constraintGuide_percent="0.3"
+        app:layout_constraintGuide_percent="0.33"
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="0dp"/>

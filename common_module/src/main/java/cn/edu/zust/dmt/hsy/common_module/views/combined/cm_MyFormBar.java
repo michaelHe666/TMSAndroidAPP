@@ -78,15 +78,14 @@ public final class cm_MyFormBar extends ConstraintLayout {
         typedArray.recycle();
     }
 
-    public void setBarContentWatcher(@NonNull final TextWatcher textWatcher) {
+    /**
+     * @param textWatcher watcher for {@link #mEditText}
+     */
+    public void setContentWatcher(@NonNull final TextWatcher textWatcher) {
         mEditText.addTextChangedListener(textWatcher);
     }
 
-    public String getBarContent() {
+    public String getContentString() {
         return mEditText.getText().toString();
-    }
-
-    public void setBarContent(@NonNull final String content) {
-        mEditText.setText(content);
     }
 }

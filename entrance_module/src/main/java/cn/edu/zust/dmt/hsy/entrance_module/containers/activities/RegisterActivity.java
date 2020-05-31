@@ -1,6 +1,6 @@
-package cn.edu.zust.dmt.hsy.main_module.containers.activities;
+package cn.edu.zust.dmt.hsy.entrance_module.containers.activities;
 
-import cn.edu.zust.dmt.hsy.main_module.R;
+import cn.edu.zust.dmt.hsy.entrance_module.R;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.activities.BaseActivity;
@@ -10,13 +10,13 @@ import cn.edu.zust.dmt.hsy.my_base_library.containers.activities.BaseActivity;
  * @version 1.0
  * @projectName TMS
  * @description $
- * @since 4/12/2020 9:52
+ * @since 5/22/2020 19:03
  **/
-@MyRouter(path = MyRouterPaths.HOME_PATH)
-public final class HomeActivity extends BaseActivity {
+@MyRouter(path = MyRouterPaths.REGISTER_PATH)
+public final class RegisterActivity extends BaseActivity {
     @Override
     protected int getLayoutRId() {
-        return R.layout.mm_activity_home;
+        return R.layout.em_activity_register;
     }
 
     @Override

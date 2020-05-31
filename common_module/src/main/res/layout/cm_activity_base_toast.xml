@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardCornerRadius="12dp"
-    app:cardBackgroundColor="@color/cm_color_universe_app_theme_color">
+    app:cardBackgroundColor="@color/cm_color_universal_app_theme_color">
 
     <TextView
         android:id="@+id/universe_toast_content"

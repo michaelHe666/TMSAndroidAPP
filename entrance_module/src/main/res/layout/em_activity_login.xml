@@ -29,7 +29,7 @@
         app:cm_myFormBarHint="@string/em_string_universal_voucher_hint"/>
 
     <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar
-        android:id="@+id/em_activity_login_token_my_form_bar"
+        android:id="@+id/em_activity_login_password_my_form_bar"
         app:layout_constraintTop_toBottomOf="@id/em_activity_login_voucher_my_form_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -43,7 +43,7 @@
 
     <Button
         android:id="@+id/em_activity_login_confirm_button"
-        app:layout_constraintTop_toBottomOf="@id/em_activity_login_token_my_form_bar"
+        app:layout_constraintTop_toBottomOf="@id/em_activity_login_password_my_form_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="@dimen/em_dimen_universal_form_button_margin_top"

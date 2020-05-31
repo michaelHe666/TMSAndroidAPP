@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--string universal-->
     <string name="em_string_universal_login">登录</string>
     <string name="em_string_universal_register">注册</string>
     <string name="em_string_universal_voucher">凭证</string>
     <string name="em_string_universal_voucher_hint">请输入工号/邮箱</string>
     <string name="em_string_universal_password">密码</string>
     <string name="em_string_universal_password_hint">请输入密码</string>
+
+    <!--string for layout_activity_register-->
+    <string name="em_string_universal_password_repeat">确认密码</string>
+    <string name="em_string_universal_password_repeat_hint">请再次输入密码</string>
 </resources>

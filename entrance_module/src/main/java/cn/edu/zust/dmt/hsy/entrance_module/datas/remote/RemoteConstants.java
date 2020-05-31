@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.entrance_module.models.remote;
+package cn.edu.zust.dmt.hsy.entrance_module.datas.remote;
 
 /**
  * @author MR.M

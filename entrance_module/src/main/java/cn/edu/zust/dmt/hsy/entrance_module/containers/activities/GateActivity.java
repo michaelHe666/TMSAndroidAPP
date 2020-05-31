@@ -1,6 +1,5 @@
 package cn.edu.zust.dmt.hsy.entrance_module.containers.activities;
 
-import android.os.Bundle;
 import android.view.View;
 
 import cn.edu.zust.dmt.hsy.entrance_module.R;
@@ -21,8 +20,8 @@ public final class GateActivity extends BaseActivity {
     /**
      * @description member views needed for {@link #findViews()}
      */
-    private View mLoginView = null;
-    private View mRegisterView = null;
+    private View mLoginView;
+    private View mRegisterView;
 
     @Override
     protected int getLayoutRId() {
@@ -33,11 +32,6 @@ public final class GateActivity extends BaseActivity {
     protected void findViews() {
         mLoginView = findViewById(R.id.em_activity_gate_login_button);
         mRegisterView = findViewById(R.id.em_activity_gate_register_button);
-
-//        Bundle bundle = new Bundle();
-//        bundle.putString(String.valueOf(MyExtrasConstants.TAG_UNIVERSE_FRAGMENT)
-//                , String.valueOf(MyExtrasConstants.VALUE_IDENTITY_LOGIN));
-//        getSafeContainer().callMyRouter(MyRouterPaths.IDENTITY_PATH, bundle);
     }
 
     @Override
@@ -45,9 +39,19 @@ public final class GateActivity extends BaseActivity {
         mLoginView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                callMyRouter(MyRouterPaths.LOGIN_PATH, bundle);
+                callMyRouter(MyRouterPaths.LOGIN_PATH, null);
             }
         });
+        mRegisterView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callMyRouter(MyRouterPaths.REGISTER_PATH, null);
+            }
+        });
+    }
+
+    @Override
+    protected void refreshViewModelListener() {
+
     }
 }

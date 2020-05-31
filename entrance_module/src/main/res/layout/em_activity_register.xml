@@ -5,9 +5,20 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar
-        android:id="@+id/em_fragment_register_voucher_my_form_bar"
+    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyTopBar
+        android:id="@+id/em_activity_register_my_top_bar"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintDimensionRatio="8:1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cm_myTopBarTitle="@string/em_string_universal_register"
+        app:cm_myTopBarLeftIcon="@drawable/cm_icon_universe_back"/>
+
+    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar
+        android:id="@+id/em_activity_register_voucher_my_form_bar"
+        app:layout_constraintTop_toBottomOf="@id/em_activity_register_my_top_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="@dimen/em_dimen_universal_form_margin_top"
@@ -19,8 +30,8 @@
         app:cm_myFormBarHint="@string/em_string_universal_voucher_hint"/>
 
     <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar
-        android:id="@+id/em_fragment_register_token_my_form_bar"
-        app:layout_constraintTop_toBottomOf="@id/em_fragment_register_voucher_my_form_bar"
+        android:id="@+id/em_activity_register_password_my_form_bar"
+        app:layout_constraintTop_toBottomOf="@id/em_activity_register_voucher_my_form_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="@dimen/em_dimen_universal_form_margin_top"
@@ -30,5 +41,33 @@
         app:cm_myFormBarTextSize="18sp"
         app:cm_myFormBarTitle="@string/em_string_universal_password"
         app:cm_myFormBarHint="@string/em_string_universal_password_hint"/>
+
+    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar
+        android:id="@+id/em_activity_register_password_repeat_my_form_bar"
+        app:layout_constraintTop_toBottomOf="@id/em_activity_register_password_my_form_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/em_dimen_universal_form_margin_top"
+        app:layout_constraintDimensionRatio="8:1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cm_myFormBarTextSize="18sp"
+        app:cm_myFormBarTitle="@string/em_string_universal_password_repeat"
+        app:cm_myFormBarHint="@string/em_string_universal_password_repeat_hint"/>
+
+    <Button
+        android:id="@+id/em_activity_register_confirm_button"
+        app:layout_constraintTop_toBottomOf="@id/em_activity_register_password_repeat_my_form_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/em_dimen_universal_form_button_margin_top"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintDimensionRatio="8:1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/cm_style_universal_button_normal"
+        android:background="@color/cm_color_universal_app_theme_color"
+        android:text="@string/em_string_universal_register"
+        android:textColor="@color/cm_color_universal_foreground"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

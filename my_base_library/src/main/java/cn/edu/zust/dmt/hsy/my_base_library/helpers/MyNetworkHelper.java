@@ -11,10 +11,10 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
-import cn.edu.zust.dmt.hsy.my_base_library.models.remote.request.BaseNetworkRequest;
-import cn.edu.zust.dmt.hsy.my_base_library.models.remote.request.BaseRequestModel;
-import cn.edu.zust.dmt.hsy.my_base_library.models.remote.response.BaseNetworkResponse;
-import cn.edu.zust.dmt.hsy.my_base_library.models.remote.response.BaseResponseModel;
+import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request.BaseNetworkRequest;
+import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request.BaseRequestData;
+import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
+import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseResponseData;
 import cn.edu.zust.dmt.hsy.my_base_library.utils.MyHttpUtils;
 
 import static java.lang.Thread.sleep;
@@ -54,13 +54,13 @@ public final class MyNetworkHelper {
         return MyNetworkHelperHolder.INSTANCE;
     }
 
-    public <T extends BaseRequestModel, K extends BaseResponseModel> void doMyPost(
+    public <T extends BaseRequestData, K extends BaseResponseData> void doMyPost(
             @NonNull final String path, @NonNull final BaseNetworkRequest<T> baseNetworkRequest
             , @NonNull final BaseNetworkCallback<K> baseNetworkCallback) {
         final Type type = baseNetworkCallback.getClass().getGenericSuperclass();
         if (type instanceof ParameterizedType) {
             final Class clazz = (Class) ((ParameterizedType) type).getActualTypeArguments()[0];
-            if (BaseResponseModel.class.isAssignableFrom(clazz)) {
+            if (BaseResponseData.class.isAssignableFrom(clazz)) {
                 final Class<K> modelClass = (Class<K>) clazz;
                 MyThreadHelper.INSTANCE.runMyTask(new MyNetworkRunnable<>(path, baseNetworkRequest,
                         new MyNetworkHandler<>(baseNetworkCallback), new MyNetworkResponseType<>(modelClass)));
@@ -71,7 +71,7 @@ public final class MyNetworkHelper {
     /**
      * @description handler for {@link BaseNetworkCallback}
      */
-    private static final class MyNetworkHandler<T extends BaseResponseModel> {
+    private static final class MyNetworkHandler<T extends BaseResponseData> {
         private final WeakReference<BaseNetworkCallback<T>> mCallbackWeakReference;
 
         private MyNetworkHandler(@NonNull final BaseNetworkCallback<T> callbackWeakReference) {
@@ -92,7 +92,7 @@ public final class MyNetworkHelper {
     /**
      * @description package contains task for {@link MyThreadHelper}
      */
-    private static final class MyNetworkRunnable<T extends BaseRequestModel, K extends BaseResponseModel>
+    private static final class MyNetworkRunnable<T extends BaseRequestData, K extends BaseResponseData>
             implements Runnable {
         private final String mPath;
         private final BaseNetworkRequest<T> mBaseNetworkRequest;
@@ -140,7 +140,7 @@ public final class MyNetworkHelper {
     /**
      * @description type builder for {@link BaseNetworkResponse}
      */
-    private static final class MyNetworkResponseType<T extends BaseResponseModel>
+    private static final class MyNetworkResponseType<T extends BaseResponseData>
             implements ParameterizedType {
         private final Class<T> mModelClass;
 

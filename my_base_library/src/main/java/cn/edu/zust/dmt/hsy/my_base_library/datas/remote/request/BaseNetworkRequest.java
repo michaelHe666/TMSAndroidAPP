@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.my_base_library.models.remote.request;
+package cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request;
 
 import android.os.Build;
 
@@ -17,7 +17,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.BuildConfig;
  * @description $
  * @since 4/23/2020 16:29
  **/
-public final class BaseNetworkRequest<T extends BaseRequestModel> {
+public final class BaseNetworkRequest<T extends BaseRequestData> {
     private final JsonElement args;
     private final JsonElement deviceInfo;
 
