@@ -142,8 +142,8 @@ public final class MyRouterProcessor extends AbstractProcessor {
             final TypeMirror typeMirror = element.asType();
             final MyRouter myRouter = element.getAnnotation(MyRouter.class);
             //set supported class here
-            if (mTypeUtils.isSubtype(typeMirror, mElementUtils
-                    .getTypeElement(innerConstants.INSTANCE.SUPPORTED_CLASS_PATH).asType())) {
+            if (mTypeUtils.isSubtype(typeMirror, mTypeUtils.erasure(mElementUtils
+                    .getTypeElement(innerConstants.INSTANCE.SUPPORTED_CLASS_PATH).asType()))) {
                 mRouterMetaMap.put(myRouter.path(), typeMirror.toString());
             } else {
                 showMyArgumentException("MyRouterPath only support BaseActivity!");

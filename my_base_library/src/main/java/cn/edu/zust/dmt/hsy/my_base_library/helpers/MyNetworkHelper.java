@@ -54,7 +54,7 @@ public final class MyNetworkHelper {
         return MyNetworkHelperHolder.INSTANCE;
     }
 
-    public <T extends BaseRequestData, K extends BaseResponseData> void doMyPost(
+    public <T extends BaseRequestData, K extends BaseResponseData> void post(
             @NonNull final String path, @NonNull final BaseNetworkRequest<T> baseNetworkRequest
             , @NonNull final BaseNetworkCallback<K> baseNetworkCallback) {
         final Type type = baseNetworkCallback.getClass().getGenericSuperclass();

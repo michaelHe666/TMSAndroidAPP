@@ -1,9 +1,8 @@
 package cn.edu.zust.dmt.hsy.entrance_module.containers.activities;
 
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -18,6 +17,7 @@ import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.activities.BaseActivity;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.SingleMethodWrapper;
 
 /**
  * @author MR.M
@@ -27,7 +27,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback
  * @since 5/22/2020 15:53
  **/
 @MyRouter(path = MyRouterPaths.LOGIN_PATH)
-public final class LoginActivity extends BaseActivity {
+public final class LoginActivity extends BaseActivity<LoginViewModelListener, LoginViewModel> {
 
     private final LoginActivity THIS = this;
 
@@ -36,38 +36,30 @@ public final class LoginActivity extends BaseActivity {
     private cm_MyFormBar mPasswordBar;
     private Button mConfirmButton;
 
-    private LoginViewModel mLoginViewModel = new LoginViewModel();
-
     @Override
     protected int getLayoutRId() {
         return R.layout.em_activity_login;
     }
 
+    @NonNull
     @Override
-    protected void findViews() {
-        mTopBar = findViewById(R.id.em_activity_login_my_top_bar);
-        mVoucherBar = findViewById(R.id.em_activity_login_voucher_my_form_bar);
-        mConfirmButton = findViewById(R.id.em_activity_login_confirm_button);
+    protected Class<LoginViewModel> getViewModelClass() {
+        return LoginViewModel.class;
     }
 
+    @NonNull
     @Override
-    protected void loadActorsToViews() {
-        loadMyTopBarActors();
-        loadMyVoucherBarActor();
-    }
-
-    @Override
-    protected void refreshViewModelListener() {
-        mLoginViewModel.setViewModelListener(new LoginViewModelListener() {
+    protected LoginViewModelListener getViewModelListener() {
+        return new LoginViewModelListener() {
             @NonNull
             @Override
-            public cm_MyFormBar getVoucherTextView() {
+            public cm_MyFormBar getVoucherBar() {
                 return mVoucherBar;
             }
 
             @NonNull
             @Override
-            public cm_MyFormBar getPasswordTextView() {
+            public cm_MyFormBar getPasswordBar() {
                 return mPasswordBar;
             }
 
@@ -97,33 +89,56 @@ public final class LoginActivity extends BaseActivity {
                     }
                 };
             }
-        });
+
+            @NonNull
+            @Override
+            public SingleMethodWrapper getVoucherInputErrorMethod() {
+                return new SingleMethodWrapper() {
+                    @Override
+                    public void startWrappedMethod() {
+                        Toast.makeText(THIS, R.string.cm_string_universal_app_name, Toast.LENGTH_SHORT).show();
+                    }
+                };
+            }
+
+            @NonNull
+            @Override
+            public SingleMethodWrapper getPasswordInputErrorMethod() {
+                return new SingleMethodWrapper() {
+                    @Override
+                    public void startWrappedMethod() {
+                        Toast.makeText(THIS, R.string.cm_string_universal_app_name, Toast.LENGTH_SHORT).show();
+                    }
+                };
+            }
+
+            @NonNull
+            @Override
+            public SingleMethodWrapper getLoginErrorMethod() {
+                return new SingleMethodWrapper() {
+                    @Override
+                    public void startWrappedMethod() {
+                        Toast.makeText(THIS, R.string.cm_string_universal_app_name, Toast.LENGTH_SHORT).show();
+                    }
+                };
+            }
+        };
     }
 
-    private void loadMyTopBarActors() {
+    @Override
+    protected void findViews() {
+        mTopBar = findViewById(R.id.em_activity_login_my_top_bar);
+        mVoucherBar = findViewById(R.id.em_activity_login_voucher_my_form_bar);
+        mPasswordBar = findViewById(R.id.em_activity_login_password_my_form_bar);
+        mConfirmButton = findViewById(R.id.em_activity_login_confirm_button);
+    }
+
+    @Override
+    protected void loadActorsToViews() {
         mTopBar.setLeftButtonOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 THIS.onBackPressed();
-            }
-        });
-    }
-
-    private void loadMyVoucherBarActor() {
-        mVoucherBar.setContentWatcher(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
             }
         });
     }

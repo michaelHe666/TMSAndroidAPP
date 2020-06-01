@@ -1,5 +1,7 @@
 package cn.edu.zust.dmt.hsy.entrance_module.datas.remote.request;
 
+import androidx.annotation.NonNull;
+
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request.BaseRequestData;
 
 /**
@@ -14,7 +16,7 @@ public final class LoginRequestData implements BaseRequestData {
     private String voucher;
     private String password;
 
-    public LoginRequestData(String voucher, String password) {
+    public LoginRequestData(@NonNull final String voucher, @NonNull final String password) {
         this.voucher = voucher;
         this.password = password;
     }

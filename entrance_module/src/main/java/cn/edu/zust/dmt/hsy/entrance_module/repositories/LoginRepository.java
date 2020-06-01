@@ -16,16 +16,53 @@ import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback
  * @description $
  * @since 5/24/2020 14:20
  **/
-public class LoginRepository {
+public final class LoginRepository {
+
+    private String mVoucher = "";
+    private String mPassword = "";
+
     /**
-     * @param voucher voucher for password
-     * @param password password for voucher
-     * @param callback actions for callback
+     * @param callback handler for view callback
+     * @return method called illegal or not
      */
-    public void login(@NonNull final String voucher, @NonNull final String password
-            , @NonNull final BaseNetworkCallback<LoginResponseData> callback) {
-        BaseNetworkRequest<LoginRequestData> baseNetworkRequest = new BaseNetworkRequest<>(
-                new LoginRequestData(voucher, password));
-        MyNetworkHelper.getInstance().doMyPost(RemoteConstants.LOGIN_PATH, baseNetworkRequest, callback);
+    public boolean login(@NonNull final BaseNetworkCallback<LoginResponseData> callback) {
+        if (mVoucher.matches("[a-zA-Z0-9_]{6,20}") && mPassword.matches("[a-zA-Z0-9_]{6,20}")) {
+            BaseNetworkRequest<LoginRequestData> baseNetworkRequest = new BaseNetworkRequest<>(
+                    new LoginRequestData(mVoucher, mPassword));
+            MyNetworkHelper.getInstance().post(RemoteConstants.LOGIN_PATH, baseNetworkRequest, callback);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * @param voucher input for {@link #mVoucher}
+     * @return false for illegal input
+     */
+    public boolean setVoucher(@NonNull final String voucher) {
+        if (voucher.matches("[a-zA-Z0-9_]{0,20}")) {
+            if (!voucher.equals(mVoucher)) {
+                mVoucher = voucher;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * @param password input for {@link #mPassword}
+     * @return false for illegal input
+     */
+    public boolean setPassword(@NonNull final String password) {
+        if (password.matches("[a-zA-Z0-9_]{0,20}")) {
+            if (!password.equals(mPassword)) {
+                mPassword = password;
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 }

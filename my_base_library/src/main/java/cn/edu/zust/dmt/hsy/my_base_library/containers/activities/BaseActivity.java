@@ -5,13 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
@@ -20,6 +18,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyErrorHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyRouterHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelListener;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseExtrasListener;
+import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.BaseViewModel;
 
 /**
  * @author MR.M
@@ -28,9 +27,23 @@ import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseExtrasListener;
  * @description $
  * @since 4/1/2020 20:16
  **/
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity<T extends BaseViewModelListener, K extends BaseViewModel<T>>
+        extends AppCompatActivity {
 
     private final ArrayList<BaseExtrasListener> mExtrasParserList = new ArrayList<>();
+
+    private final K mViewModel;
+
+    /**
+     * @description check whether initialize {@link #mViewModel} or not
+     */
+    protected BaseActivity() {
+        try {
+            mViewModel = getViewModelClass().newInstance();
+        } catch (IllegalAccessException | InstantiationException e) {
+            throw new IllegalArgumentException("Failed on initialize ViewModel!");
+        }
+    }
 
     /**
      * @description inject {@link #getLayoutRId(),#findViews()}
@@ -42,13 +55,24 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutRId());
         findViews();
         loadActorsToViews();
-        refreshViewModelListener();
+        //set listener while views are created
+        mViewModel.setCurrentListener(getViewModelListener());
+        //trigger extras parser while views are created
         final Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             for (BaseExtrasListener myExtrasParser : mExtrasParserList) {
                 myExtrasParser.parseMyExtras(bundle);
             }
         }
+    }
+
+    /**
+     * @description release all resources here to ensure {@link BaseActivity} could be finalized
+     */
+    @Override
+    protected final void onDestroy() {
+        super.onDestroy();
+        mViewModel.onViewModelDestroyed();
     }
 
     /**
@@ -116,6 +140,18 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract int getLayoutRId();
 
     /**
+     * @return {@link BaseViewModel} for {@link BaseActivity}
+     */
+    @NonNull
+    protected abstract Class<K> getViewModelClass();
+
+    /**
+     * @return {@link BaseViewModelListener} for {@link #getViewModelClass()}
+     */
+    @NonNull
+    protected abstract T getViewModelListener();
+
+    /**
      * @description find {@link View} from layout which needs add actions on
      */
     protected abstract void findViews();
@@ -124,9 +160,4 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @description load actors to views to ensure its motion attributes
      */
     protected abstract void loadActorsToViews();
-
-    /**
-     * @description ensure link of models to views is correct
-     */
-    protected abstract void refreshViewModelListener();
 }
