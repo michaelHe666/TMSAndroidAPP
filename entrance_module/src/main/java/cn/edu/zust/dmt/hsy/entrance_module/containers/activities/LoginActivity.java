@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import cn.edu.zust.dmt.hsy.common_module.containers.activities.MyActivity;
 import cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar;
 import cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyTopBar;
 import cn.edu.zust.dmt.hsy.entrance_module.R;
@@ -14,7 +15,6 @@ import cn.edu.zust.dmt.hsy.entrance_module.interfaces.listeners.LoginViewModelLi
 import cn.edu.zust.dmt.hsy.entrance_module.viewmodels.LoginViewModel;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.my_base_library.containers.activities.BaseActivity;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.SingleMethodWrapper;
@@ -27,7 +27,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.SingleMethodWrapper
  * @since 5/22/2020 15:53
  **/
 @MyRouter(path = MyRouterPaths.LOGIN_PATH)
-public final class LoginActivity extends BaseActivity<LoginViewModelListener, LoginViewModel> {
+public final class LoginActivity extends MyActivity<LoginViewModelListener, LoginViewModel> {
 
     private final LoginActivity THIS = this;
 

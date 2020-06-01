@@ -65,4 +65,14 @@ public final class LoginRepository {
             return false;
         }
     }
+
+    @NonNull
+    public String getVoucher() {
+        return mVoucher;
+    }
+
+    @NonNull
+    public String getPassword() {
+        return mPassword;
+    }
 }

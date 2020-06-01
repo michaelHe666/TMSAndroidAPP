@@ -85,7 +85,10 @@ public final class cm_MyFormBar extends ConstraintLayout {
         mEditText.addTextChangedListener(textWatcher);
     }
 
-    public String getContentString() {
-        return mEditText.getText().toString();
+    /**
+     * @param content string for {@link #mEditText}
+     */
+    public void setContent(@NonNull final String content) {
+        mEditText.setText(content);
     }
 }

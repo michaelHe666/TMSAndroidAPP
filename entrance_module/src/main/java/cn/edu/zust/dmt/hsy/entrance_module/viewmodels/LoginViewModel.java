@@ -21,9 +21,19 @@ public final class LoginViewModel extends BaseViewModel<LoginViewModelListener> 
 
     @Override
     protected void loadViewModelToListener() {
+        initializeData();
         loadVoucherBarEvent();
         loadPasswordBarEvent();
         loadLoginEvent();
+    }
+
+    /**
+     * @description load data to current viewModelListener
+     */
+    private void initializeData() {
+        final LoginViewModelListener loginViewModelListener = getViewModelListener();
+        loginViewModelListener.getVoucherBar().setContent(mLoginRepository.getVoucher());
+        loginViewModelListener.getPasswordBar().setContent(mLoginRepository.getPassword());
     }
 
     /**

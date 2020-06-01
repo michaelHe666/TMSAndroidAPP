@@ -10,7 +10,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.BaseViewModel;
  * @description $
  * @since 6/1/2020 10:01
  **/
-public class NullViewModel extends BaseViewModel<NullViewModelListener> {
+public final class NullViewModel extends BaseViewModel<NullViewModelListener> {
     @Override
     protected void loadViewModelToListener() {
 
