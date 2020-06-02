@@ -66,7 +66,7 @@ public final class cm_MyTopBar extends ConstraintLayout {
     }
 
     /**
-     * @description initialize myTopBar
+     * @description initialize {@link cm_MyTopBar} attrs to view
      */
     private void initializeViews(@NonNull Context context, @Nullable AttributeSet attributeSet) {
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.cm_MyTopBar);

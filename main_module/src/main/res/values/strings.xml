@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!--strings for activity_home-->
+    <string name="mm_string_activity_home_front">首页</string>
+    <string name="mm_string_activity_home_management">管理</string>
+    <string name="mm_string_activity_home_message">消息</string>
+    <string name="mm_string_activity_home_mine">我的</string>
+
+</resources>

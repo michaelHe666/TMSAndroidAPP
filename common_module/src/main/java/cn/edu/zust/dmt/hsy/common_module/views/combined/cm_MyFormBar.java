@@ -61,7 +61,7 @@ public final class cm_MyFormBar extends ConstraintLayout {
     }
 
     /**
-     * @description initialize MyFormBar attrs
+     * @description initialize {@link cm_MyFormBar} attrs to view
      */
     private void initializeViews(@NonNull final Context context, @Nullable final AttributeSet attributeSet) {
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.cm_MyFormBar);

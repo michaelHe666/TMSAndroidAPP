@@ -32,7 +32,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/cm_style_universal_title_normal"
-        tools:text="首页" />
+        tools:text="@string/cm_string_universal_app_name" />
 
     <ImageButton
         android:id="@+id/cm_views_my_top_bar_right_image_button"

@@ -127,7 +127,7 @@ public abstract class BaseActivity<T extends BaseViewModelListener, K extends Ba
     }
 
     /**
-     * @param myExtrasParser add new parser for myExtras
+     * @param myExtrasParser add new parser for {@link #mExtrasParserList}
      */
     protected final void addMyExtrasParser(@NonNull final BaseExtrasListener myExtrasParser) {
         mExtrasParserList.add(myExtrasParser);

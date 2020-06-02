@@ -11,4 +11,24 @@
         <attr name="cm_myFormBarHint" format="string" />
         <attr name="cm_myFormBarTextSize" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="cm_MySignalLight">
+        <attr name="cm_mySignalLight" format="enum">
+            <enum name="green" value="0" />
+            <enum name="red" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="cm_MyFixtureCard">
+        <attr name="cm_myFixtureName" format="string" />
+        <attr name="cm_myFixtureDeadline" format="string" />
+        <attr name="cm_myFixtureLocationSignal" format="enum">
+            <enum name="green" value="0" />
+            <enum name="red" value="1" />
+        </attr>
+        <attr name="cm_myFixtureRiskSignal" format="enum">
+            <enum name="green" value="0" />
+            <enum name="red" value="1" />
+        </attr>
+    </declare-styleable>
 </resources>
