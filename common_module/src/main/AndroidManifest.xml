@@ -3,5 +3,8 @@
     
     <application
         android:label="@string/cm_string_universal_app_name"
+        android:allowBackup="false"
+        android:supportsRtl="false"
         android:theme="@style/cm_style_app"/>
+
 </manifest>

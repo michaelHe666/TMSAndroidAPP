@@ -8,10 +8,14 @@
     app:cardBackgroundColor="@color/cm_color_universal_app_theme_color">
 
     <TextView
-        android:id="@+id/universe_toast_content"
+        android:id="@+id/my_activity_toast_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/cm_style_helper_toast"
+        android:layout_gravity="center"
+        android:textColor="@color/cm_color_universal_foreground"
+        android:padding="14dp"
+        android:textSize="16sp"
+        android:includeFontPadding="false"
         tools:text="消息弹窗"/>
 
 </androidx.cardview.widget.CardView>

@@ -1,7 +1,6 @@
 package cn.edu.zust.dmt.hsy.my_base_library.viewmodels;
 
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.NullViewModelListener;
-import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.BaseViewModel;
 
 /**
  * @author MR.M

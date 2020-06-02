@@ -9,7 +9,6 @@ import cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar;
 import cn.edu.zust.dmt.hsy.entrance_module.datas.remote.response.LoginResponseData;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelListener;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.SingleMethodWrapper;
 
 /**
  * @author MR.M
@@ -44,20 +43,17 @@ public interface LoginViewModelListener extends BaseViewModelListener {
     BaseNetworkCallback<LoginResponseData> getLoginCallback();
 
     /**
-     * @return {@link SingleMethodWrapper} contains method for illegal voucher input
+     * @description contains method for illegal voucher input
      */
-    @NonNull
-    SingleMethodWrapper getVoucherInputErrorMethod();
+    void sendVoucherInputError();
 
     /**
-     * @return {@link SingleMethodWrapper} contains method for illegal password input
+     * @description contains method for illegal password input
      */
-    @NonNull
-    SingleMethodWrapper getPasswordInputErrorMethod();
+    void sendPasswordInputError();
 
     /**
-     * @return {@link SingleMethodWrapper} contains method for illegal login request
+     * @description contains method for illegal login request
      */
-    @NonNull
-    SingleMethodWrapper getLoginErrorMethod();
+    void sendLoginError();
 }

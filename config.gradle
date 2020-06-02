@@ -9,7 +9,6 @@ ext {
             entranceModule: "em_",
             mainModule    : "mm_",
             commonModule  : "cm_",
-            myBaseLibrary : "mbl_"
     ]
 
     tmsIdsConfigs = [

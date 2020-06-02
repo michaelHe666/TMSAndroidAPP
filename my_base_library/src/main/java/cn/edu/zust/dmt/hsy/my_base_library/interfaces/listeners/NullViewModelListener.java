@@ -1,7 +1,5 @@
 package cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners;
 
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelListener;
-
 /**
  * @author MR.M
  * @version 1.0

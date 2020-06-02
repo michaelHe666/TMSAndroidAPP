@@ -2,7 +2,6 @@ package cn.edu.zust.dmt.hsy.entrance_module.containers.activities;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -17,7 +16,6 @@ import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.SingleMethodWrapper;
 
 /**
  * @author MR.M
@@ -53,25 +51,25 @@ public final class LoginActivity extends MyActivity<LoginViewModelListener, Logi
         return new LoginViewModelListener() {
             @NonNull
             @Override
-            public cm_MyFormBar getVoucherBar() {
+            public final cm_MyFormBar getVoucherBar() {
                 return mVoucherBar;
             }
 
             @NonNull
             @Override
-            public cm_MyFormBar getPasswordBar() {
+            public final cm_MyFormBar getPasswordBar() {
                 return mPasswordBar;
             }
 
             @NonNull
             @Override
-            public View getLoginClickableView() {
+            public final View getLoginClickableView() {
                 return mConfirmButton;
             }
 
             @NonNull
             @Override
-            public BaseNetworkCallback<LoginResponseData> getLoginCallback() {
+            public final BaseNetworkCallback<LoginResponseData> getLoginCallback() {
                 return new BaseNetworkCallback<LoginResponseData>() {
                     @Override
                     public void onResult(@NonNull BaseNetworkResponse<LoginResponseData> response) {
@@ -90,37 +88,19 @@ public final class LoginActivity extends MyActivity<LoginViewModelListener, Logi
                 };
             }
 
-            @NonNull
             @Override
-            public SingleMethodWrapper getVoucherInputErrorMethod() {
-                return new SingleMethodWrapper() {
-                    @Override
-                    public void startWrappedMethod() {
-                        Toast.makeText(THIS, R.string.cm_string_universal_app_name, Toast.LENGTH_SHORT).show();
-                    }
-                };
+            public final void sendVoucherInputError() {
+                showMyToast(R.string.em_string_universal_voucher_error);
             }
 
-            @NonNull
             @Override
-            public SingleMethodWrapper getPasswordInputErrorMethod() {
-                return new SingleMethodWrapper() {
-                    @Override
-                    public void startWrappedMethod() {
-                        Toast.makeText(THIS, R.string.cm_string_universal_app_name, Toast.LENGTH_SHORT).show();
-                    }
-                };
+            public final void sendPasswordInputError() {
+                showMyToast(R.string.em_string_universal_password_error);
             }
 
-            @NonNull
             @Override
-            public SingleMethodWrapper getLoginErrorMethod() {
-                return new SingleMethodWrapper() {
-                    @Override
-                    public void startWrappedMethod() {
-                        Toast.makeText(THIS, R.string.cm_string_universal_app_name, Toast.LENGTH_SHORT).show();
-                    }
-                };
+            public final void sendLoginError() {
+                showMyToast(R.string.em_string_login_error);
             }
         };
     }

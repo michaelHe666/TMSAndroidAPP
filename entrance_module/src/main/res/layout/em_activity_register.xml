@@ -52,8 +52,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cm_myFormBarTextSize="18sp"
-        app:cm_myFormBarTitle="@string/em_string_universal_password_repeat"
-        app:cm_myFormBarHint="@string/em_string_universal_password_repeat_hint"/>
+        app:cm_myFormBarTitle="@string/em_string_register_password_repeat"
+        app:cm_myFormBarHint="@string/em_string_register_password_repeat_hint"/>
 
     <Button
         android:id="@+id/em_activity_register_confirm_button"

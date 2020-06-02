@@ -53,7 +53,7 @@ public final class LoginViewModel extends BaseViewModel<LoginViewModelListener> 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!mLoginRepository.setVoucher(s.toString())) {
-                    loginViewModelListener.getVoucherInputErrorMethod().startWrappedMethod();
+                    loginViewModelListener.sendVoucherInputError();
                     isInputLegal = false;
                 } else {
                     isInputLegal = true;
@@ -86,7 +86,7 @@ public final class LoginViewModel extends BaseViewModel<LoginViewModelListener> 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!mLoginRepository.setPassword(s.toString())) {
-                    loginViewModelListener.getPasswordInputErrorMethod().startWrappedMethod();
+                    loginViewModelListener.sendPasswordInputError();
                     isInputLegal = false;
                 } else {
                     isInputLegal = true;
@@ -111,7 +111,7 @@ public final class LoginViewModel extends BaseViewModel<LoginViewModelListener> 
             @Override
             public void onClick(View v) {
                 if (!mLoginRepository.login(loginViewModelListener.getLoginCallback())) {
-                    loginViewModelListener.getLoginErrorMethod().startWrappedMethod();
+                    loginViewModelListener.sendLoginError();
                 }
             }
         });
