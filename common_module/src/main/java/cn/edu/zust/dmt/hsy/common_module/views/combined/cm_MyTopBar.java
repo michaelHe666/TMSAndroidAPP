@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -37,22 +36,14 @@ public final class cm_MyTopBar extends ConstraintLayout {
     private int mLeftButtonRID = 0;
     private int mRightButtonRID = 0;
 
-    public cm_MyTopBar(Context context) {
-        super(context);
-        bindViews(context);
-        initializeViews(context, null);
-    }
-
     public cm_MyTopBar(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        bindViews(context);
-        initializeViews(context, attrs);
+        this(context, attrs, 0);
     }
 
     public cm_MyTopBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         bindViews(context);
-        initializeViews(context, attrs);
+        initializeAttributes(context, attrs);
     }
 
     /**
@@ -68,7 +59,7 @@ public final class cm_MyTopBar extends ConstraintLayout {
     /**
      * @description initialize {@link cm_MyTopBar} attrs to view
      */
-    private void initializeViews(@NonNull Context context, @Nullable AttributeSet attributeSet) {
+    private void initializeAttributes(@NonNull Context context, @NonNull AttributeSet attributeSet) {
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.cm_MyTopBar);
 
         final String titleString = typedArray.getString(R.styleable.cm_MyTopBar_cm_myTopBarTitle);

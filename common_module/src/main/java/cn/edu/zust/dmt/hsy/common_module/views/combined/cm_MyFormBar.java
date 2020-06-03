@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import cn.edu.zust.dmt.hsy.common_module.R;
@@ -24,31 +23,20 @@ import cn.edu.zust.dmt.hsy.common_module.R;
  * @since 4/7/2020 16:42
  **/
 public final class cm_MyFormBar extends ConstraintLayout {
-
     /**
      * @description member views
      */
     private TextView mTextView = null;
     private EditText mEditText = null;
 
-    private int mTextSize = 40;
-
-    public cm_MyFormBar(@NonNull Context context) {
-        super(context);
-        bindViews(context);
-        initializeViews(context, null);
-    }
-
     public cm_MyFormBar(@NonNull Context context, AttributeSet attrs) {
-        super(context, attrs);
-        bindViews(context);
-        initializeViews(context, attrs);
+        this(context, attrs, 0);
     }
 
     public cm_MyFormBar(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         bindViews(context);
-        initializeViews(context, attrs);
+        initializedAttributes(context, attrs);
     }
 
     /**
@@ -63,18 +51,10 @@ public final class cm_MyFormBar extends ConstraintLayout {
     /**
      * @description initialize {@link cm_MyFormBar} attrs to view
      */
-    private void initializeViews(@NonNull final Context context, @Nullable final AttributeSet attributeSet) {
+    private void initializedAttributes(@NonNull final Context context, @NonNull final AttributeSet attributeSet) {
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.cm_MyFormBar);
-
-        final String titleString = typedArray.getString(R.styleable.cm_MyFormBar_cm_myFormBarTitle);
-        final String hintString = typedArray.getString(R.styleable.cm_MyFormBar_cm_myFormBarHint);
-        mTextSize = typedArray.getDimensionPixelSize(R.styleable.cm_MyFormBar_cm_myFormBarTextSize, mTextSize);
-
-        mTextView.setText(titleString);
-        mEditText.setHint(hintString);
-        mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
-        mEditText.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
-
+        mTextView.setText(typedArray.getString(R.styleable.cm_MyFormBar_cm_myFormBarTitle));
+        mEditText.setHint(typedArray.getString(R.styleable.cm_MyFormBar_cm_myFormBarHint));
         typedArray.recycle();
     }
 

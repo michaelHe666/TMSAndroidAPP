@@ -8,8 +8,4 @@
     <color name="cm_color_universal_title">#1F1F1F</color>
     <color name="cm_color_universal_text">#333333</color>
     <color name="cm_color_universal_hint">#999999</color>
-
-    <!--    color for layout views_combined_my_fixture_card-->
-    <color name="cm_color_views_my_fixture_card_background">#F5F5DC</color>
-    <color name="cm_color_views_my_fixture_card_divider">#BBBBBB</color>
 </resources>

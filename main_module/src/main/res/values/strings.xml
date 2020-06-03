@@ -6,4 +6,8 @@
     <string name="mm_string_activity_home_message">消息</string>
     <string name="mm_string_activity_home_mine">我的</string>
 
+    <!--string for views_adapter_my_fixture_card-->
+    <string name="mm_string_views_adapter_fixture_card_deadline">截止时间</string>
+    <string name="mm_string_views_adapter_fixture_card_location">定位</string>
+    <string name="mm_string_views_adapter_fixture_card_risk">故障风险</string>
 </resources>

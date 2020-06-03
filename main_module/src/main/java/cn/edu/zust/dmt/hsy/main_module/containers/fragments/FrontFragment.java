@@ -1,14 +1,15 @@
 package cn.edu.zust.dmt.hsy.main_module.containers.fragments;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.edu.zust.dmt.hsy.main_module.R;
+import cn.edu.zust.dmt.hsy.main_module.datas.local.MyFixtureInfo;
+import cn.edu.zust.dmt.hsy.main_module.views.adapters.FixtureCardAdapter;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.fragments.BaseFragment;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.NullViewModelListener;
 import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.NullViewModel;
@@ -49,26 +50,12 @@ public final class FrontFragment extends BaseFragment<NullViewModelListener, Nul
 
     @Override
     protected void loadActorsToViews() {
-        mRecyclerView.setAdapter(new RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-            @NonNull
-            @Override
-            public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.cm_views_combined_my_fixture_card, parent, false);
-                return new RecyclerView.ViewHolder(view) {
-                };
-            }
-
-            @Override
-            public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-            }
-
-            @Override
-            public int getItemCount() {
-                return 10;
-            }
-        });
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        List<MyFixtureInfo> myFixtureInfoList = new ArrayList<>();
+        myFixtureInfoList.add(new MyFixtureInfo("ppx", "2020/1/1", 0, 0));
+        myFixtureInfoList.add(new MyFixtureInfo("hsy", "2020/3/1", 0, 1));
+        myFixtureInfoList.add(new MyFixtureInfo("yjt", "2020/2/1", 1, 0));
+        myFixtureInfoList.add(new MyFixtureInfo("ppx", "2020/1/1", 0, 0));
+        mRecyclerView.setAdapter(new FixtureCardAdapter(myFixtureInfoList));
     }
 }

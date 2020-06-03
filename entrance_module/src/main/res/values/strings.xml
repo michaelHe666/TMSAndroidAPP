@@ -10,10 +10,10 @@
     <string name="em_string_universal_password_hint">请输入密码</string>
     <string name="em_string_universal_password_error">密码输入错误</string>
 
-    <!--string for layout_activity_login-->
+    <!--string for activity_login-->
     <string name="em_string_login_error">登录凭证或者密码输入错误</string>
 
-    <!--string for layout_activity_register-->
+    <!--string for activity_register-->
     <string name="em_string_register_password_repeat">确认密码</string>
     <string name="em_string_register_password_repeat_hint">请再次输入密码</string>
 </resources>

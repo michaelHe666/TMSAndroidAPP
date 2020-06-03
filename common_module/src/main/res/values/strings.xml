@@ -4,10 +4,4 @@
     <string name="cm_string_universal_app_name">TMS</string>
     <string name="cm_string_universal_loading">加载中</string>
     <string name="cm_string_universal_load_fail">加载失败</string>
-
-    <!--    string for views_combined_my_fixture_card-->
-    <string name="cm_string_views_combined_my_fixture_card_deadline">截止时间</string>
-    <string name="cm_string_views_combined_my_fixture_card_location">定位</string>
-    <string name="cm_string_views_combined_my_fixture_card_risk">故障风险</string>
-
 </resources>

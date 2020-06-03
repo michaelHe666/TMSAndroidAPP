@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cm_color_universal_background">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mm_views_adapter_fixture_card_background_card_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="@color/mm_color_views_adapter_fixture_card_background"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/mm_views_adapter_fixture_card_name_text_view"
+        style="@style/cm_style_universal_title_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toTopOf="@id/mm_views_adapter_fixture_card_horizontal_view"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_fixture_card_horizontal_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_fixture_card_background_card_view"
+        tools:text="T1机械工具箱" />
+
+    <View
+        android:id="@+id/mm_views_adapter_fixture_card_horizontal_view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/mm_color_views_adapter_fixture_card_divider"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_fixture_card_background_card_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_fixture_card_background_card_view"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <View
+        android:id="@+id/mm_views_adapter_fixture_card_vertical_view"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/mm_color_views_adapter_fixture_card_divider"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_fixture_card_background_card_view"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_fixture_card_background_card_view"
+        app:layout_constraintRight_toRightOf="@id/mm_views_adapter_fixture_card_background_card_view"
+        app:layout_constraintTop_toBottomOf="@id/mm_views_adapter_fixture_card_horizontal_view" />
+
+    <TextView
+        android:id="@+id/mm_views_adapter_fixture_card_deadline_title_text_view"
+        style="@style/cm_style_universal_text_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:text="@string/mm_string_views_adapter_fixture_card_deadline"
+        app:layout_constraintBottom_toTopOf="@id/mm_views_adapter_fixture_card_deadline_content_text_view"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_fixture_card_horizontal_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_fixture_card_vertical_view" />
+
+    <TextView
+        android:id="@+id/mm_views_adapter_fixture_card_deadline_content_text_view"
+        style="@style/cm_style_universal_text_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_fixture_card_vertical_view"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_fixture_card_horizontal_view"
+        app:layout_constraintTop_toBottomOf="@id/mm_views_adapter_fixture_card_deadline_title_text_view"
+        tools:text="2018/12/08" />
+
+    <TextView
+        android:id="@+id/mm_views_adapter_fixture_card_location_text_view"
+        style="@style/cm_style_universal_text_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:text="@string/mm_string_views_adapter_fixture_card_location"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_fixture_card_deadline_title_text_view"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_fixture_card_vertical_view"
+        app:layout_constraintRight_toRightOf="@id/mm_views_adapter_fixture_card_background_card_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_fixture_card_deadline_title_text_view" />
+
+    <cn.edu.zust.dmt.hsy.common_module.views.extended.cm_MySignalView
+        android:id="@+id/mm_views_adapter_fixture_card_location_my_signal_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_fixture_card_deadline_title_text_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintRight_toRightOf="@id/mm_views_adapter_fixture_card_horizontal_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_fixture_card_deadline_title_text_view"
+        tools:cm_mySignalLight="green" />
+
+    <TextView
+        android:id="@+id/mm_views_adapter_fixture_card_risk_text_view"
+        style="@style/cm_style_universal_text_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:text="@string/mm_string_views_adapter_fixture_card_risk"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_fixture_card_deadline_content_text_view"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_fixture_card_location_text_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_fixture_card_deadline_content_text_view" />
+
+    <cn.edu.zust.dmt.hsy.common_module.views.extended.cm_MySignalView
+        android:id="@+id/mm_views_adapter_fixture_card_risk_my_signal_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_fixture_card_deadline_content_text_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintRight_toRightOf="@id/mm_views_adapter_fixture_card_horizontal_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_fixture_card_deadline_content_text_view"
+        tools:cm_mySignalLight="green" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

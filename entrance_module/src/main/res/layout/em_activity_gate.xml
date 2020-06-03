@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cm_color_universal_background">
+    android:background="@color/cm_color_universal_background"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/em_activity_gate_login_button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/em_activity_gate_register_button"
-        app:layout_constraintVertical_bias="0.9"
+        style="@style/cm_style_universal_button_normal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintDimensionRatio="5:2"
-        android:text="@string/em_string_universal_login"
         android:background="@color/cm_color_universal_app_theme_color"
+        android:text="@string/em_string_universal_login"
         android:textColor="@color/cm_color_universal_foreground"
-        style="@style/cm_style_universal_button_normal"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="5:2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/em_activity_gate_register_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
 
     <Button
         android:id="@+id/em_activity_gate_register_button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/em_activity_gate_login_button"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.9"
+        style="@style/cm_style_universal_button_normal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintDimensionRatio="5:2"
-        android:text="@string/em_string_universal_register"
         android:background="@color/cm_color_universal_foreground"
+        android:text="@string/em_string_universal_register"
         android:textColor="@color/cm_color_universal_app_theme_color"
-        style="@style/cm_style_universal_button_normal"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="5:2"
+        app:layout_constraintLeft_toRightOf="@id/em_activity_gate_login_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,7 +27,7 @@ public abstract class MyActivity<T extends BaseViewModelListener, K extends Base
      */
     protected final void showMyToast(@NonNull final String message) {
         Toast toast = new Toast(this);
-        View mView = LayoutInflater.from(this).inflate(R.layout.cm_my_activity_toast, null);
+        View mView = LayoutInflater.from(this).inflate(R.layout.cm_activity_my_toast, null);
         ((TextView) mView.findViewById(R.id.my_activity_toast_message)).setText(message);
         toast.setView(mView);
         toast.show();

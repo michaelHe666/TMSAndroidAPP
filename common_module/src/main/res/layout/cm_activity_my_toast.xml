@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="12dp"
-    app:cardBackgroundColor="@color/cm_color_universal_app_theme_color">
+    app:cardBackgroundColor="@color/cm_color_universal_app_theme_color"
+    app:cardCornerRadius="12dp">
 
     <TextView
         android:id="@+id/my_activity_toast_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="@color/cm_color_universal_foreground"
-        android:padding="14dp"
-        android:textSize="16sp"
         android:includeFontPadding="false"
-        tools:text="消息弹窗"/>
+        android:padding="14dp"
+        android:textColor="@color/cm_color_universal_foreground"
+        android:textSize="16sp"
+        tools:text="消息弹窗" />
 
 </androidx.cardview.widget.CardView>

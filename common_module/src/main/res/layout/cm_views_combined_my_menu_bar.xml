@@ -6,47 +6,29 @@
     android:layout_height="match_parent"
     android:background="@color/cm_color_universal_foreground">
 
-    <ImageButton
-        android:id="@+id/cm_views_my_top_bar_left_image_button"
+    <ImageView
+        android:id="@+id/cm_views_combined_my_menu_bar_image_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/cm_string_universal_load_fail"
-        android:padding="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.07" />
 
     <TextView
-        android:id="@+id/cm_views_my_top_bar_center_text_view"
-        style="@style/cm_style_universal_title_normal"
+        android:id="@+id/cm_views_combined_my_menu_bar_text_view"
+        style="@style/cm_style_universal_text_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/cm_string_universal_app_name" />
-
-    <ImageButton
-        android:id="@+id/cm_views_my_top_bar_right_image_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/cm_string_universal_load_fail"
-        android:padding="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.07" />
+        tools:text="界面设置" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
