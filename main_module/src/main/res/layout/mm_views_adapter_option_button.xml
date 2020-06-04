@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cm_views_combined_my_option_button_card_view"
+        android:id="@+id/mm_views_adapter_option_button_card_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardElevation="8dp"
@@ -18,29 +18,29 @@
         app:layout_constraintWidth_percent="0.9" />
 
     <ImageView
-        android:id="@+id/cm_views_combined_my_option_button_image_view"
+        android:id="@+id/mm_views_adapter_option_button_image_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/cm_string_universal_load_fail"
         android:elevation="8dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@id/cm_views_combined_my_option_button_text_view"
+        app:layout_constraintBottom_toTopOf="@id/mm_views_adapter_option_button_text_view"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/cm_views_combined_my_option_button_card_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_option_button_card_view"
         app:layout_constraintWidth_percent="0.7" />
 
     <TextView
-        android:id="@+id/cm_views_combined_my_option_button_text_view"
+        android:id="@+id/mm_views_adapter_option_button_text_view"
         style="@style/cm_style_universal_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="8dp"
-        app:layout_constraintBottom_toBottomOf="@id/cm_views_combined_my_option_button_card_view"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_option_button_card_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cm_views_combined_my_option_button_image_view"
+        app:layout_constraintTop_toBottomOf="@id/mm_views_adapter_option_button_image_view"
         tools:text="皮皮虾"
         tools:textSize="20sp" />
 

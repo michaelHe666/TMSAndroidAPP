@@ -18,13 +18,6 @@
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="cm_MyOptionButton">
-        <attr name="cm_myOptionIcon" format="reference" />
-        <attr name="cm_myOptionColor" format="color" />
-        <attr name="cm_myOptionText" format="string" />
-        <attr name="cm_myOptionTextSize" format="dimension" />
-    </declare-styleable>
-
     <declare-styleable name="cm_MyMenuBar">
         <attr name="cm_myMenuIcon" format="reference" />
         <attr name="cm_myMenuText" format="string" />

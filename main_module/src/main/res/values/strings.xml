@@ -6,6 +6,13 @@
     <string name="mm_string_activity_home_message">消息</string>
     <string name="mm_string_activity_home_mine">我的</string>
 
+    <!--strings for fragment_management-->
+    <string name="mm_string_fragment_management_order">采购入库</string>
+    <string name="mm_string_fragment_management_entry">入库</string>
+    <string name="mm_string_fragment_management_delivery">出库</string>
+    <string name="mm_string_fragment_management_repair">维修</string>
+    <string name="mm_string_fragment_management_scrap">报废</string>
+
     <!--string for views_adapter_my_fixture_card-->
     <string name="mm_string_views_adapter_fixture_card_deadline">截止时间</string>
     <string name="mm_string_views_adapter_fixture_card_location">定位</string>
