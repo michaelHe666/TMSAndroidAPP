@@ -53,19 +53,19 @@ public final class ManagementFragment extends BaseFragment<NullViewModelListener
         final List<OptionButtonAdapter.OptionButtonAttributes> attributesList = new ArrayList<>();
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
                 R.color.mm_color_universal_order, R.drawable.mm_icon_universal_order,
-                R.string.mm_string_fragment_management_order, 50));
+                R.string.mm_string_fragment_management_order, 80));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
                 R.color.mm_color_universal_entry, R.drawable.mm_icon_universal_entry,
-                R.string.mm_string_fragment_management_entry, 50));
+                R.string.mm_string_fragment_management_entry, 80));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
                 R.color.mm_color_universal_delivery, R.drawable.mm_icon_universal_delivery,
-                R.string.mm_string_fragment_management_delivery, 50));
+                R.string.mm_string_fragment_management_delivery, 80));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
                 R.color.mm_color_universal_repair, R.drawable.mm_icon_universal_repair,
-                R.string.mm_string_fragment_management_repair, 50));
+                R.string.mm_string_fragment_management_repair, 80));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
                 R.color.mm_color_universal_scrap, R.drawable.mm_icon_universal_scrap,
-                R.string.mm_string_fragment_management_scrap, 50));
+                R.string.mm_string_fragment_management_scrap, 80));
 
         mManagementGridView.setAdapter(new OptionButtonAdapter(attributesList,
                 Objects.requireNonNull(getContext())));
