@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,11 +26,11 @@ import cn.edu.zust.dmt.hsy.main_module.R;
  * @description $
  * @since 6/3/2020 20:04
  **/
-public final class OptionButtonAdapter extends BaseAdapter {
+public final class ManagementButtonAdapter extends BaseAdapter {
     /**
      * @description store attributes input of adapter item view
      */
-    public static final class OptionButtonAttributes {
+    public static final class ManagementButtonAttributes {
         @ColorRes
         private final int mBackgroundColorRId;
         @DrawableRes
@@ -40,8 +39,8 @@ public final class OptionButtonAdapter extends BaseAdapter {
         private final int mTextStringRId;
         private final int mCornerRadius;
 
-        public OptionButtonAttributes(@ColorRes int backgroundColorRId, @DrawableRes int iconDrawableRId,
-                                      @StringRes int textStringRId, int cornerRadius) {
+        public ManagementButtonAttributes(@ColorRes int backgroundColorRId, @DrawableRes int iconDrawableRId,
+                                          @StringRes int textStringRId, int cornerRadius) {
             mBackgroundColorRId = backgroundColorRId;
             mIconDrawableRId = iconDrawableRId;
             mTextStringRId = textStringRId;
@@ -49,11 +48,11 @@ public final class OptionButtonAdapter extends BaseAdapter {
         }
     }
 
-    private final List<OptionButtonAttributes> mAttributesList;
+    private final List<ManagementButtonAttributes> mAttributesList;
     private final LayoutInflater mLayoutInflater;
 
-    public OptionButtonAdapter(@NonNull final List<OptionButtonAttributes> attributesList,
-                               @NonNull final Context context) {
+    public ManagementButtonAdapter(@NonNull final List<ManagementButtonAttributes> attributesList,
+                                   @NonNull final Context context) {
         mAttributesList = attributesList;
         mLayoutInflater = LayoutInflater.from(context);
     }
@@ -78,14 +77,14 @@ public final class OptionButtonAdapter extends BaseAdapter {
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        OptionButtonViewHolder currentViewHolder;
+        ManagementButtonViewHolder currentViewHolder;
         if (convertView == null) {
             convertView = mLayoutInflater.inflate(
-                    R.layout.mm_views_adapter_option_button, parent, false);
-            currentViewHolder = new OptionButtonViewHolder(convertView);
+                    R.layout.mm_views_adapter_management_button, parent, false);
+            currentViewHolder = new ManagementButtonViewHolder(convertView);
             convertView.setTag(currentViewHolder);
         } else {
-            currentViewHolder = (OptionButtonViewHolder) convertView.getTag();
+            currentViewHolder = (ManagementButtonViewHolder) convertView.getTag();
         }
         currentViewHolder.mButtonCardView.setCardBackgroundColor(mLayoutInflater.getContext()
                 .getResources().getColor(mAttributesList.get(position).mBackgroundColorRId));
@@ -98,16 +97,16 @@ public final class OptionButtonAdapter extends BaseAdapter {
     /**
      * @description extra views for {@link #getView(int, View, ViewGroup)} from layout
      */
-    private static class OptionButtonViewHolder extends RecyclerView.ViewHolder {
+    private static class ManagementButtonViewHolder extends RecyclerView.ViewHolder {
         private final CardView mButtonCardView;
         private final ImageView mIconImageView;
         private final TextView mOptionTextView;
 
-        public OptionButtonViewHolder(@NonNull final View itemView) {
+        public ManagementButtonViewHolder(@NonNull final View itemView) {
             super(itemView);
-            mButtonCardView = itemView.findViewById(R.id.mm_views_adapter_option_button_card_view);
-            mIconImageView = itemView.findViewById(R.id.mm_views_adapter_option_button_image_view);
-            mOptionTextView = itemView.findViewById(R.id.mm_views_adapter_option_button_text_view);
+            mButtonCardView = itemView.findViewById(R.id.mm_views_adapter_management_button_card_view);
+            mIconImageView = itemView.findViewById(R.id.mm_views_adapter_management_button_image_view);
+            mOptionTextView = itemView.findViewById(R.id.mm_views_adapter_management_button_text_view);
         }
     }
 }
