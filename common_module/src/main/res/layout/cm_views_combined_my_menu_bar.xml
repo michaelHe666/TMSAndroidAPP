@@ -10,7 +10,7 @@
         android:id="@+id/cm_views_combined_my_menu_bar_image_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="centerCrop"
+        style="@style/cm_style_universal_image_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintHorizontal_bias="0.1"

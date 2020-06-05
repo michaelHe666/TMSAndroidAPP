@@ -2,79 +2,95 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
-            <size android:width="100dp" android:height="100dp"/>
-            <solid android:color="@android:color/transparent"/>
+            <size
+                android:width="100dp"
+                android:height="100dp" />
         </shape>
     </item>
     <item
-        android:top="22dp"
         android:bottom="74dp"
         android:left="20dp"
-        android:right="20dp">
+        android:right="20dp"
+        android:top="22dp">
         <shape android:shape="rectangle">
-            <size android:width="60dp" android:height="4dp"/>
-            <corners android:radius="2dp"/>
-            <solid android:color="@color/cm_color_universal_foreground"/>
+            <size
+                android:width="60dp"
+                android:height="4dp" />
+            <corners android:radius="2dp" />
+            <solid android:color="@color/cm_color_universal_foreground" />
         </shape>
     </item>
     <item
-        android:top="12dp"
         android:bottom="75dp"
         android:left="40dp"
-        android:right="40dp">
+        android:right="40dp"
+        android:top="12dp">
         <shape android:shape="rectangle">
-            <size android:width="20dp" android:height="13dp"/>
-            <corners android:radius="4dp"
+            <size
+                android:width="20dp"
+                android:height="13dp" />
+            <corners
                 android:bottomLeftRadius="0dp"
-                android:bottomRightRadius="0dp"/>
-            <stroke android:width="4dp" android:color="@color/cm_color_universal_foreground"/>
+                android:bottomRightRadius="0dp"
+                android:radius="4dp" />
+            <stroke
+                android:width="4dp"
+                android:color="@color/cm_color_universal_foreground" />
         </shape>
     </item>
     <item
-        android:top="30dp"
         android:bottom="66dp"
         android:left="24dp"
-        android:right="24dp">
+        android:right="24dp"
+        android:top="30dp">
         <shape android:shape="rectangle">
-            <size android:width="52dp" android:height="4dp"/>
-            <solid android:color="@color/cm_color_universal_foreground"/>
-            <corners android:radius="2dp"/>
+            <size
+                android:width="52dp"
+                android:height="4dp" />
+            <solid android:color="@color/cm_color_universal_foreground" />
+            <corners android:radius="2dp" />
         </shape>
     </item>
     <item
-        android:top="82dp"
         android:bottom="14dp"
         android:left="28dp"
-        android:right="28dp">
+        android:right="28dp"
+        android:top="82dp">
         <shape android:shape="rectangle">
-            <size android:width="44dp" android:height="4dp"/>
-            <solid android:color="@color/cm_color_universal_foreground"/>
-            <corners android:radius="2dp"/>
+            <size
+                android:width="44dp"
+                android:height="4dp" />
+            <solid android:color="@color/cm_color_universal_foreground" />
+            <corners android:radius="2dp" />
         </shape>
     </item>
     <item
-        android:top="30dp"
         android:bottom="14dp"
         android:left="70dp"
-        android:right="26dp">
+        android:right="26dp"
+        android:top="30dp">
         <rotate android:fromDegrees="4">
             <shape android:shape="rectangle">
-                <size android:width="4dp" android:height="56dp"/>
-                <solid android:color="@color/cm_color_universal_foreground"/>
-                <corners android:radius="2dp"/>
+                <size
+                    android:width="4dp"
+                    android:height="56dp" />
+                <solid android:color="@color/cm_color_universal_foreground" />
+                <corners android:radius="2dp" />
             </shape>
         </rotate>
     </item>
     <item
-        android:top="30dp"
         android:bottom="14dp"
         android:left="26dp"
-        android:right="70dp">
+        android:right="70dp"
+        android:top="30dp">
         <rotate android:fromDegrees="-4">
             <shape android:shape="rectangle">
-                <size android:width="4dp" android:height="56dp"/>
-                <solid android:color="@color/cm_color_universal_foreground"/>
-                <corners android:radius="2dp"/>
+                <size
+                    android:width="4dp"
+                    android:height="56dp" />
+                <solid android:color="@color/cm_color_universal_foreground" />
+                <corners android:radius="2dp" />
             </shape>
         </rotate>
     </item>

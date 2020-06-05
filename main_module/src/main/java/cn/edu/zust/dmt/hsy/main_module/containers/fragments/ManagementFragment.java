@@ -50,17 +50,24 @@ public final class ManagementFragment extends BaseFragment<NullViewModelListener
 
     @Override
     protected void loadActorsToViews() {
-        final List<Integer> drawableList = new ArrayList<>();
-        drawableList.add(R.drawable.mm_icon_universal_order);
-        drawableList.add(R.drawable.mm_icon_universal_entry);
-        drawableList.add(R.drawable.mm_icon_universal_delivery);
+        final List<OptionButtonAdapter.OptionButtonAttributes> attributesList = new ArrayList<>();
+        attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
+                R.color.mm_color_universal_order, R.drawable.mm_icon_universal_order,
+                R.string.mm_string_fragment_management_order, 50));
+        attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
+                R.color.mm_color_universal_entry, R.drawable.mm_icon_universal_entry,
+                R.string.mm_string_fragment_management_entry, 50));
+        attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
+                R.color.mm_color_universal_delivery, R.drawable.mm_icon_universal_delivery,
+                R.string.mm_string_fragment_management_delivery, 50));
+        attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
+                R.color.mm_color_universal_repair, R.drawable.mm_icon_universal_repair,
+                R.string.mm_string_fragment_management_repair, 50));
+        attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
+                R.color.mm_color_universal_scrap, R.drawable.mm_icon_universal_scrap,
+                R.string.mm_string_fragment_management_scrap, 50));
 
-        final List<Integer> textList = new ArrayList<>();
-        textList.add(R.string.mm_string_fragment_management_order);
-        textList.add(R.string.mm_string_fragment_management_entry);
-        textList.add(R.string.mm_string_fragment_management_delivery);
-
-        mManagementGridView.setAdapter(new OptionButtonAdapter(drawableList, textList,
+        mManagementGridView.setAdapter(new OptionButtonAdapter(attributesList,
                 Objects.requireNonNull(getContext())));
     }
 }

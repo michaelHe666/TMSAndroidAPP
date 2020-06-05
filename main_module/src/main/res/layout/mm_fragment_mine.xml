@@ -4,11 +4,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyMenuBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <View
+        android:id="@+id/mm_fragment_mine_top_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/cm_color_universal_foreground"
+        app:layout_constraintDimensionRatio="7:2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyMenuBar
+        android:id="@+id/mm_fragment_mine_ui_my_menu_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:cm_myMenuIcon="@drawable/mm_icon_fragment_mine_ui"
+        app:cm_myMenuText="@string/mm_string_fragment_mine_ui"
+        app:layout_constraintDimensionRatio="8:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mm_fragment_mine_top_view" />
+
+    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyMenuBar
+        android:id="@+id/mm_fragment_mine_notification_my_menu_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/mm_dimen_fragment_mine_bar_spacing"
+        app:cm_myMenuIcon="@drawable/mm_icon_fragment_mine_notification"
+        app:cm_myMenuText="@string/mm_string_fragment_mine_notification"
+        app:layout_constraintDimensionRatio="8:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mm_fragment_mine_ui_my_menu_bar" />
+
+    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyMenuBar
+        android:id="@+id/mm_fragment_mine_security_my_menu_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/mm_dimen_fragment_mine_bar_spacing"
+        app:cm_myMenuIcon="@drawable/mm_icon_fragment_mine_security"
+        app:cm_myMenuText="@string/mm_string_fragment_mine_security"
+        app:layout_constraintDimensionRatio="8:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mm_fragment_mine_notification_my_menu_bar" />
+
+    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyMenuBar
+        android:id="@+id/mm_fragment_mine_update_my_menu_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/mm_dimen_fragment_mine_bar_spacing"
+        app:cm_myMenuIcon="@drawable/mm_icon_fragment_mine_update"
+        app:cm_myMenuText="@string/mm_string_fragment_mine_update"
+        app:layout_constraintDimensionRatio="8:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mm_fragment_mine_security_my_menu_bar" />
+
+    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyMenuBar
+        android:id="@+id/mm_fragment_mine_contacts_my_menu_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/mm_dimen_fragment_mine_bar_spacing"
+        app:cm_myMenuIcon="@drawable/mm_icon_fragment_mine_contacts"
+        app:cm_myMenuText="@string/mm_string_fragment_mine_contacts"
+        app:layout_constraintDimensionRatio="8:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mm_fragment_mine_update_my_menu_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

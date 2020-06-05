@@ -13,6 +13,13 @@
     <string name="mm_string_fragment_management_repair">维修</string>
     <string name="mm_string_fragment_management_scrap">报废</string>
 
+    <!--strings for fragment_mine-->
+    <string name="mm_string_fragment_mine_ui">界面设置</string>
+    <string name="mm_string_fragment_mine_notification">通知设置</string>
+    <string name="mm_string_fragment_mine_security">安全设置</string>
+    <string name="mm_string_fragment_mine_update">检查更新</string>
+    <string name="mm_string_fragment_mine_contacts">联系我们</string>
+
     <!--string for views_adapter_my_fixture_card-->
     <string name="mm_string_views_adapter_fixture_card_deadline">截止时间</string>
     <string name="mm_string_views_adapter_fixture_card_location">定位</string>

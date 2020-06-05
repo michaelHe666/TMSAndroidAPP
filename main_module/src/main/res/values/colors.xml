@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--universal colors-->
-    <color name="mm_color_universal_order">#E4C87F</color>
+    <color name="mm_color_universal_order">#F2E4C87F</color>
     <color name="mm_color_universal_entry">#C5D16B</color>
     <color name="mm_color_universal_delivery">#5CC28F</color>
     <color name="mm_color_universal_repair">#5C60C2</color>
     <color name="mm_color_universal_scrap">#9F9F9F</color>
+
+    <!--color for fragment_mine-->
+    <color name="mm_color_fragment_mine_ui">#E7B121</color>
+    <color name="mm_color_fragment_mine_notification">#2D23C3</color>
+    <color name="mm_color_fragment_mine_security">#D22A2A</color>
+    <color name="mm_color_fragment_mine_update">#36A39F</color>
+    <color name="mm_color_fragment_mine_contacts">#74CB4D</color>
 
     <!--color for views_adapter_my_fixture_card-->
     <color name="mm_color_views_adapter_fixture_card_background">#F5F5DC</color>

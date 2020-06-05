@@ -93,8 +93,8 @@ public final class cm_MyFlowLayout extends FrameLayout {
             final List<View> currentLineViews = mViewListsRecorder.get(i);
             final int currentLineHeight = mLineHeights.get(i);
             for (int j = 0; j < currentLineViews.size(); j++) {
-                View child = currentLineViews.get(j);
-                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) child.getLayoutParams();
+                final View child = currentLineViews.get(j);
+                final FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) child.getLayoutParams();
                 int childLeft = currentLeft + params.leftMargin;
                 int childRight = currentLeft + child.getMeasuredWidth();
                 int childTop = currentTop + params.topMargin;

@@ -22,4 +22,9 @@
         <attr name="cm_myMenuIcon" format="reference" />
         <attr name="cm_myMenuText" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="cm_MyColumnView">
+        <attr name="cm_myColumnNumbers" format="integer"/>
+        <attr name="cm_myViewState" format="integer"/>
+    </declare-styleable>
 </resources>

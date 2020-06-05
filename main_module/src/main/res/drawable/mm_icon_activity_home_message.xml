@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <size
+                android:width="100dp"
+                android:height="100dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="26dp"
+        android:left="14dp"
+        android:right="14dp"
+        android:top="16dp">
+        <shape android:shape="rectangle">
+            <size
+                android:width="72dp"
+                android:height="58dp" />
+            <solid android:color="@color/cm_color_universal_app_theme_color" />
+            <corners
+                android:bottomLeftRadius="0dp"
+                android:radius="8dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="25dp"
+        android:left="10dp"
+        android:right="60dp"
+        android:top="45dp">
+        <rotate
+            android:fromDegrees="45"
+            android:pivotX="0"
+            android:pivotY="0">
+            <shape android:shape="rectangle">
+                <size
+                    android:width="30dp"
+                    android:height="30dp" />
+                <solid android:color="@color/cm_color_universal_app_theme_color" />
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="90dp"
+        android:top="0dp">
+        <shape android:shape="rectangle">
+            <size
+                android:width="14dp"
+                android:height="100dp" />
+            <solid android:color="@color/cm_color_universal_foreground" />
+        </shape>
+    </item>
+    <item
+        android:bottom="64dp"
+        android:left="30dp"
+        android:right="30dp"
+        android:top="28dp">
+        <shape android:shape="rectangle">
+            <size
+                android:width="40dp"
+                android:height="8dp" />
+            <solid android:color="@color/cm_color_universal_foreground" />
+        </shape>
+    </item>
+    <item
+        android:bottom="52dp"
+        android:left="30dp"
+        android:right="30dp"
+        android:top="40dp">
+        <shape android:shape="rectangle">
+            <size
+                android:width="40dp"
+                android:height="8dp" />
+            <solid android:color="@color/cm_color_universal_foreground" />
+        </shape>
+    </item>
+    <item
+        android:bottom="40dp"
+        android:left="30dp"
+        android:right="30dp"
+        android:top="52dp">
+        <shape android:shape="rectangle">
+            <size
+                android:width="40dp"
+                android:height="8dp" />
+            <solid android:color="@color/cm_color_universal_foreground" />
+        </shape>
+    </item>
+</layer-list>

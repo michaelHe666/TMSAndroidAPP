@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!--styles for layout_activity_home-->
+    <style name="mm_style_activity_home_bottom_text_view">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/cm_color_universal_app_theme_color</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+</resources>

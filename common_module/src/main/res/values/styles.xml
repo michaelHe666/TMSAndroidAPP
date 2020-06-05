@@ -86,4 +86,10 @@
     <style name="cm_style_universal_button_normal" parent="cm_style_universal_title_normal">
         <item name="android:stateListAnimator">@null</item>
     </style>
+
+    <!--styles for image_view-->
+    <style name="cm_style_universal_image_view">
+        <item name="contentDescription">@string/cm_string_universal_load_fail</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
 </resources>

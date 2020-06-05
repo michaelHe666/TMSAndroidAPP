@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <size
+                android:width="100dp"
+                android:height="100dp" />
+        </shape>
+    </item>
+    <item>
+        <shape
+            android:innerRadius="12dp"
+            android:shape="ring"
+            android:thickness="16dp"
+            android:useLevel="false">
+            <solid android:color="@color/mm_color_fragment_mine_ui" />
+        </shape>
+    </item>
+    <item
+        android:bottom="72dp"
+        android:left="42dp"
+        android:right="42dp"
+        android:top="12dp">
+        <shape android:shape="rectangle">
+            <size
+                android:width="16dp"
+                android:height="16dp" />
+            <solid android:color="@color/mm_color_fragment_mine_ui" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="12dp"
+        android:left="42dp"
+        android:right="42dp"
+        android:top="72dp">
+        <shape android:shape="rectangle">
+            <size
+                android:width="16dp"
+                android:height="16dp" />
+            <solid android:color="@color/mm_color_fragment_mine_ui" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="26dp"
+        android:left="16dp"
+        android:right="68dp"
+        android:top="58dp">
+        <rotate android:fromDegrees="60">
+            <shape android:shape="rectangle">
+                <size
+                    android:width="16dp"
+                    android:height="16dp" />
+                <solid android:color="@color/mm_color_fragment_mine_ui" />
+                <corners android:radius="6dp" />
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:bottom="58dp"
+        android:left="68dp"
+        android:right="16dp"
+        android:top="26dp">
+        <rotate android:fromDegrees="-120">
+            <shape android:shape="rectangle">
+                <size
+                    android:width="16dp"
+                    android:height="16dp" />
+                <solid android:color="@color/mm_color_fragment_mine_ui" />
+                <corners android:radius="6dp" />
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:bottom="26dp"
+        android:left="68dp"
+        android:right="16dp"
+        android:top="58dp">
+        <rotate android:fromDegrees="-60">
+            <shape android:shape="rectangle">
+                <size
+                    android:width="16dp"
+                    android:height="16dp" />
+                <solid android:color="@color/mm_color_fragment_mine_ui" />
+                <corners android:radius="6dp" />
+            </shape>
+        </rotate>
+    </item>
+    <item
+        android:bottom="58dp"
+        android:left="16dp"
+        android:right="68dp"
+        android:top="26dp">
+        <rotate android:fromDegrees="120">
+            <shape android:shape="rectangle">
+                <size
+                    android:width="16dp"
+                    android:height="16dp" />
+                <solid android:color="@color/mm_color_fragment_mine_ui" />
+                <corners android:radius="6dp" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>
