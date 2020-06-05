@@ -67,6 +67,7 @@ public final class ManagementFragment extends BaseFragment<NullViewModelListener
                 R.color.mm_color_universal_scrap, R.drawable.mm_icon_universal_scrap,
                 R.string.mm_string_fragment_management_scrap, 80));
 
+
         mManagementGridView.setAdapter(new OptionButtonAdapter(attributesList,
                 Objects.requireNonNull(getContext())));
     }
