@@ -24,4 +24,8 @@
     <string name="mm_string_views_adapter_fixture_card_deadline">截止时间</string>
     <string name="mm_string_views_adapter_fixture_card_location">定位</string>
     <string name="mm_string_views_adapter_fixture_card_risk">故障风险</string>
+
+    <!--string for activity_delivery_select-->
+    <string name="mm_string_activity_delivery_select_title">出库</string>
+
 </resources>
