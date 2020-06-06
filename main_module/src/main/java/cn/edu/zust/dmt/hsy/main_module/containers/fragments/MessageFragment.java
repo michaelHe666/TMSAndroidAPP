@@ -39,7 +39,7 @@ public final class MessageFragment extends BaseFragment<NullViewModelListener, N
 
     @Override
     protected void findViews() {
-        mRecyclerView = findViewByRId(R.id.mm_fragment_message_container_recycler_view);
+        mRecyclerView = findViewById(R.id.mm_fragment_message_container_recycler_view);
     }
 
     @Override

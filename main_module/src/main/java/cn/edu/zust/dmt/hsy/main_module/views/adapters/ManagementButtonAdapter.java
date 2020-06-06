@@ -69,7 +69,7 @@ public final class ManagementButtonAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     /**
@@ -86,11 +86,12 @@ public final class ManagementButtonAdapter extends BaseAdapter {
         } else {
             currentViewHolder = (ManagementButtonViewHolder) convertView.getTag();
         }
+        final ManagementButtonAttributes attributes = mAttributesList.get(position);
         currentViewHolder.mButtonCardView.setCardBackgroundColor(mLayoutInflater.getContext()
-                .getResources().getColor(mAttributesList.get(position).mBackgroundColorRId));
-        currentViewHolder.mButtonCardView.setRadius(mAttributesList.get(position).mCornerRadius);
-        currentViewHolder.mIconImageView.setImageResource(mAttributesList.get(position).mIconDrawableRId);
-        currentViewHolder.mOptionTextView.setText(mAttributesList.get(position).mTextStringRId);
+                .getResources().getColor(attributes.mBackgroundColorRId));
+        currentViewHolder.mButtonCardView.setRadius(attributes.mCornerRadius);
+        currentViewHolder.mIconImageView.setImageResource(attributes.mIconDrawableRId);
+        currentViewHolder.mOptionTextView.setText(attributes.mTextStringRId);
         return convertView;
     }
 

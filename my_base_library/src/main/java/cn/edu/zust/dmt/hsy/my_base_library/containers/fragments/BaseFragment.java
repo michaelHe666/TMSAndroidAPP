@@ -104,7 +104,7 @@ public abstract class BaseFragment<T extends BaseViewModelListener, K extends Ba
      * @param <A>     ? extends view
      * @return ? extends view
      */
-    protected final <A extends View> A findViewByRId(@IdRes int viewRId) {
+    protected final <A extends View> A findViewById(@IdRes int viewRId) {
         return Objects.requireNonNull(getView()).findViewById(viewRId);
     }
 

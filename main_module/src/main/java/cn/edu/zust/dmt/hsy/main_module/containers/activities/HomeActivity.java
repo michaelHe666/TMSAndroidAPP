@@ -1,5 +1,7 @@
 package cn.edu.zust.dmt.hsy.main_module.containers.activities;
 
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -61,6 +63,12 @@ public final class HomeActivity extends MyActivity<NullViewModelListener, NullVi
     @Override
     protected void loadActorsToViews() {
         mTopBar.setTitle(R.string.mm_string_activity_home_front);
+        mTopBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callMyRouter(MyRouterPaths.DELIVERY_OPTIONS_ACTIVITY, null);
+            }
+        });
         final List<BaseFragment<?, ?>> fragmentList = new ArrayList<>();
         fragmentList.add(new FrontFragment());
         fragmentList.add(new ManagementFragment());

@@ -1,8 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.edu.zust.dmt.hsy.main_module" >
+    package="cn.edu.zust.dmt.hsy.main_module">
 
     <application>
-        <activity android:name="cn.edu.zust.dmt.hsy.main_module.containers.activities.HomeActivity"/>
+        <activity
+            android:name="cn.edu.zust.dmt.hsy.main_module.containers.activities.HomeActivity"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".containers.activities.DeliveryOptionsActivity"
+            android:launchMode="singleTop" />
 
     </application>
 </manifest>

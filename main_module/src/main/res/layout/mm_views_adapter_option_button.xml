@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/mm_views_adapter_option_button_card_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardCornerRadius="35dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="8:1"
+        app:layout_constraintDimensionRatio="3:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.9"
-        app:cardCornerRadius="35dp"/>
+        app:layout_constraintWidth_percent="0.9" />
 
-    <Button
-        android:id="@+id/mm_views_adapter_option_button"
+    <ImageView
+        android:id="@+id/mm_views_adapter_option_button_image_view"
+        style="@style/cm_style_universal_image_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="
-        @+id/mm_views_adapter_option_button_card_view"
-        app:layout_constraintLeft_toLeftOf="
-        @id/mm_views_adapter_option_button_card_view"
-        app:layout_constraintRight_toRightOf="
-        @id/mm_views_adapter_option_button_card_view"
-        app:layout_constraintTop_toTopOf="
-        @+id/mm_views_adapter_option_button_card_view"
         android:elevation="8dp"
-        android:scaleType="centerCrop"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_option_button_card_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.9"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_option_button_card_view"
+        app:layout_constraintRight_toRightOf="@id/mm_views_adapter_option_button_card_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_option_button_card_view" />
 
-
+    <TextView
+        android:id="@+id/mm_views_adapter_option_button_text_view"
+        style="@style/cm_style_universal_title_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_option_button_card_view"
+        app:layout_constraintLeft_toRightOf="@id/mm_views_adapter_option_button_image_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_option_button_card_view"
+        tools:text="@string/cm_string_universal_app_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
