@@ -37,14 +37,12 @@ public final class ManagementButtonAdapter extends BaseAdapter {
         private final int mIconDrawableRId;
         @StringRes
         private final int mTextStringRId;
-        private final int mCornerRadius;
 
         public ManagementButtonAttributes(@ColorRes int backgroundColorRId, @DrawableRes int iconDrawableRId,
-                                          @StringRes int textStringRId, int cornerRadius) {
+                                          @StringRes int textStringRId) {
             mBackgroundColorRId = backgroundColorRId;
             mIconDrawableRId = iconDrawableRId;
             mTextStringRId = textStringRId;
-            mCornerRadius = cornerRadius;
         }
     }
 
@@ -89,7 +87,6 @@ public final class ManagementButtonAdapter extends BaseAdapter {
         final ManagementButtonAttributes attributes = mAttributesList.get(position);
         currentViewHolder.mButtonCardView.setCardBackgroundColor(mLayoutInflater.getContext()
                 .getResources().getColor(attributes.mBackgroundColorRId));
-        currentViewHolder.mButtonCardView.setRadius(attributes.mCornerRadius);
         currentViewHolder.mIconImageView.setImageResource(attributes.mIconDrawableRId);
         currentViewHolder.mOptionTextView.setText(attributes.mTextStringRId);
         return convertView;

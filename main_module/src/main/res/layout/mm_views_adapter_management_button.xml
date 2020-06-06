@@ -2,48 +2,48 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="16dp"
-    android:background="@color/cm_color_universal_background"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/cm_color_universal_background">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/mm_views_adapter_management_button_card_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="3:4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.9" />
+        app:layout_constraintWidth_percent="0.72" />
 
     <ImageView
         android:id="@+id/mm_views_adapter_management_button_image_view"
+        style="@style/cm_style_universal_image_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/cm_string_universal_load_fail"
         android:elevation="8dp"
-        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@id/mm_views_adapter_management_button_text_view"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_management_button_card_view"
-        app:layout_constraintWidth_percent="0.7" />
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_management_button_card_view"
+        app:layout_constraintRight_toRightOf="@id/mm_views_adapter_management_button_card_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_management_button_card_view" />
 
     <TextView
         android:id="@+id/mm_views_adapter_management_button_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="8dp"
+        android:textColor="@color/cm_color_universal_foreground"
+        android:textSize="@dimen/cm_dimen_universal_title_large"
         app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_management_button_card_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mm_views_adapter_management_button_image_view"
-        android:textSize="@dimen/cm_dimen_universal_title_large"
-        android:textColor="@color/cm_color_universal_foreground"
-        tools:text="皮皮虾"/>
+        tools:text="皮皮虾" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

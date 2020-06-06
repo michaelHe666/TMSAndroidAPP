@@ -2,10 +2,19 @@
 <resources>
     <!--universal strings-->
     <string name="mm_string_universal_order">采购入库</string>
+    <string name="mm_string_universal_order_search">查看采购入库记录</string>
+    <string name="mm_string_universal_order_apply">申请采购入库</string>
+    <string name="mm_string_universal_order_trail_first">采购入库初审</string>
+    <string name="mm_string_universal_order_trail_last">采购入库终审</string>
     <string name="mm_string_universal_entry">入库</string>
     <string name="mm_string_universal_delivery">出库</string>
     <string name="mm_string_universal_repair">维修</string>
     <string name="mm_string_universal_scrap">报废</string>
+    <string name="mm_string_universal_scrap_search">查看报废记录</string>
+    <string name="mm_string_universal_scrap_apply">申请报废</string>
+    <string name="mm_string_universal_scrap_trail_first">报废初审</string>
+    <string name="mm_string_universal_scrap_trail_last">报废终审</string>
+    <string name="mm_string_universal_notification">系统通知</string>
 
     <!--strings for activity_home-->
     <string name="mm_string_activity_home_front">首页</string>

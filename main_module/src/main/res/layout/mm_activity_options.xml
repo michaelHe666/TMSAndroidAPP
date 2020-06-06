@@ -2,25 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyTopBar
-        android:id="@+id/mm_activity_delivery_options_my_top_bar"
+        android:id="@+id/mm_activity_options_my_top_bar"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:cm_myTopBarTitle="@string/mm_string_universal_delivery"
         app:cm_myTopBarLeftIcon="@drawable/cm_icon_universal_back"
+        app:cm_myTopBarTitle="@string/mm_string_universal_delivery"
         app:layout_constraintDimensionRatio="8:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/mm_activity_delivery_options_my_list_view"
+        android:id="@+id/mm_activity_options_my_list_view"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:divider="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mm_activity_delivery_options_my_top_bar" />
+        app:layout_constraintTop_toBottomOf="@id/mm_activity_options_my_top_bar"
+        tools:listitem="@layout/mm_views_adapter_option_button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

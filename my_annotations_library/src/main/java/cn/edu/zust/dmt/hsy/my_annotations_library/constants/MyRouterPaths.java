@@ -13,8 +13,9 @@ public enum MyRouterPaths {
     LOGIN_PATH,
     REGISTER_PATH,
     RESET_PATH,
-    DELIVERY_OPTIONS_ACTIVITY,
 
     //router path for mainModule
     HOME_PATH,
+    OPTIONS_PATH,
+    CHAT_PATH,
 }

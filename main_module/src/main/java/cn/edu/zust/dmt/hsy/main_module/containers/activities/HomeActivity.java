@@ -66,7 +66,7 @@ public final class HomeActivity extends MyActivity<NullViewModelListener, NullVi
         mTopBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callMyRouter(MyRouterPaths.DELIVERY_OPTIONS_ACTIVITY, null);
+                callMyRouter(MyRouterPaths.OPTIONS_PATH, null);
             }
         });
         final List<BaseFragment<?, ?>> fragmentList = new ArrayList<>();

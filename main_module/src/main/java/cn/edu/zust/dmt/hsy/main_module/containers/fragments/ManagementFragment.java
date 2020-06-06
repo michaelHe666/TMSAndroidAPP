@@ -54,19 +54,19 @@ public final class ManagementFragment extends BaseFragment<NullViewModelListener
         final List<ManagementButtonAdapter.ManagementButtonAttributes> attributesList = new ArrayList<>();
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
                 R.color.mm_color_universal_order, R.drawable.mm_icon_universal_order,
-                R.string.mm_string_universal_order, 80));
+                R.string.mm_string_universal_order));
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
                 R.color.mm_color_universal_entry, R.drawable.mm_icon_universal_entry,
-                R.string.mm_string_universal_entry, 80));
+                R.string.mm_string_universal_entry));
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
                 R.color.mm_color_universal_delivery, R.drawable.mm_icon_universal_delivery,
-                R.string.mm_string_universal_delivery, 80));
+                R.string.mm_string_universal_delivery));
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
                 R.color.mm_color_universal_repair, R.drawable.mm_icon_universal_repair,
-                R.string.mm_string_universal_repair, 80));
+                R.string.mm_string_universal_repair));
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
                 R.color.mm_color_universal_scrap, R.drawable.mm_icon_universal_scrap,
-                R.string.mm_string_universal_scrap, 80));
+                R.string.mm_string_universal_scrap));
 
 
         mManagementGridView.setAdapter(new ManagementButtonAdapter(attributesList,

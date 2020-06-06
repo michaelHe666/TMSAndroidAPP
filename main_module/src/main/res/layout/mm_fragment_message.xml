@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/cm_color_universal_background">
+    android:background="@color/cm_color_universal_background"
+    android:overScrollMode="ifContentScrolls">
 
     <View
         android:id="@+id/mm_fragment_message_search_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/cm_color_universal_background"
         app:layout_constraintDimensionRatio="8:1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mm_fragment_message_container_recycler_view"
+        android:id="@+id/mm_fragment_message_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:overScrollMode="never"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mm_fragment_message_search_view" />
+        app:layout_constraintTop_toBottomOf="@id/mm_fragment_message_search_view"
+        tools:listitem="@layout/mm_views_adapter_conversation_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

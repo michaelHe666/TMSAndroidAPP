@@ -4,10 +4,13 @@
     <application>
         <activity
             android:name="cn.edu.zust.dmt.hsy.main_module.containers.activities.HomeActivity"
-            android:launchMode="singleInstance" />
+            android:launchMode="standard" />
         <activity
-            android:name=".containers.activities.DeliveryOptionsActivity"
-            android:launchMode="singleTop" />
+            android:name=".containers.activities.OptionsActivity"
+            android:launchMode="standard" />
+        <activity
+            android:name=".containers.activities.ChatActivity"
+            android:launchMode="standard" />
 
     </application>
 </manifest>

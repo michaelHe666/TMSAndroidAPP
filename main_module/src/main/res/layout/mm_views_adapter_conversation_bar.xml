@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mm_views_adapter_conversation_bar_icon_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mm_views_adapter_conversation_bar_title_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mm_views_adapter_conversation_bar_hint_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <View
+        android:id="@+id/mm_views_adapter_conversation_bar_background_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/cm_color_universal_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="5:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mm_views_adapter_conversation_bar_image_view"
+        style="@style/cm_style_universal_image_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_conversation_bar_background_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_conversation_bar_icon_guideline"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_conversation_bar_background_view"
+        tools:src="@drawable/mm_icon_fragment_mine_contacts" />
+
+    <TextView
+        android:id="@+id/mm_views_adapter_conversation_bar_title_text_view"
+        style="@style/cm_style_universal_title_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_conversation_bar_background_view"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_conversation_bar_title_guideline"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_conversation_bar_background_view"
+        tools:text="@string/mm_string_universal_notification" />
+
+    <TextView
+        android:id="@+id/mm_views_adapter_conversation_bar_tag_text_view"
+        style="@style/cm_style_universal_title_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/holo_orange_dark"
+        android:padding="2dp"
+        android:textColor="@color/cm_color_universal_foreground"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_conversation_bar_title_text_view"
+        app:layout_constraintLeft_toRightOf="@id/mm_views_adapter_conversation_bar_title_text_view"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_conversation_bar_title_text_view"
+        tools:text="@string/mm_string_universal_delivery" />
+
+    <TextView
+        android:id="@+id/mm_views_adapter_conversation_bar_hint_text_view"
+        style="@style/cm_style_universal_title_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:padding="2dp"
+        android:textColor="@color/cm_color_universal_foreground"
+        app:layout_constraintBottom_toBottomOf="@id/mm_views_adapter_conversation_bar_background_view"
+        app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_conversation_bar_hint_guideline"
+        app:layout_constraintTop_toTopOf="@id/mm_views_adapter_conversation_bar_background_view"
+        tools:text="@string/mm_string_universal_delivery" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

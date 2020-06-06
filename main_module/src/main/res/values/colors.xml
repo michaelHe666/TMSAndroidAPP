@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--universal colors-->
-    <color name="mm_color_universal_order">#F2E4C87F</color>
+    <color name="mm_color_universal_order">#E4C87F</color>
     <color name="mm_color_universal_entry">#C5D16B</color>
     <color name="mm_color_universal_delivery">#5CC28F</color>
     <color name="mm_color_universal_repair">#5C60C2</color>
     <color name="mm_color_universal_scrap">#9F9F9F</color>
+
+    <!--color for fragment_message-->
+    <color name="mm_color_fragment_message_notification">#FF9800</color>
 
     <!--color for fragment_mine-->
     <color name="mm_color_fragment_mine_ui">#E7B121</color>

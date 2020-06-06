@@ -1,9 +1,14 @@
 package cn.edu.zust.dmt.hsy.main_module.containers.fragments;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.edu.zust.dmt.hsy.main_module.R;
+import cn.edu.zust.dmt.hsy.main_module.views.adapters.ConversationBarAdapter;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.fragments.BaseFragment;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.NullViewModelListener;
 import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.NullViewModel;
@@ -39,11 +44,18 @@ public final class MessageFragment extends BaseFragment<NullViewModelListener, N
 
     @Override
     protected void findViews() {
-        mRecyclerView = findViewById(R.id.mm_fragment_message_container_recycler_view);
+        mRecyclerView = findViewById(R.id.mm_fragment_message_recycler_view);
     }
 
     @Override
     protected void loadActorsToViews() {
-
+        List<ConversationBarAdapter.MyConversationInfo> infoList = new ArrayList<>();
+        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
+        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
+        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
+        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
+        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView.setAdapter(new ConversationBarAdapter(infoList));
     }
 }

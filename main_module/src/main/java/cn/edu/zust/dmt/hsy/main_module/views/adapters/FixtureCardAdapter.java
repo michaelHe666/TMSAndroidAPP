@@ -59,10 +59,10 @@ public final class FixtureCardAdapter extends RecyclerView.Adapter<FixtureCardAd
         public FixtureCardViewHolder(@NonNull final View itemView) {
             super(itemView);
             mFixtureNameTextView = itemView.findViewById(R.id.mm_views_adapter_fixture_card_name_text_view);
-            mDeadlineTextView = itemView.findViewById(
-                    R.id.mm_views_adapter_fixture_card_deadline_content_text_view);
-            mLocationSignalView = itemView.findViewById(
-                    R.id.mm_views_adapter_fixture_card_location_my_signal_view);
+            mDeadlineTextView = itemView
+                    .findViewById(R.id.mm_views_adapter_fixture_card_deadline_content_text_view);
+            mLocationSignalView = itemView
+                    .findViewById(R.id.mm_views_adapter_fixture_card_location_my_signal_view);
             mRiskSignalView = itemView.findViewById(R.id.mm_views_adapter_fixture_card_risk_my_signal_view);
         }
     }
