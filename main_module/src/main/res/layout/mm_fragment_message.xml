@@ -7,7 +7,7 @@
     android:background="@color/cm_color_universal_background"
     android:overScrollMode="ifContentScrolls">
 
-    <View
+    <SearchView
         android:id="@+id/mm_fragment_message_search_view"
         android:layout_width="0dp"
         android:layout_height="0dp"

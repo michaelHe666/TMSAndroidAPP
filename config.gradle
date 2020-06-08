@@ -3,18 +3,21 @@ ext {
     isBuildingApp = true
     isBuildingEntranceModule = false
     isBuildingMainModule = false
+    isBuildingChatModule = false
 
     tmsResourcePrefixs = [
             app           : "",
             entranceModule: "em_",
             mainModule    : "mm_",
             commonModule  : "cm_",
+            chatModule    : 'cm1_'
     ]
 
     tmsIdsConfigs = [
             app           : "cn.edu.zust.dmt.hsy.tms",
             entranceModule: "cn.edu.zust.dmt.hsy.tms.em",
             mainModule    : "cn.edu.zust.dmt.hsy.tms.main",
+            chatModule    : "cn.edu.zust.dmt.hsy.tms.chat"
     ]
 
     tmsAndroidConfigs = [

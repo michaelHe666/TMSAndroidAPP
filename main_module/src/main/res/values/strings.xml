@@ -29,7 +29,7 @@
     <string name="mm_string_fragment_mine_update">检查更新</string>
     <string name="mm_string_fragment_mine_contacts">联系我们</string>
 
-    <!--string for views_adapter_my_fixture_card-->
+    <!--string for views_adapter_fixture_card-->
     <string name="mm_string_views_adapter_fixture_card_deadline">截止时间</string>
     <string name="mm_string_views_adapter_fixture_card_location">定位</string>
     <string name="mm_string_views_adapter_fixture_card_risk">故障风险</string>

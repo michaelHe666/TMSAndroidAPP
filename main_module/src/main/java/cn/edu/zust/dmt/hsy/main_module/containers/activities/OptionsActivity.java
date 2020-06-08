@@ -57,16 +57,16 @@ public final class OptionsActivity extends MyActivity<NullViewModelListener, Nul
 
         final List<OptionButtonAdapter.OptionButtonAttributes> attributesList = new ArrayList<>();
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
-                R.color.mm_color_universal_order, R.drawable.mm_icon_universal_order,
+                R.color.mm_color_fragment_management_order, R.drawable.mm_icon_universal_order,
                 R.string.mm_string_universal_order_search));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
-                R.color.mm_color_universal_entry, R.drawable.mm_icon_universal_entry,
+                R.color.mm_color_fragment_management_entry, R.drawable.mm_icon_universal_entry,
                 R.string.mm_string_universal_order_apply));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
-                R.color.mm_color_universal_delivery, R.drawable.mm_icon_universal_delivery,
+                R.color.mm_color_fragment_management_delivery, R.drawable.mm_icon_universal_delivery,
                 R.string.mm_string_universal_order_trail_first));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
-                R.color.mm_color_universal_repair, R.drawable.mm_icon_universal_repair,
+                R.color.mm_color_fragment_management_repair, R.drawable.mm_icon_universal_repair,
                 R.string.mm_string_universal_order_trail_last));
 
         mOptionsListView.setAdapter(new OptionButtonAdapter(attributesList, this));

@@ -48,7 +48,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintLeft_toLeftOf="@id/mm_views_adapter_conversation_bar_icon_guideline"
         app:layout_constraintTop_toTopOf="@id/mm_views_adapter_conversation_bar_background_view"
-        tools:src="@drawable/mm_icon_fragment_mine_contacts" />
+        tools:src="@drawable/mm_icon_activity_home_mine" />
 
     <TextView
         android:id="@+id/mm_views_adapter_conversation_bar_title_text_view"

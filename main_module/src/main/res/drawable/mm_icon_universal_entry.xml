@@ -31,7 +31,7 @@
             <size
                 android:width="20dp"
                 android:height="6dp" />
-            <solid android:color="@color/mm_color_universal_entry" />
+            <solid android:color="@color/mm_color_fragment_management_entry" />
         </shape>
     </item>
     <item
@@ -57,7 +57,7 @@
             <size
                 android:width="40dp"
                 android:height="20dp" />
-            <solid android:color="@color/mm_color_universal_entry" />
+            <solid android:color="@color/mm_color_fragment_management_entry" />
         </shape>
     </item>
     <item

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyTopBar
+        android:id="@+id/cm1_activity_chat_my_top_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cm_myTopBarLeftIcon="@drawable/cm_icon_universal_back"
+        app:cm_myTopBarRightIcon="@drawable/cm_icon_universal_settings"
+        app:layout_constraintDimensionRatio="8:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cm1_activity_chat_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="ifContentScrolls"
+        app:layout_constraintBottom_toTopOf="@id/cm1_activity_chat_bottom_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cm1_activity_chat_my_top_bar"
+        tools:listitem="@layout/cm1_views_adapter_chat_bubble_me" />
+
+    <View
+        android:id="@+id/cm1_activity_chat_bottom_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/cm_color_universal_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="8:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

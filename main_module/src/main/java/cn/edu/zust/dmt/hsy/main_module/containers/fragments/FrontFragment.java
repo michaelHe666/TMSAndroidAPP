@@ -46,7 +46,7 @@ public final class FrontFragment extends BaseFragment<NullViewModelListener, Nul
 
     @Override
     protected void findViews() {
-        mRecyclerView = findViewById(R.id.mm_fragment_front_container_recycler_view);
+        mRecyclerView = findViewById(R.id.mm_fragment_front_recycler_view);
     }
 
     @Override

@@ -50,7 +50,7 @@
                 <corners
                     android:bottomLeftRadius="4dp"
                     android:bottomRightRadius="4dp" />
-                <solid android:color="@color/mm_color_universal_repair" />
+                <solid android:color="@color/mm_color_fragment_management_repair" />
             </shape>
         </rotate>
     </item>
@@ -64,7 +64,7 @@
                 <size
                     android:width="12dp"
                     android:height="30dp" />
-                <solid android:color="@color/mm_color_universal_repair" />
+                <solid android:color="@color/mm_color_fragment_management_repair" />
             </shape>
         </rotate>
     </item>
@@ -98,7 +98,7 @@
                 <corners
                     android:bottomLeftRadius="5dp"
                     android:bottomRightRadius="5dp" />
-                <solid android:color="@color/mm_color_universal_repair" />
+                <solid android:color="@color/mm_color_fragment_management_repair" />
             </shape>
         </rotate>
     </item>

@@ -8,9 +8,6 @@
         <activity
             android:name=".containers.activities.OptionsActivity"
             android:launchMode="standard" />
-        <activity
-            android:name=".containers.activities.ChatActivity"
-            android:launchMode="standard" />
 
     </application>
 </manifest>

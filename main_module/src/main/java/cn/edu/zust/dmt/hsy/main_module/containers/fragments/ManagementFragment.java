@@ -50,24 +50,22 @@ public final class ManagementFragment extends BaseFragment<NullViewModelListener
 
     @Override
     protected void loadActorsToViews() {
-
         final List<ManagementButtonAdapter.ManagementButtonAttributes> attributesList = new ArrayList<>();
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
-                R.color.mm_color_universal_order, R.drawable.mm_icon_universal_order,
+                R.color.mm_color_fragment_management_order, R.drawable.mm_icon_universal_order,
                 R.string.mm_string_universal_order));
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
-                R.color.mm_color_universal_entry, R.drawable.mm_icon_universal_entry,
+                R.color.mm_color_fragment_management_entry, R.drawable.mm_icon_universal_entry,
                 R.string.mm_string_universal_entry));
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
-                R.color.mm_color_universal_delivery, R.drawable.mm_icon_universal_delivery,
+                R.color.mm_color_fragment_management_delivery, R.drawable.mm_icon_universal_delivery,
                 R.string.mm_string_universal_delivery));
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
-                R.color.mm_color_universal_repair, R.drawable.mm_icon_universal_repair,
+                R.color.mm_color_fragment_management_repair, R.drawable.mm_icon_universal_repair,
                 R.string.mm_string_universal_repair));
         attributesList.add(new ManagementButtonAdapter.ManagementButtonAttributes(
-                R.color.mm_color_universal_scrap, R.drawable.mm_icon_universal_scrap,
+                R.color.mm_color_fragment_management_scrap, R.drawable.mm_icon_universal_scrap,
                 R.string.mm_string_universal_scrap));
-
 
         mManagementGridView.setAdapter(new ManagementButtonAdapter(attributesList,
                 Objects.requireNonNull(getContext())));

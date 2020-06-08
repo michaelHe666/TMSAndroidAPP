@@ -1,3 +1,4 @@
+include ':chat_module'
 rootProject.name='TMS'
 include ':app'
 include ':my_base_library'
