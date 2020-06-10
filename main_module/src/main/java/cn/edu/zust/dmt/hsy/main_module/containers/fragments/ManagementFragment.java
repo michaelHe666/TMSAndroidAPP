@@ -11,8 +11,8 @@ import java.util.Objects;
 import cn.edu.zust.dmt.hsy.main_module.R;
 import cn.edu.zust.dmt.hsy.main_module.views.adapters.ManagementButtonAdapter;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.fragments.BaseFragment;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.NullViewModelListener;
-import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.NullViewModel;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.NullPresenterListener;
+import cn.edu.zust.dmt.hsy.my_base_library.presenters.NullPresenter;
 
 /**
  * @author MR.M
@@ -21,7 +21,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.NullViewModel;
  * @description $
  * @since 6/2/2020 15:48
  **/
-public final class ManagementFragment extends BaseFragment<NullViewModelListener, NullViewModel> {
+public final class ManagementFragment extends BaseFragment<NullPresenterListener, NullPresenter> {
 
     private GridView mManagementGridView;
 
@@ -32,14 +32,14 @@ public final class ManagementFragment extends BaseFragment<NullViewModelListener
 
     @NonNull
     @Override
-    protected Class<NullViewModel> getViewModelClass() {
-        return NullViewModel.class;
+    protected Class<NullPresenter> getViewModelClass() {
+        return NullPresenter.class;
     }
 
     @NonNull
     @Override
-    protected NullViewModelListener getViewModelListener() {
-        return new NullViewModelListener() {
+    protected NullPresenterListener getViewModelListener() {
+        return new NullPresenterListener() {
         };
     }
 

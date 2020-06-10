@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.entrance_module.interfaces.listeners;
+package cn.edu.zust.dmt.hsy.entrance_module.interfaces.presenter_listeners;
 
 import android.view.View;
 import android.widget.TextView;
@@ -7,8 +7,8 @@ import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar;
 import cn.edu.zust.dmt.hsy.entrance_module.datas.remote.response.LoginResponseData;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelListener;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
 
 /**
  * @author MR.M
@@ -17,7 +17,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback
  * @description $
  * @since 5/22/2020 20:38
  **/
-public interface LoginViewModelListener extends BaseViewModelListener {
+public interface LoginPresenterListener extends BasePresenterListener {
     /**
      * @return {@link TextView} contains voucher string
      */

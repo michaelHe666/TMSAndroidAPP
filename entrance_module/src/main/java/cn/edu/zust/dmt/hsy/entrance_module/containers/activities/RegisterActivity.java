@@ -6,8 +6,8 @@ import cn.edu.zust.dmt.hsy.common_module.containers.activities.MyActivity;
 import cn.edu.zust.dmt.hsy.entrance_module.R;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.NullViewModelListener;
-import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.NullViewModel;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.NullPresenterListener;
+import cn.edu.zust.dmt.hsy.my_base_library.presenters.NullPresenter;
 
 /**
  * @author MR.M
@@ -17,7 +17,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.NullViewModel;
  * @since 5/22/2020 19:03
  **/
 @MyRouter(path = MyRouterPaths.REGISTER_PATH)
-public final class RegisterActivity extends MyActivity<NullViewModelListener, NullViewModel> {
+public final class RegisterActivity extends MyActivity<NullPresenterListener, NullPresenter> {
     @Override
     protected int getLayoutRId() {
         return R.layout.em_activity_register;
@@ -25,14 +25,14 @@ public final class RegisterActivity extends MyActivity<NullViewModelListener, Nu
 
     @NonNull
     @Override
-    protected Class<NullViewModel> getViewModelClass() {
-        return NullViewModel.class;
+    protected Class<NullPresenter> getViewModelClass() {
+        return NullPresenter.class;
     }
 
     @NonNull
     @Override
-    protected NullViewModelListener getViewModelListener() {
-        return new NullViewModelListener() {
+    protected NullPresenterListener getViewModelListener() {
+        return new NullPresenterListener() {
         };
     }
 

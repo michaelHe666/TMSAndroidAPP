@@ -16,9 +16,9 @@ import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyErrorHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyRouterHelper;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelListener;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseExtrasListener;
-import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.BaseViewModel;
+import cn.edu.zust.dmt.hsy.my_base_library.presenters.BasePresenter;
 
 /**
  * @author MR.M
@@ -27,7 +27,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.BaseViewModel;
  * @description $
  * @since 4/1/2020 20:16
  **/
-public abstract class BaseActivity<T extends BaseViewModelListener, K extends BaseViewModel<T>>
+public abstract class BaseActivity<T extends BasePresenterListener, K extends BasePresenter<T>>
         extends AppCompatActivity {
 
     private final ArrayList<BaseExtrasListener> mExtrasParserList = new ArrayList<>();
@@ -140,13 +140,13 @@ public abstract class BaseActivity<T extends BaseViewModelListener, K extends Ba
     protected abstract int getLayoutRId();
 
     /**
-     * @return {@link BaseViewModel} for {@link BaseActivity}
+     * @return {@link BasePresenter} for {@link BaseActivity}
      */
     @NonNull
     protected abstract Class<K> getViewModelClass();
 
     /**
-     * @return {@link BaseViewModelListener} for {@link #getViewModelClass()}
+     * @return {@link BasePresenterListener} for {@link #getViewModelClass()}
      */
     @NonNull
     protected abstract T getViewModelListener();

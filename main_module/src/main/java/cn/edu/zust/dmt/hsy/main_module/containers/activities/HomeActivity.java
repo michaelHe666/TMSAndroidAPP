@@ -20,8 +20,8 @@ import cn.edu.zust.dmt.hsy.main_module.containers.fragments.MineFragment;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.fragments.BaseFragment;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.NullViewModelListener;
-import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.NullViewModel;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.NullPresenterListener;
+import cn.edu.zust.dmt.hsy.my_base_library.presenters.NullPresenter;
 
 /**
  * @author MR.M
@@ -31,7 +31,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.NullViewModel;
  * @since 4/12/2020 9:52
  **/
 @MyRouter(path = MyRouterPaths.HOME_PATH)
-public final class HomeActivity extends MyActivity<NullViewModelListener, NullViewModel> {
+public final class HomeActivity extends MyActivity<NullPresenterListener, NullPresenter> {
 
     private cm_MyTopBar mTopBar;
     private ViewPager2 mViewPager2;
@@ -43,14 +43,14 @@ public final class HomeActivity extends MyActivity<NullViewModelListener, NullVi
 
     @NonNull
     @Override
-    protected Class<NullViewModel> getViewModelClass() {
-        return NullViewModel.class;
+    protected Class<NullPresenter> getViewModelClass() {
+        return NullPresenter.class;
     }
 
     @NonNull
     @Override
-    protected NullViewModelListener getViewModelListener() {
-        return new NullViewModelListener() {
+    protected NullPresenterListener getViewModelListener() {
+        return new NullPresenterListener() {
         };
     }
 

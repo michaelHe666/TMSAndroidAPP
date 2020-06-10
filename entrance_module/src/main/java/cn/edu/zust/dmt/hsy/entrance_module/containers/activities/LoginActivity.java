@@ -10,8 +10,8 @@ import cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyFormBar;
 import cn.edu.zust.dmt.hsy.common_module.views.combined.cm_MyTopBar;
 import cn.edu.zust.dmt.hsy.entrance_module.R;
 import cn.edu.zust.dmt.hsy.entrance_module.datas.remote.response.LoginResponseData;
-import cn.edu.zust.dmt.hsy.entrance_module.interfaces.listeners.LoginViewModelListener;
-import cn.edu.zust.dmt.hsy.entrance_module.viewmodels.LoginViewModel;
+import cn.edu.zust.dmt.hsy.entrance_module.interfaces.presenter_listeners.LoginPresenterListener;
+import cn.edu.zust.dmt.hsy.entrance_module.presenters.LoginPresenter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
@@ -25,7 +25,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback
  * @since 5/22/2020 15:53
  **/
 @MyRouter(path = MyRouterPaths.LOGIN_PATH)
-public final class LoginActivity extends MyActivity<LoginViewModelListener, LoginViewModel> {
+public final class LoginActivity extends MyActivity<LoginPresenterListener, LoginPresenter> {
 
     private final LoginActivity THIS = this;
 
@@ -41,14 +41,14 @@ public final class LoginActivity extends MyActivity<LoginViewModelListener, Logi
 
     @NonNull
     @Override
-    protected Class<LoginViewModel> getViewModelClass() {
-        return LoginViewModel.class;
+    protected Class<LoginPresenter> getViewModelClass() {
+        return LoginPresenter.class;
     }
 
     @NonNull
     @Override
-    protected LoginViewModelListener getViewModelListener() {
-        return new LoginViewModelListener() {
+    protected LoginPresenterListener getViewModelListener() {
+        return new LoginPresenterListener() {
             @NonNull
             @Override
             public final cm_MyFormBar getVoucherBar() {

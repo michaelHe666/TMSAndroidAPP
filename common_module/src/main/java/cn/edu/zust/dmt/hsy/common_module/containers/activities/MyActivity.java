@@ -10,8 +10,8 @@ import androidx.annotation.StringRes;
 
 import cn.edu.zust.dmt.hsy.common_module.R;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.activities.BaseActivity;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelListener;
-import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.BaseViewModel;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
+import cn.edu.zust.dmt.hsy.my_base_library.presenters.BasePresenter;
 
 /**
  * @author MR.M
@@ -20,7 +20,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.BaseViewModel;
  * @description $
  * @since 6/1/2020 19:24
  **/
-public abstract class MyActivity<T extends BaseViewModelListener, K extends BaseViewModel<T>>
+public abstract class MyActivity<T extends BasePresenterListener, K extends BasePresenter<T>>
         extends BaseActivity<T, K> {
     /**
      * @param message string for toast message

@@ -17,9 +17,9 @@ import java.util.Objects;
 
 import cn.edu.zust.dmt.hsy.my_base_library.containers.activities.BaseActivity;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyErrorHelper;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelListener;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseExtrasListener;
-import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.BaseViewModel;
+import cn.edu.zust.dmt.hsy.my_base_library.presenters.BasePresenter;
 
 /**
  * @author MR.M
@@ -28,7 +28,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.BaseViewModel;
  * @description $
  * @since 4/6/2020 13:53
  **/
-public abstract class BaseFragment<T extends BaseViewModelListener, K extends BaseViewModel<T>>
+public abstract class BaseFragment<T extends BasePresenterListener, K extends BasePresenter<T>>
         extends Fragment {
 
     private final K mViewModel;
@@ -115,13 +115,13 @@ public abstract class BaseFragment<T extends BaseViewModelListener, K extends Ba
     protected abstract int getLayoutRId();
 
     /**
-     * @return {@link BaseViewModel} for {@link BaseActivity}
+     * @return {@link BasePresenter} for {@link BaseActivity}
      */
     @NonNull
     protected abstract Class<K> getViewModelClass();
 
     /**
-     * @return {@link BaseViewModelListener} for {@link #getViewModelClass()}
+     * @return {@link BasePresenterListener} for {@link #getViewModelClass()}
      */
     @NonNull
     protected abstract T getViewModelListener();

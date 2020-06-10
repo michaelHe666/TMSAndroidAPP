@@ -14,11 +14,11 @@ import cn.edu.zust.dmt.hsy.main_module.R;
 import cn.edu.zust.dmt.hsy.main_module.views.adapters.OptionButtonAdapter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.NullViewModelListener;
-import cn.edu.zust.dmt.hsy.my_base_library.viewmodels.NullViewModel;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.NullPresenterListener;
+import cn.edu.zust.dmt.hsy.my_base_library.presenters.NullPresenter;
 
 @MyRouter(path = MyRouterPaths.OPTIONS_PATH)
-public final class OptionsActivity extends MyActivity<NullViewModelListener, NullViewModel> {
+public final class OptionsActivity extends MyActivity<NullPresenterListener, NullPresenter> {
     private cm_MyTopBar mTopBar;
     private ListView mOptionsListView;
 
@@ -29,14 +29,14 @@ public final class OptionsActivity extends MyActivity<NullViewModelListener, Nul
 
     @NonNull
     @Override
-    protected Class<NullViewModel> getViewModelClass() {
-        return NullViewModel.class;
+    protected Class<NullPresenter> getViewModelClass() {
+        return NullPresenter.class;
     }
 
     @NonNull
     @Override
-    protected NullViewModelListener getViewModelListener() {
-        return new NullViewModelListener() {
+    protected NullPresenterListener getViewModelListener() {
+        return new NullPresenterListener() {
         };
     }
 

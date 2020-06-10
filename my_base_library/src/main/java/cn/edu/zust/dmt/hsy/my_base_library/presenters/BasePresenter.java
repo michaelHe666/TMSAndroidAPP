@@ -1,10 +1,10 @@
-package cn.edu.zust.dmt.hsy.my_base_library.viewmodels;
+package cn.edu.zust.dmt.hsy.my_base_library.presenters;
 
 import androidx.annotation.NonNull;
 
 import java.lang.ref.WeakReference;
 
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelListener;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
 
 /**
  * @author MR.M
@@ -13,14 +13,14 @@ import cn.edu.zust.dmt.hsy.my_base_library.interfaces.listeners.BaseViewModelLis
  * @description $
  * @since 5/24/2020 14:09
  **/
-public abstract class BaseViewModel<T extends BaseViewModelListener> {
+public abstract class BasePresenter<T extends BasePresenterListener> {
 
     private WeakReference<T> mViewModelListenerHandler = null;
 
     /**
-     * @description {@link BaseViewModel} should only be initialized in child class
+     * @description {@link BasePresenter} should only be initialized in child class
      */
-    protected BaseViewModel() {
+    protected BasePresenter() {
     }
 
     /**
@@ -34,7 +34,7 @@ public abstract class BaseViewModel<T extends BaseViewModelListener> {
     }
 
     /**
-     * @return get {@link BaseViewModelListener} safely from {@link #mViewModelListenerHandler}
+     * @return get {@link BasePresenterListener} safely from {@link #mViewModelListenerHandler}
      */
     @NonNull
     protected final T getViewModelListener() {
@@ -55,7 +55,7 @@ public abstract class BaseViewModel<T extends BaseViewModelListener> {
     }
 
     /**
-     * @description bind {@link BaseViewModel} with current listener
+     * @description bind {@link BasePresenter} with current listener
      */
     protected abstract void loadViewModelToListener();
 }
