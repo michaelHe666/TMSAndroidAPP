@@ -1,5 +1,7 @@
 package cn.edu.zust.dmt.hsy.my_base_library.helpers;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -71,7 +73,7 @@ public final class MyNetworkHelper {
     /**
      * @description handler for {@link BaseNetworkCallback}
      */
-    private static final class MyNetworkHandler<T extends BaseResponseData> {
+    private static final class MyNetworkHandler<T extends BaseResponseData> extends Handler {
         private final WeakReference<BaseNetworkCallback<T>> mCallbackWeakReference;
 
         private MyNetworkHandler(@NonNull final BaseNetworkCallback<T> callbackWeakReference) {
@@ -111,6 +113,7 @@ public final class MyNetworkHelper {
 
         @Override
         public void run() {
+            Looper.prepare();
             final MyNetworkHandler<K> handler = mHandlerWeakReference.get();
             if (handler != null) {
                 final Gson jsonUtils = new Gson();
@@ -122,7 +125,7 @@ public final class MyNetworkHelper {
                 }
                 Log.d("ppx", "end net");
                 final String result = MyHttpsUtils.getInstance()
-                        .postReturnString(mPath, jsonUtils.toJson(mBaseNetworkRequest));
+                        .doHttpsPost(mPath, jsonUtils.toJson(mBaseNetworkRequest));
                 final BaseNetworkResponse<K> baseNetworkResponse = jsonUtils.fromJson(result, mResponseType);
                 if (baseNetworkResponse != null) {
                     handler.handleResponse(baseNetworkResponse);
@@ -132,6 +135,7 @@ public final class MyNetworkHelper {
             } else {
                 MyErrorHelper.showMyNullPointerException("MyNetworkPostCallbackHandler no longer exist!");
             }
+            Looper.loop();
         }
     }
 

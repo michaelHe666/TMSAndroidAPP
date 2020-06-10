@@ -11,11 +11,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.security.GeneralSecurityException;
+import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
+import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
@@ -64,7 +67,7 @@ public final class MyHttpsUtils {
      * @return null for error, {@link String} for respond body
      */
     @Nullable
-    public String postReturnString(@NonNull final String url, @NonNull final String request) {
+    public String doHttpsPost(@NonNull final String url, @NonNull final String request) {
         HttpsURLConnection connection = null;
 
         try {
@@ -75,7 +78,6 @@ public final class MyHttpsUtils {
 
         if (connection != null) {
             try {
-                connection.setSSLSocketFactory(getMySSLSocketFactory());
                 connection.setRequestMethod("POST");
                 connection.setDoOutput(true);
                 connection.setDoInput(true);
@@ -85,11 +87,6 @@ public final class MyHttpsUtils {
                 OutputStream outputStream = connection.getOutputStream();
                 outputStream.write(request.getBytes());
                 outputStream.close();
-
-//                DataOutputStream printWriter = new DataOutputStream(connection.getOutputStream());
-//                printWriter.write(request.getBytes());
-//                printWriter.flush();
-//                printWriter.close();
 
                 int respondCode = connection.getResponseCode();
                 Log.d("respondCode", "respondCode=" + respondCode);
@@ -112,7 +109,7 @@ public final class MyHttpsUtils {
                     String message = new String(temp.toByteArray());
                     Log.d("Respond", message);
 
-//                    connection.disconnect();
+                    connection.disconnect();
 
                     Log.d("postSuccess", message);
                     return message;
@@ -144,6 +141,13 @@ public final class MyHttpsUtils {
         connection.setInstanceFollowRedirects(true);
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setRequestProperty("Charset", "UTF-8");
+        connection.setSSLSocketFactory(getMySSLSocketFactory());
+        connection.setHostnameVerifier(new HostnameVerifier() {
+            @Override
+            public boolean verify(String hostname, SSLSession session) {
+                return true;
+            }
+        });
         return connection;
     }
 
@@ -154,7 +158,7 @@ public final class MyHttpsUtils {
      */
     private SSLSocketFactory getMySSLSocketFactory() {
         try {
-            SSLContext sslContext = SSLContext.getInstance("TLS");
+            SSLContext sslContext = SSLContext.getInstance("SSL");
             sslContext.init(null, new TrustManager[]{
                     new X509TrustManager() {
                         @Override
@@ -174,7 +178,7 @@ public final class MyHttpsUtils {
                             return new X509Certificate[0];
                         }
                     }
-            }, null);
+            }, new SecureRandom());
             return sslContext.getSocketFactory();
         } catch (GeneralSecurityException e) {
             e.printStackTrace();

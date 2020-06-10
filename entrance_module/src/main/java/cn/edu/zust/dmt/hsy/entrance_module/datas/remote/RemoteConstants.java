@@ -15,5 +15,5 @@ public final class RemoteConstants {
         throw new AssertionError();
     }
 
-    public static final String LOGIN_PATH = "/api/login";
+    public static final String LOGIN_PATH = "/api/login/";
 }
