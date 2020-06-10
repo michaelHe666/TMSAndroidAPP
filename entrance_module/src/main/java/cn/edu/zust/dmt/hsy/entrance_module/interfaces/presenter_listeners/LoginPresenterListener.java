@@ -45,15 +45,15 @@ public interface LoginPresenterListener extends BasePresenterListener {
     /**
      * @description contains method for illegal voucher input
      */
-    void sendVoucherInputError();
+    void getVoucherInputError();
 
     /**
      * @description contains method for illegal password input
      */
-    void sendPasswordInputError();
+    void getPasswordInputError();
 
     /**
      * @description contains method for illegal login request
      */
-    void sendLoginError();
+    void getLoginError();
 }

@@ -5,8 +5,8 @@ import androidx.annotation.NonNull;
 import cn.edu.zust.dmt.hsy.entrance_module.datas.remote.RemoteConstants;
 import cn.edu.zust.dmt.hsy.entrance_module.datas.remote.request.LoginRequestData;
 import cn.edu.zust.dmt.hsy.entrance_module.datas.remote.response.LoginResponseData;
-import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request.BaseNetworkRequest;
-import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyNetworkHelper;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.network.BaseNetworkRequest;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.network.MyNetworkHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
 
 /**

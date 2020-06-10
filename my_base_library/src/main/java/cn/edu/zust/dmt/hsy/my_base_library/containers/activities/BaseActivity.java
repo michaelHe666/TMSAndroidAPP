@@ -10,14 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyErrorHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyRouterHelper;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseExtrasListener;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
 import cn.edu.zust.dmt.hsy.my_base_library.presenters.BasePresenter;
 
 /**
@@ -32,22 +34,29 @@ public abstract class BaseActivity<T extends BasePresenterListener, K extends Ba
 
     private final ArrayList<BaseExtrasListener> mExtrasParserList = new ArrayList<>();
 
-    private final K mViewModel;
+    private final K mPresenter;
 
     /**
-     * @description check whether initialize {@link #mViewModel} or not
+     * @description initialize {@link #mPresenter} by {@link Class<K>}
      */
     protected BaseActivity() {
         try {
-            mViewModel = getViewModelClass().newInstance();
+            final Type genericSuperclass = this.getClass().getGenericSuperclass();
+            if (genericSuperclass instanceof ParameterizedType) {
+                mPresenter = ((Class<K>) ((ParameterizedType) genericSuperclass).getActualTypeArguments()[1])
+                        .newInstance();
+                return;
+            }
         } catch (IllegalAccessException | InstantiationException e) {
-            throw new IllegalArgumentException("Failed on initialize ViewModel!");
+            e.printStackTrace();
         }
+        throw new IllegalArgumentException("Failed on initialize Presenter!");
     }
 
     /**
      * @description inject {@link #getLayoutRId(),#findViews()}
      * inject methods provided by {@link #mExtrasParserList}
+     * inject {@link #mPresenter} with {@link #getPresenterListener()}
      */
     @Override
     protected final void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -56,7 +65,7 @@ public abstract class BaseActivity<T extends BasePresenterListener, K extends Ba
         findViews();
         loadActorsToViews();
         //set listener while views are created
-        mViewModel.setCurrentListener(getViewModelListener());
+        mPresenter.setCurrentListener(getPresenterListener());
         //trigger extras parser while views are created
         final Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -72,7 +81,7 @@ public abstract class BaseActivity<T extends BasePresenterListener, K extends Ba
     @Override
     protected final void onDestroy() {
         super.onDestroy();
-        mViewModel.onViewModelDestroyed();
+        mPresenter.onViewModelDestroyed();
     }
 
     /**
@@ -140,16 +149,10 @@ public abstract class BaseActivity<T extends BasePresenterListener, K extends Ba
     protected abstract int getLayoutRId();
 
     /**
-     * @return {@link BasePresenter} for {@link BaseActivity}
+     * @return {@link BasePresenterListener} for {@link #mPresenter}
      */
     @NonNull
-    protected abstract Class<K> getViewModelClass();
-
-    /**
-     * @return {@link BasePresenterListener} for {@link #getViewModelClass()}
-     */
-    @NonNull
-    protected abstract T getViewModelListener();
+    protected abstract T getPresenterListener();
 
     /**
      * @description find {@link View} from layout which needs add actions on

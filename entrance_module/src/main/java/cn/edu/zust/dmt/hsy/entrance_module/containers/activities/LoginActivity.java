@@ -14,7 +14,7 @@ import cn.edu.zust.dmt.hsy.entrance_module.interfaces.presenter_listeners.LoginP
 import cn.edu.zust.dmt.hsy.entrance_module.presenters.LoginPresenter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
-import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.network.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
 
 /**
@@ -41,13 +41,7 @@ public final class LoginActivity extends MyActivity<LoginPresenterListener, Logi
 
     @NonNull
     @Override
-    protected Class<LoginPresenter> getViewModelClass() {
-        return LoginPresenter.class;
-    }
-
-    @NonNull
-    @Override
-    protected LoginPresenterListener getViewModelListener() {
+    protected LoginPresenterListener getPresenterListener() {
         return new LoginPresenterListener() {
             @NonNull
             @Override
@@ -70,64 +64,40 @@ public final class LoginActivity extends MyActivity<LoginPresenterListener, Logi
             @NonNull
             @Override
             public final BaseNetworkCallback<LoginResponseData> getLoginCallback() {
-//                return new BaseNetworkCallback<LoginResponseData>() {
-//                    @Override
-//                    public void onResult(@NonNull BaseNetworkResponse<LoginResponseData> response) {
-//                        callMyRouter(MyRouterPaths.HOME_PATH, null);
+                return new BaseNetworkCallback<LoginResponseData>() {
+                    @Override
+                    public void onResult(@NonNull BaseNetworkResponse<LoginResponseData> response) {
+                        callMyRouter(MyRouterPaths.HOME_PATH, null);
 //                        showMyToast(response.toString());
-//                    }
-//
-//                    @Override
-//                    public void onError(@NonNull Throwable e) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onComplete() {
-//
-//                    }
-//                };
-                return new MyBaseNetworkCallBack(THIS);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                };
             }
 
             @Override
-            public final void sendVoucherInputError() {
+            public final void getVoucherInputError() {
                 showMyToast(R.string.em_string_universal_voucher_error);
             }
 
             @Override
-            public final void sendPasswordInputError() {
+            public final void getPasswordInputError() {
                 showMyToast(R.string.em_string_universal_password_error);
             }
 
             @Override
-            public final void sendLoginError() {
+            public final void getLoginError() {
                 showMyToast(R.string.em_string_login_error);
             }
         };
-    }
-
-    public static final class MyBaseNetworkCallBack implements BaseNetworkCallback<LoginResponseData> {
-        private final LoginActivity mLoginActivity;
-
-        public MyBaseNetworkCallBack(LoginActivity loginActivity) {
-            mLoginActivity = loginActivity;
-        }
-
-        @Override
-        public void onResult(@NonNull BaseNetworkResponse<LoginResponseData> response) {
-            mLoginActivity.showMyToast(response.toString());
-        }
-
-        @Override
-        public void onError(@NonNull Throwable e) {
-
-        }
-
-        @Override
-        public void onComplete() {
-
-        }
     }
 
     @Override

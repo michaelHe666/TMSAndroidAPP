@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request;
+package cn.edu.zust.dmt.hsy.my_base_library.helpers.network;
 
 import android.os.Build;
 
@@ -9,6 +9,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import cn.edu.zust.dmt.hsy.my_base_library.BuildConfig;
+import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request.BaseRequestData;
 
 /**
  * @author MR.M
@@ -17,6 +18,7 @@ import cn.edu.zust.dmt.hsy.my_base_library.BuildConfig;
  * @description $
  * @since 4/23/2020 16:29
  **/
+//todo:try scan child class of this and delay initialization of base request to common module
 public final class BaseNetworkRequest<T extends BaseRequestData> {
     private final JsonElement args;
     private final JsonElement deviceInfo;

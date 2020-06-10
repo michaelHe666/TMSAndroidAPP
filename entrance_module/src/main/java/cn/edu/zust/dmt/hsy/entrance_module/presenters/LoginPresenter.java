@@ -7,7 +7,7 @@ import android.view.View;
 import cn.edu.zust.dmt.hsy.entrance_module.datas.remote.response.LoginResponseData;
 import cn.edu.zust.dmt.hsy.entrance_module.interfaces.presenter_listeners.LoginPresenterListener;
 import cn.edu.zust.dmt.hsy.entrance_module.repositories.LoginRepository;
-import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.network.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.presenters.BasePresenter;
 
 /**
@@ -55,7 +55,7 @@ public final class LoginPresenter extends BasePresenter<LoginPresenterListener> 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!mLoginRepository.setVoucher(s.toString())) {
-                    loginViewModelListener.sendVoucherInputError();
+                    loginViewModelListener.getVoucherInputError();
                     isInputLegal = false;
                 } else {
                     isInputLegal = true;
@@ -88,7 +88,7 @@ public final class LoginPresenter extends BasePresenter<LoginPresenterListener> 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!mLoginRepository.setPassword(s.toString())) {
-                    loginViewModelListener.sendPasswordInputError();
+                    loginViewModelListener.getPasswordInputError();
                     isInputLegal = false;
                 } else {
                     isInputLegal = true;

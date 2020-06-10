@@ -34,13 +34,7 @@ public final class GateActivity extends MyActivity<NullPresenterListener, NullPr
 
     @NonNull
     @Override
-    protected Class<NullPresenter> getViewModelClass() {
-        return NullPresenter.class;
-    }
-
-    @NonNull
-    @Override
-    protected NullPresenterListener getViewModelListener() {
+    protected NullPresenterListener getPresenterListener() {
         return new NullPresenterListener() {
         };
     }

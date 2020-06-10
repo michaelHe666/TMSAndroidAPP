@@ -2,7 +2,7 @@ package cn.edu.zust.dmt.hsy.my_base_library.interfaces.others;
 
 import androidx.annotation.NonNull;
 
-import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.network.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseResponseData;
 
 /**

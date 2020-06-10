@@ -1,4 +1,4 @@
-package cn.edu.zust.dmt.hsy.my_base_library.helpers;
+package cn.edu.zust.dmt.hsy.my_base_library.helpers.network;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -12,10 +12,10 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request.BaseNetworkRequest;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request.BaseRequestData;
-import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseResponseData;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyErrorHelper;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyThreadHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
 import cn.edu.zust.dmt.hsy.my_base_library.utils.MyHttpsUtils;
 
