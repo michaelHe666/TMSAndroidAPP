@@ -70,22 +70,24 @@ public final class LoginActivity extends MyActivity<LoginViewModelListener, Logi
             @NonNull
             @Override
             public final BaseNetworkCallback<LoginResponseData> getLoginCallback() {
-                return new BaseNetworkCallback<LoginResponseData>() {
-                    @Override
-                    public void onResult(@NonNull BaseNetworkResponse<LoginResponseData> response) {
-                        callMyRouter(MyRouterPaths.HOME_PATH, null);
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                };
+//                return new BaseNetworkCallback<LoginResponseData>() {
+//                    @Override
+//                    public void onResult(@NonNull BaseNetworkResponse<LoginResponseData> response) {
+//                        callMyRouter(MyRouterPaths.HOME_PATH, null);
+//                        showMyToast(response.toString());
+//                    }
+//
+//                    @Override
+//                    public void onError(@NonNull Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//
+//                    }
+//                };
+                return new MyBaseNetworkCallBack(THIS);
             }
 
             @Override
@@ -103,6 +105,29 @@ public final class LoginActivity extends MyActivity<LoginViewModelListener, Logi
                 showMyToast(R.string.em_string_login_error);
             }
         };
+    }
+
+    public static final class MyBaseNetworkCallBack implements BaseNetworkCallback<LoginResponseData> {
+        private final LoginActivity mLoginActivity;
+
+        public MyBaseNetworkCallBack(LoginActivity loginActivity) {
+            mLoginActivity = loginActivity;
+        }
+
+        @Override
+        public void onResult(@NonNull BaseNetworkResponse<LoginResponseData> response) {
+            mLoginActivity.showMyToast(response.toString());
+        }
+
+        @Override
+        public void onError(@NonNull Throwable e) {
+
+        }
+
+        @Override
+        public void onComplete() {
+
+        }
     }
 
     @Override

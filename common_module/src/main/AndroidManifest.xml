@@ -1,10 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.edu.zust.dmt.hsy.common_module">
-    
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:label="@string/cm_string_universal_app_name"
         android:allowBackup="false"
+        android:label="@string/cm_string_universal_app_name"
         android:supportsRtl="false"
-        android:theme="@style/cm_style_app"/>
+        android:theme="@style/cm_style_app" />
 
 </manifest>

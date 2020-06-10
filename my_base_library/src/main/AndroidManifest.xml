@@ -2,6 +2,6 @@
     package="cn.edu.zust.dmt.hsy.my_base_library">
 
     <application
-        android:name="cn.edu.zust.dmt.hsy.my_base_library.MyApplication"/>
+        android:name="cn.edu.zust.dmt.hsy.my_base_library.BaseApplication"/>
 
 </manifest>

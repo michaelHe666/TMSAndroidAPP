@@ -1,5 +1,7 @@
 package cn.edu.zust.dmt.hsy.entrance_module.datas.remote.response;
 
+import androidx.annotation.NonNull;
+
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseResponseData;
 
 /**
@@ -10,19 +12,15 @@ import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseResponseDat
  * @since 4/24/2020 10:51
  **/
 public final class LoginResponseData implements BaseResponseData {
-    private String username;
-    private String permission;
+    //    private String username;
+//    private String permission;
+    private String status;
 
-    public LoginResponseData(String username, String permission) {
-        this.username = username;
-        this.permission = permission;
+    public LoginResponseData(@NonNull final String status) {
+        this.status = status;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPermission() {
-        return permission;
+    public String getStatus() {
+        return status;
     }
 }

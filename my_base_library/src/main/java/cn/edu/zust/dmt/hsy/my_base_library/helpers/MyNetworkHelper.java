@@ -10,12 +10,12 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request.BaseNetworkRequest;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.request.BaseRequestData;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseResponseData;
-import cn.edu.zust.dmt.hsy.my_base_library.utils.MyHttpUtils;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
+import cn.edu.zust.dmt.hsy.my_base_library.utils.MyHttpsUtils;
 
 import static java.lang.Thread.sleep;
 
@@ -57,7 +57,7 @@ public final class MyNetworkHelper {
     public <T extends BaseRequestData, K extends BaseResponseData> void post(
             @NonNull final String path, @NonNull final BaseNetworkRequest<T> baseNetworkRequest
             , @NonNull final BaseNetworkCallback<K> baseNetworkCallback) {
-        final Type type = baseNetworkCallback.getClass().getGenericSuperclass();
+        final Type type = baseNetworkCallback.getClass().getGenericInterfaces()[0];
         if (type instanceof ParameterizedType) {
             final Class clazz = (Class) ((ParameterizedType) type).getActualTypeArguments()[0];
             if (BaseResponseData.class.isAssignableFrom(clazz)) {
@@ -121,7 +121,7 @@ public final class MyNetworkHelper {
                     e.printStackTrace();
                 }
                 Log.d("ppx", "end net");
-                final String result = MyHttpUtils.getInstance()
+                final String result = MyHttpsUtils.getInstance()
                         .postReturnString(mPath, jsonUtils.toJson(mBaseNetworkRequest));
                 final BaseNetworkResponse<K> baseNetworkResponse = jsonUtils.fromJson(result, mResponseType);
                 if (baseNetworkResponse != null) {

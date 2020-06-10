@@ -112,13 +112,13 @@ public final class LoginViewModel extends BaseViewModel<LoginViewModelListener> 
         loginViewModelListener.getLoginClickableView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (!mLoginRepository.login(loginViewModelListener.getLoginCallback())) {
-//                    loginViewModelListener.sendLoginError();
-//                }
+                if (!mLoginRepository.login(loginViewModelListener.getLoginCallback())) {
+                    loginViewModelListener.sendLoginError();
+                }
                 //todo: remove this method after network is done
-                loginViewModelListener.getLoginCallback()
-                        .onResult(new BaseNetworkResponse<>(1, ""
-                                , new LoginResponseData("", "")));
+//                loginViewModelListener.getLoginCallback()
+//                        .onResult(new BaseNetworkResponse<>(1, ""
+//                                , new LoginResponseData("", "")));
             }
         });
     }
