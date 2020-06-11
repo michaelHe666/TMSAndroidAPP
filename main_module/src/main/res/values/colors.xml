@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--color for activity_home-->
+    <color name="mm_color_activity_home_bottom_icon_selected">#4F8C08</color>
+
+    <!--color for activity_options-->
+    <color name="mm_color_activity_options_apply_icon_border">#222222</color>
+
     <!--color for fragment_management-->
     <color name="mm_color_fragment_management_order">#E4C87F</color>
     <color name="mm_color_fragment_management_entry">#C5D16B</color>
@@ -20,7 +26,4 @@
     <!--color for views_adapter_fixture_card-->
     <color name="mm_color_views_adapter_fixture_card_background">#F5F5DC</color>
     <color name="mm_color_views_adapter_fixture_card_divider">#BBBBBB</color>
-
-    <!--color for activity_options-->
-    <color name="mm_color_activity_options_apply_icon_border">#222222</color>
 </resources>

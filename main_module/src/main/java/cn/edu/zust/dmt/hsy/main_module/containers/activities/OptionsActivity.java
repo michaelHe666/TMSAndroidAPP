@@ -64,10 +64,10 @@ public final class OptionsActivity extends MyActivity<NullPresenterListener, Nul
                 R.color.mm_color_fragment_management_entry, R.drawable.mm_icon_activity_options_apply,
                 R.string.mm_string_universal_order_apply));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
-                R.color.mm_color_fragment_management_delivery, R.drawable.mm_icon_activity_options_initial_audit,
+                R.color.mm_color_fragment_management_delivery, R.drawable.mm_icon_activity_options_first_audit,
                 R.string.mm_string_universal_order_trail_first));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
-                R.color.mm_color_fragment_management_repair, R.drawable.mm_icon_activity_option_final_audit,
+                R.color.mm_color_fragment_management_repair, R.drawable.mm_icon_activity_options_final_audit,
                 R.string.mm_string_universal_order_trail_last));
 
         mOptionsListView.setAdapter(new OptionButtonAdapter(attributesList, this));

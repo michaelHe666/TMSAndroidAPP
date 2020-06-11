@@ -17,7 +17,7 @@
         tools:cm_myTopBarRightIcon="@drawable/cm_icon_universal_settings" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/mm_activity_home_container_view_pager2"
+        android:id="@+id/mm_activity_home_view_pager2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/mm_activity_home_bottom_view"
