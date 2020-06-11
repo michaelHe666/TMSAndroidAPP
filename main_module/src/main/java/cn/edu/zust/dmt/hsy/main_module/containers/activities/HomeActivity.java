@@ -57,12 +57,12 @@ public final class HomeActivity extends MyActivity<NullPresenterListener, NullPr
     @Override
     protected void loadActorsToViews() {
         mTopBar.setTitle(R.string.mm_string_activity_home_front);
-        mTopBar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                callMyRouter(MyRouterPaths.OPTIONS_PATH, null);
-            }
-        });
+//        mTopBar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                callMyRouter(MyRouterPaths.OPTIONS_PATH, null);
+//            }
+//        });
         final List<BaseFragment<?, ?>> fragmentList = new ArrayList<>();
         fragmentList.add(new FrontFragment());
         fragmentList.add(new ManagementFragment());

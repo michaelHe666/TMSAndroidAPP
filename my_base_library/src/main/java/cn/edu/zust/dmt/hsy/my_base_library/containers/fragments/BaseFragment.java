@@ -12,13 +12,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
+import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.activities.BaseActivity;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyErrorHelper;
-import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyExtrasHelper;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyRouterHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseExtrasListener;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
 import cn.edu.zust.dmt.hsy.my_base_library.presenters.BasePresenter;
 
 /**
@@ -30,17 +36,28 @@ import cn.edu.zust.dmt.hsy.my_base_library.presenters.BasePresenter;
  **/
 public abstract class BaseFragment<T extends BasePresenterListener, K extends BasePresenter<T>>
         extends Fragment {
-
-    private final K mViewModel;
+    /**
+     * @description {@link BasePresenter<T>} for {@link BaseFragment<>}
+     */
+    private final K mPresenter;
 
     private final ArrayList<BaseExtrasListener> mExtrasParserList = new ArrayList<>();
 
+    /**
+     * @description initialize {@link #mPresenter} by {@link Class<K>}
+     */
     protected BaseFragment() {
         try {
-            mViewModel = getViewModelClass().newInstance();
+            final Type genericSuperclass = this.getClass().getGenericSuperclass();
+            if (genericSuperclass instanceof ParameterizedType) {
+                mPresenter = ((Class<K>) ((ParameterizedType) genericSuperclass).getActualTypeArguments()[1])
+                        .newInstance();
+                return;
+            }
         } catch (IllegalAccessException | java.lang.InstantiationException e) {
-            throw new IllegalArgumentException("Failed on initialize ViewModel!");
+            e.printStackTrace();
         }
+        throw new IllegalArgumentException("Failed on initialize Presenter!");
     }
 
 
@@ -73,7 +90,7 @@ public abstract class BaseFragment<T extends BasePresenterListener, K extends Ba
         findViews();
         loadActorsToViews();
         //set listener while views are created
-        mViewModel.setCurrentListener(getViewModelListener());
+        mPresenter.setCurrentListener(getPresenterListener());
         //trigger extras parser while views are created
         final Bundle myExtras = getArguments();
         if (myExtras != null) {
@@ -89,7 +106,7 @@ public abstract class BaseFragment<T extends BasePresenterListener, K extends Ba
     @Override
     public final void onDetach() {
         super.onDetach();
-        mViewModel.onViewModelDestroyed();
+        mPresenter.onViewModelDestroyed();
     }
 
     /**
@@ -109,22 +126,34 @@ public abstract class BaseFragment<T extends BasePresenterListener, K extends Ba
     }
 
     /**
+     * @param path     Path of targetClass annotated with {@link MyRouter}
+     * @param myExtras extra info for path targetClass
+     */
+    protected final void callMyRouter(@NonNull final MyRouterPaths path
+            , @Nullable final MyExtrasHelper.MyExtras myExtras) {
+        final Context context = getContext();
+        if (context instanceof BaseActivity) {
+            if (myExtras == null) {
+                MyRouterHelper.INSTANCE.startBaseActivity(context, path, null);
+            } else {
+                MyRouterHelper.INSTANCE.startBaseActivity(context, path, myExtras.getBundle());
+            }
+        } else {
+            MyErrorHelper.showMyArgumentException("BaseFragment is not attached to BaseActivity!");
+        }
+    }
+
+    /**
      * @return {@link LayoutRes}  for {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)}
      */
     @LayoutRes
     protected abstract int getLayoutRId();
 
     /**
-     * @return {@link BasePresenter} for {@link BaseActivity}
+     * @return {@link BasePresenterListener} for {@link #mPresenter}
      */
     @NonNull
-    protected abstract Class<K> getViewModelClass();
-
-    /**
-     * @return {@link BasePresenterListener} for {@link #getViewModelClass()}
-     */
-    @NonNull
-    protected abstract T getViewModelListener();
+    protected abstract T getPresenterListener();
 
     /**
      * @description find {@link View} from layout which needs add actions on

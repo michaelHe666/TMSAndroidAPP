@@ -17,6 +17,13 @@ import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.NullPresenterListener;
 import cn.edu.zust.dmt.hsy.my_base_library.presenters.NullPresenter;
 
+/**
+ * @author JiaTao Yao
+ * @version 1.0
+ * @projectName TMS
+ * @description $
+ * @since 6/9/2020 20:04
+ **/
 @MyRouter(path = MyRouterPaths.OPTIONS_PATH)
 public final class OptionsActivity extends MyActivity<NullPresenterListener, NullPresenter> {
     private cm_MyTopBar mTopBar;

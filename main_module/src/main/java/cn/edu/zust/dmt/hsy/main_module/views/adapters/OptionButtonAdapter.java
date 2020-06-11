@@ -19,6 +19,13 @@ import java.util.List;
 
 import cn.edu.zust.dmt.hsy.main_module.R;
 
+/**
+ * @author JiaTao Yao
+ * @version 1.0
+ * @projectName TMS
+ * @description $
+ * @since 6/9/2020 20:04
+ **/
 public final class OptionButtonAdapter extends BaseAdapter {
 
     public static final class OptionButtonAttributes {

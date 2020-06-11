@@ -37,12 +37,15 @@ public final class ManagementButtonAdapter extends BaseAdapter {
         private final int mIconDrawableRId;
         @StringRes
         private final int mTextStringRId;
+        @NonNull
+        private final View.OnClickListener mOnClickListener;
 
-        public ManagementButtonAttributes(@ColorRes int backgroundColorRId, @DrawableRes int iconDrawableRId,
-                                          @StringRes int textStringRId) {
+        public ManagementButtonAttributes(@ColorRes int backgroundColorRId, @DrawableRes int iconDrawableRId
+                , @StringRes int textStringRId, @NonNull View.OnClickListener onClickListener) {
             mBackgroundColorRId = backgroundColorRId;
             mIconDrawableRId = iconDrawableRId;
             mTextStringRId = textStringRId;
+            mOnClickListener = onClickListener;
         }
     }
 
@@ -89,6 +92,7 @@ public final class ManagementButtonAdapter extends BaseAdapter {
                 .getResources().getColor(attributes.mBackgroundColorRId));
         currentViewHolder.mIconImageView.setImageResource(attributes.mIconDrawableRId);
         currentViewHolder.mOptionTextView.setText(attributes.mTextStringRId);
+        currentViewHolder.mButtonCardView.setOnClickListener(attributes.mOnClickListener);
         return convertView;
     }
 

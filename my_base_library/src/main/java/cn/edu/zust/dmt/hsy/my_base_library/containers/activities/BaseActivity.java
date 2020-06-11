@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyErrorHelper;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyExtrasHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyRouterHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseExtrasListener;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.BasePresenterListener;
@@ -128,11 +129,16 @@ public abstract class BaseActivity<T extends BasePresenterListener, K extends Ba
     }
 
     /**
-     * @param path     Path of targetClass annotated with {@link MyRouter}
+     * @param path           Path of targetClass annotated with {@link MyRouter}
      * @param myExtras extra info for path targetClass
      */
-    protected final void callMyRouter(@NonNull final MyRouterPaths path, @Nullable final Bundle myExtras) {
-        MyRouterHelper.INSTANCE.startBaseActivity(this, path, myExtras);
+    protected final void callMyRouter(@NonNull final MyRouterPaths path
+            , @Nullable final MyExtrasHelper.MyExtras myExtras) {
+        if (myExtras == null) {
+            MyRouterHelper.INSTANCE.startBaseActivity(this, path, null);
+        } else {
+            MyRouterHelper.INSTANCE.startBaseActivity(this, path, myExtras.getBundle());
+        }
     }
 
     /**

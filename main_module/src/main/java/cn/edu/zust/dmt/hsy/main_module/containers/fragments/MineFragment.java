@@ -22,13 +22,7 @@ public final class MineFragment extends BaseFragment<NullPresenterListener, Null
 
     @NonNull
     @Override
-    protected Class<NullPresenter> getViewModelClass() {
-        return NullPresenter.class;
-    }
-
-    @NonNull
-    @Override
-    protected NullPresenterListener getViewModelListener() {
+    protected NullPresenterListener getPresenterListener() {
         return new NullPresenterListener() {
         };
     }

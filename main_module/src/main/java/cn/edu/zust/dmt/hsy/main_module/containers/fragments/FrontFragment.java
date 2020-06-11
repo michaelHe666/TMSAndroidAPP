@@ -32,13 +32,7 @@ public final class FrontFragment extends BaseFragment<NullPresenterListener, Nul
 
     @NonNull
     @Override
-    protected Class<NullPresenter> getViewModelClass() {
-        return NullPresenter.class;
-    }
-
-    @NonNull
-    @Override
-    protected NullPresenterListener getViewModelListener() {
+    protected NullPresenterListener getPresenterListener() {
         return new NullPresenterListener() {
         };
     }
@@ -53,10 +47,10 @@ public final class FrontFragment extends BaseFragment<NullPresenterListener, Nul
     protected void loadActorsToViews() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         List<MyFixtureInfo> myFixtureInfoList = new ArrayList<>();
-        myFixtureInfoList.add(new MyFixtureInfo("ppx", "2020/1/1", 0, 0));
-        myFixtureInfoList.add(new MyFixtureInfo("hsy", "2020/3/1", 0, 1));
-        myFixtureInfoList.add(new MyFixtureInfo("yjt", "2020/2/1", 1, 0));
-        myFixtureInfoList.add(new MyFixtureInfo("ppx", "2020/1/1", 0, 0));
+        myFixtureInfoList.add(new MyFixtureInfo("LM2312-3", "2020/1/1", 0, 0));
+        myFixtureInfoList.add(new MyFixtureInfo("LM2312-2", "2020/3/1", 0, 1));
+        myFixtureInfoList.add(new MyFixtureInfo("DF4409-3", "2020/2/1", 1, 0));
+        myFixtureInfoList.add(new MyFixtureInfo("ED1233-1", "2020/1/1", 0, 0));
         mRecyclerView.setAdapter(new FixtureCardAdapter(myFixtureInfoList));
     }
 }
