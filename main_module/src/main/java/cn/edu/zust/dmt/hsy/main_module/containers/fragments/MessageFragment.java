@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.edu.zust.dmt.hsy.main_module.R;
+import cn.edu.zust.dmt.hsy.main_module.datas.local.MyConversationInfo;
 import cn.edu.zust.dmt.hsy.main_module.views.adapters.ConversationBarAdapter;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.fragments.BaseFragment;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.NullPresenterListener;
@@ -43,12 +44,22 @@ public final class MessageFragment extends BaseFragment<NullPresenterListener, N
 
     @Override
     protected void loadActorsToViews() {
-        List<ConversationBarAdapter.MyConversationInfo> infoList = new ArrayList<>();
-        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
-        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
-        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
-        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
-        infoList.add(new ConversationBarAdapter.MyConversationInfo("yjt"));
+        List<MyConversationInfo> infoList = new ArrayList<>();
+        infoList.add(new MyConversationInfo(getResources().getDrawable(R.drawable.mm_icon_activity_home_mine)
+                , "王经理", MyConversationInfo.MyConversationState.TOP, "3条未读消息"
+        ));
+        infoList.add(new MyConversationInfo(getResources().getDrawable(R.drawable.mm_icon_activity_home_mine)
+                , "小张", MyConversationInfo.MyConversationState.NORMAL, "5条未读消息"
+        ));
+        infoList.add(new MyConversationInfo(getResources().getDrawable(R.drawable.mm_icon_activity_home_mine)
+                , "小刘", MyConversationInfo.MyConversationState.NORMAL, ""
+        ));
+        infoList.add(new MyConversationInfo(getResources().getDrawable(R.drawable.mm_icon_activity_home_mine)
+                , "小王", MyConversationInfo.MyConversationState.NORMAL, ""
+        ));
+        infoList.add(new MyConversationInfo(getResources().getDrawable(R.drawable.mm_icon_activity_home_mine)
+                , "小陈", MyConversationInfo.MyConversationState.NORMAL, ""
+        ));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerView.setAdapter(new ConversationBarAdapter(infoList));
     }

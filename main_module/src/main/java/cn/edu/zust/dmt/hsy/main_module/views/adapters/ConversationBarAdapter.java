@@ -1,5 +1,6 @@
 package cn.edu.zust.dmt.hsy.main_module.views.adapters;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import cn.edu.zust.dmt.hsy.main_module.R;
+import cn.edu.zust.dmt.hsy.main_module.datas.local.MyConversationInfo;
 
 /**
  * @author MR.M
@@ -24,14 +26,6 @@ public final class ConversationBarAdapter
         extends RecyclerView.Adapter<ConversationBarAdapter.ConversationBarViewHolder> {
     private final List<MyConversationInfo> mConversationInfoList;
 
-    public static final class MyConversationInfo {
-        private final String mTitleString;
-
-        public MyConversationInfo(@NonNull final String titleString) {
-            mTitleString = titleString;
-        }
-    }
-
     public ConversationBarAdapter(@NonNull final List<MyConversationInfo> conversationInfoList) {
         mConversationInfoList = conversationInfoList;
     }
@@ -43,6 +37,9 @@ public final class ConversationBarAdapter
                 .inflate(R.layout.mm_views_adapter_conversation_bar, parent, false));
     }
 
+    /**
+     * @description get position and judge which data to return
+     */
     @Override
     public void onBindViewHolder(@NonNull ConversationBarViewHolder holder, int position) {
         if (position == 0) {
@@ -52,12 +49,33 @@ public final class ConversationBarAdapter
                     .mBackgroundView.getLayoutParams();
             layoutParams.bottomMargin = layoutParams.bottomMargin * 3;
             holder.mBackgroundView.setLayoutParams(layoutParams);
+            holder.mTagTextView.setVisibility(View.GONE);
+            holder.mHintTextView.setVisibility(View.GONE);
             holder.hideTag();
         } else {
-            holder.mNameTextView.setText(mConversationInfoList.get(position - 1).mTitleString);
+            MyConversationInfo info = mConversationInfoList.get(position - 1);
+            holder.mPhotoImageView.setImageDrawable(info.getPhotoDrawable());
+            holder.mNameTextView.setText(info.getTitleString());
+            switch (info.getState()) {
+                case TOP:
+                    holder.mTagTextView.setText(R.string.mm_string_views_adapter_conversation_bar_tag_top);
+                    break;
+                case NORMAL:
+                    holder.mTagTextView.setVisibility(View.GONE);
+                    break;
+            }
+            final String hint = info.getHint();
+            if (TextUtils.isEmpty(hint)) {
+                holder.mHintTextView.setVisibility(View.GONE);
+            } else {
+                holder.mHintTextView.setText(hint);
+            }
         }
     }
 
+    /**
+     * @description add a model which position is 0 with special data source
+     */
     @Override
     public int getItemCount() {
         return mConversationInfoList.size() + 1;

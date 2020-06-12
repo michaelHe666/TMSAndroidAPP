@@ -95,7 +95,6 @@ public final class ManagementFragment extends BaseFragment<NullPresenterListener
                         "target", "ppx5"));
             }
         }));
-
         mManagementGridView.setAdapter(new ManagementButtonAdapter(attributesList,
                 Objects.requireNonNull(getContext())));
     }

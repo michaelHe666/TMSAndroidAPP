@@ -34,4 +34,6 @@
     <string name="mm_string_views_adapter_fixture_card_location">定位</string>
     <string name="mm_string_views_adapter_fixture_card_risk">故障风险</string>
 
+    <!--string for views_adapter_conversation_bar-->
+    <string name="mm_string_views_adapter_conversation_bar_tag_top">置顶</string>
 </resources>
