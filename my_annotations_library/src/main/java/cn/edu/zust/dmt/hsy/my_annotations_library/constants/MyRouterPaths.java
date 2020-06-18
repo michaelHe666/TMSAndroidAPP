@@ -17,5 +17,8 @@ public enum MyRouterPaths {
     //router path for mainModule
     HOME_PATH,
     OPTIONS_PATH,
+
+    //router path for chatModule
     CHAT_PATH,
+    TEST_PATH,
 }

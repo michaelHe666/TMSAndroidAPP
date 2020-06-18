@@ -5,6 +5,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,11 +18,16 @@ import java.util.List;
  * @description $
  * @since 6/3/2020 14:41
  **/
+//todo: attribute set impact is ignored ,try fix by add judge
 public final class cm_MyFlowLayout extends FrameLayout {
     private List<Integer> mLineHeights = new ArrayList<>();
     private List<List<View>> mViewListsRecorder = new ArrayList<>();
 
-    public cm_MyFlowLayout(Context context, AttributeSet attrs) {
+    public cm_MyFlowLayout(@NonNull Context context) {
+        this(context, null);
+    }
+
+    public cm_MyFlowLayout(@Nullable Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 

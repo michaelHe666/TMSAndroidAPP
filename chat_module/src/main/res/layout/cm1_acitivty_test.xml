@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <cn.edu.zust.dmt.hsy.chat_module.views.customized.cm1_MyChatView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cm1_MyChatBubbleColor="@android:color/holo_red_light"
+        app:cm1_MyChatBubbleCornerRadius="15dp"
+        app:cm1_MyChatBubblePadding="10dp"
+        app:cm1_MyChatBubbleStyle="right"
+        app:cm1_MyChatBubbleWidthPercent="0.6"
+        app:cm1_MyChatName="ppx"
+        app:cm1_MyChatNameSize="12sp"
+        app:cm1_MyChatTag="ppx"
+        app:cm1_MyChatTagSize="12sp"
+        app:cm1_MyChatWords="哈哈哈哈哈哈"
+        app:cm1_MyChatWordsSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

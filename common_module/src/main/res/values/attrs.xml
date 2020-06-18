@@ -18,13 +18,16 @@
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="cm_MyMenuBar">
-        <attr name="cm_myMenuIcon" format="reference" />
-        <attr name="cm_myMenuText" format="string" />
+    <declare-styleable name="cm_MyColumnView">
+        <attr name="cm_myColumnNumbers" format="integer" />
+        <attr name="cm_myViewState" format="integer" />
     </declare-styleable>
 
-    <declare-styleable name="cm_MyColumnView">
-        <attr name="cm_myColumnNumbers" format="integer"/>
-        <attr name="cm_myViewState" format="integer"/>
+    <declare-styleable name="cm_MyTextCardView">
+        <attr name="cm_myTextCardViewText" format="string" />
+        <attr name="cm_myTextCardViewTextColor" format="color" />
+        <attr name="cm_myTextCardViewTextSize" format="dimension" />
+        <attr name="cm_myTextCardViewCardColor" format="color" />
+        <attr name="cm_myTextCardViewCardRadius" format="dimension" />
     </declare-styleable>
 </resources>

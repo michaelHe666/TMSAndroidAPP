@@ -7,7 +7,7 @@
     android:background="@color/cm_color_universal_foreground">
 
     <ImageView
-        android:id="@+id/cm_views_combined_my_menu_bar_image_view"
+        android:id="@+id/mm_views_combined_my_menu_bar_image_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         style="@style/cm_style_universal_image_view"
@@ -20,7 +20,7 @@
         app:layout_constraintWidth_percent="0.07" />
 
     <TextView
-        android:id="@+id/cm_views_combined_my_menu_bar_text_view"
+        android:id="@+id/mm_views_combined_my_menu_bar_text_view"
         style="@style/cm_style_universal_text_normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

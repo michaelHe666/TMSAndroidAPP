@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="mm_MyMenuBar">
+        <attr name="mm_myMenuIcon" format="reference" />
+        <attr name="mm_myMenuText" format="string" />
+    </declare-styleable>
+</resources>

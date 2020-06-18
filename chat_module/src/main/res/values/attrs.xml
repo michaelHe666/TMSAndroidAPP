@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="cm1_MyChatView">
+        <attr name="cm1_MyChatTag" format="string" />
+        <attr name="cm1_MyChatTagSize" format="dimension" />
+        <attr name="cm1_MyChatName" format="string" />
+        <attr name="cm1_MyChatNameSize" format="dimension" />
+        <attr name="cm1_MyChatWords" format="string" />
+        <attr name="cm1_MyChatWordsSize" format="dimension" />
+        <attr name="cm1_MyChatBubbleWidthPercent" format="float" />
+        <attr name="cm1_MyChatBubblePadding" format="dimension" />
+        <attr name="cm1_MyChatBubbleColor" format="color" />
+        <attr name="cm1_MyChatBubbleCornerRadius" format="dimension" />
+        <attr name="cm1_MyChatBubbleStyle" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

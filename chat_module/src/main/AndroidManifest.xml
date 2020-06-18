@@ -5,5 +5,6 @@
         <activity
             android:name=".containers.activities.ChatActivity"
             android:launchMode="standard" />
+        <activity android:name=".containers.activities.TestActivity" />
     </application>
 </manifest>

@@ -37,6 +37,7 @@ ext {
 static def addTmsShellDependencies(final DependencyHandler dependencyHandler) {
     dependencyHandler.add("implementation", dependencyHandler.project(path: ':entrance_module'))
     dependencyHandler.add("implementation", dependencyHandler.project(path: ':main_module'))
+    dependencyHandler.add("implementation", dependencyHandler.project(path: ':chat_module'))
 }
 
 static def addTmsModuleDependencies(final DependencyHandler dependencyHandler) {

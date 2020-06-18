@@ -74,6 +74,12 @@ public final class HomeActivity extends MyActivity<NullPresenterListener, NullPr
 
     @Override
     protected void loadActorsToViews() {
+        mTopBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callMyRouter(MyRouterPaths.TEST_PATH, null);
+            }
+        });
         loadActorToViewPager();
         loadActorToBottomViews();
     }
