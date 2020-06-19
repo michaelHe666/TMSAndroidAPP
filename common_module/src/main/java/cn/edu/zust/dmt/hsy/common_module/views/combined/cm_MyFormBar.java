@@ -2,15 +2,16 @@ package cn.edu.zust.dmt.hsy.common_module.views.combined;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import cn.edu.zust.dmt.hsy.common_module.R;
@@ -24,19 +25,34 @@ import cn.edu.zust.dmt.hsy.common_module.R;
  **/
 public final class cm_MyFormBar extends ConstraintLayout {
     /**
-     * @description member views
+     * @description {@link cm_MyFormBar} title view
      */
     private TextView mTextView = null;
+    /**
+     * @description {@link cm_MyFormBar} content view
+     */
     private EditText mEditText = null;
 
-    public cm_MyFormBar(@NonNull Context context, AttributeSet attrs) {
+    /**
+     * @description enum the input types of {@link #mEditText}
+     */
+    public enum MyFormBarInputType {
+        PLAIN_TEXT,
+        PASSWORD,
+    }
+
+    public cm_MyFormBar(@NonNull final Context context) {
+        this(context, null);
+    }
+
+    public cm_MyFormBar(@NonNull final Context context, @Nullable final AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public cm_MyFormBar(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
+    public cm_MyFormBar(@NonNull final Context context, @Nullable final AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         bindViews(context);
-        initializedAttributes(context, attrs);
+        initializeAttributes(context, attrs);
     }
 
     /**
@@ -51,17 +67,26 @@ public final class cm_MyFormBar extends ConstraintLayout {
     /**
      * @description initialize {@link cm_MyFormBar} attrs to view
      */
-    private void initializedAttributes(@NonNull final Context context, @NonNull final AttributeSet attributeSet) {
+    private void initializeAttributes(@NonNull final Context context
+            , @Nullable final AttributeSet attributeSet) {
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.cm_MyFormBar);
         mTextView.setText(typedArray.getString(R.styleable.cm_MyFormBar_cm_myFormBarTitle));
         mEditText.setHint(typedArray.getString(R.styleable.cm_MyFormBar_cm_myFormBarHint));
+        switch (typedArray.getInteger(R.styleable.cm_MyFormBar_cm_myFormBarInputType, 0)) {
+            case 0:
+                setInputType(MyFormBarInputType.PLAIN_TEXT);
+                break;
+            case 1:
+                setInputType(MyFormBarInputType.PASSWORD);
+                break;
+        }
         typedArray.recycle();
     }
 
     /**
      * @param textWatcher watcher for {@link #mEditText}
      */
-    public void setContentWatcher(@NonNull final TextWatcher textWatcher) {
+    public void setContentChangedWatcher(@NonNull final TextWatcher textWatcher) {
         mEditText.addTextChangedListener(textWatcher);
     }
 
@@ -70,5 +95,26 @@ public final class cm_MyFormBar extends ConstraintLayout {
      */
     public void setContent(@NonNull final String content) {
         mEditText.setText(content);
+    }
+
+    /**
+     * @return content of {@link #mEditText}
+     */
+    public String getContent() {
+        return mEditText.getText().toString();
+    }
+
+    /**
+     * @param inputType for {@link #mEditText#setInputType(int)}
+     */
+    public void setInputType(@NonNull final MyFormBarInputType inputType) {
+        switch (inputType) {
+            case PLAIN_TEXT:
+                mEditText.setInputType(InputType.TYPE_CLASS_TEXT);
+                break;
+            case PASSWORD:
+                mEditText.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT);
+                break;
+        }
     }
 }

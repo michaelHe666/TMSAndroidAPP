@@ -36,13 +36,13 @@ public class em_MyTreeView extends BaseAnimateView {
 
 //    private int mTrunkCount = 0;
 
-    private final class MyTrunkPoint {
+    private static final class MyTrunkPoint {
         float mXCoordinate = 0;
         float mYCoordinate = 0;
         float mRadius = 0;
     }
 
-    private final class MyTrunk {
+    private static final class MyTrunk {
         List<MyTrunkPoint> mTrunkPointList = new ArrayList<>();
         List<MyTrunk> mChildTrunkList = new ArrayList<>();
         int mGeneration = 0;

@@ -33,6 +33,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/em_dimen_universal_form_margin_top"
         app:cm_myFormBarHint="@string/em_string_universal_password_hint"
+        app:cm_myFormBarInputType="password"
         app:cm_myFormBarTitle="@string/em_string_universal_password"
         app:layout_constraintDimensionRatio="8:1"
         app:layout_constraintLeft_toLeftOf="parent"

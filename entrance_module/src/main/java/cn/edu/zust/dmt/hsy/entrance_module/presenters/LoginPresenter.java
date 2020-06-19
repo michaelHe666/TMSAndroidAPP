@@ -4,10 +4,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 
-import cn.edu.zust.dmt.hsy.entrance_module.datas.remote.response.LoginResponseData;
 import cn.edu.zust.dmt.hsy.entrance_module.interfaces.presenter_listeners.LoginPresenterListener;
 import cn.edu.zust.dmt.hsy.entrance_module.repositories.LoginRepository;
-import cn.edu.zust.dmt.hsy.my_base_library.helpers.network.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.presenters.BasePresenter;
 
 /**
@@ -43,7 +41,7 @@ public final class LoginPresenter extends BasePresenter<LoginPresenterListener> 
      */
     private void loadVoucherBarEvent() {
         final LoginPresenterListener loginViewModelListener = getViewModelListener();
-        loginViewModelListener.getVoucherBar().setContentWatcher(new TextWatcher() {
+        loginViewModelListener.getVoucherBar().setContentChangedWatcher(new TextWatcher() {
             private String lastInput = null;
             private boolean isInputLegal = true;
 
@@ -76,7 +74,7 @@ public final class LoginPresenter extends BasePresenter<LoginPresenterListener> 
      */
     private void loadPasswordBarEvent() {
         final LoginPresenterListener loginViewModelListener = getViewModelListener();
-        loginViewModelListener.getPasswordBar().setContentWatcher(new TextWatcher() {
+        loginViewModelListener.getPasswordBar().setContentChangedWatcher(new TextWatcher() {
             private String lastInput = null;
             private boolean isInputLegal = true;
 
