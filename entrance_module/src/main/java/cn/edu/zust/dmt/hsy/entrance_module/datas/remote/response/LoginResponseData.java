@@ -12,21 +12,27 @@ import cn.edu.zust.dmt.hsy.my_base_library.datas.remote.response.BaseResponseDat
  * @since 4/24/2020 10:51
  **/
 public final class LoginResponseData implements BaseResponseData {
-    private String username;
+    private String userId;
     private String permission;
+    private String workCell;
 
-    public LoginResponseData(@NonNull final String username, @NonNull final String permission) {
-        this.username = username;
+    public LoginResponseData(@NonNull final String userId, @NonNull final String permission
+            , @NonNull final String workCell) {
+        this.userId = userId;
         this.permission = permission;
+        this.workCell = workCell;
     }
 
-    @NonNull
-    public String getUsername() {
-        return username;
+    public String getUserId() {
+        return userId;
     }
 
     @NonNull
     public String getPermission() {
         return permission;
+    }
+
+    public String getWorkCell() {
+        return workCell;
     }
 }

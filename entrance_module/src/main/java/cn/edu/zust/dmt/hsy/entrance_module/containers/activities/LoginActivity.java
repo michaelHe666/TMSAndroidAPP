@@ -14,6 +14,7 @@ import cn.edu.zust.dmt.hsy.entrance_module.interfaces.presenter_listeners.LoginP
 import cn.edu.zust.dmt.hsy.entrance_module.presenters.LoginPresenter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyExtrasHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.helpers.network.BaseNetworkResponse;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseNetworkCallback;
 
@@ -67,8 +68,15 @@ public final class LoginActivity extends MyActivity<LoginPresenterListener, Logi
                 return new BaseNetworkCallback<LoginResponseData>() {
                     @Override
                     public void onResult(@NonNull BaseNetworkResponse<LoginResponseData> response) {
-                        callMyRouter(MyRouterPaths.HOME_PATH, null);
-//                        showMyToast(response.toString());
+                        if (response.getReturnCode() == 200) {
+                            showMyToast("登陆成功！");
+                            MyExtrasHelper.MyExtras myExtras = MyExtrasHelper
+                                    .buildMyExtras("PERMISSION", response.getData().getPermission())
+                                    .addExtra("USER_ID", response.getData().getUserId());
+                            callMyRouter(MyRouterPaths.HOME_PATH, myExtras);
+                        } else {
+                            showMyToast("登陆失败！");
+                        }
                     }
 
                     @Override

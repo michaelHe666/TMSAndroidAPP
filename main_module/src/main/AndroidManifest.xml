@@ -7,7 +7,10 @@
             android:launchMode="standard" />
         <activity
             android:name=".containers.activities.OptionsActivity"
-            android:launchMode="standard" />
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".containers.activities.FormActivity"
+            android:launchMode="singleTop" />
 
     </application>
 </manifest>

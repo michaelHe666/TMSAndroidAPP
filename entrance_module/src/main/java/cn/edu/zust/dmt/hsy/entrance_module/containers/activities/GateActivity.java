@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import cn.edu.zust.dmt.hsy.common_module.containers.activities.MyActivity;
 import cn.edu.zust.dmt.hsy.entrance_module.R;
+import cn.edu.zust.dmt.hsy.entrance_module.views.customized.em_MyTreeView;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.NullPresenterListener;
@@ -47,6 +48,7 @@ public final class GateActivity extends MyActivity<NullPresenterListener, NullPr
 
     @Override
     protected void loadActorsToViews() {
+        getLifecycle().addObserver((em_MyTreeView) findViewById(R.id.em_activity_gate_my_tree_view));
         mLoginView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

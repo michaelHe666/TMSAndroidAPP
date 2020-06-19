@@ -26,7 +26,7 @@ public final class LoginRepository {
      * @return method called illegal or not
      */
     public boolean login(@NonNull final BaseNetworkCallback<LoginResponseData> callback) {
-        if (mVoucher.matches("[a-zA-Z0-9_]{6,20}") && mPassword.matches("[a-zA-Z0-9_]{6,20}")) {
+        if (mVoucher.matches("[A-Z][0-9]{4}") && mPassword.matches("[a-zA-Z0-9_]{6,20}")) {
             BaseNetworkRequest<LoginRequestData> baseNetworkRequest = new BaseNetworkRequest<>(
                     new LoginRequestData(mVoucher, mPassword));
             MyNetworkHelper.getInstance().post(RemoteConstants.LOGIN_PATH, baseNetworkRequest, callback);

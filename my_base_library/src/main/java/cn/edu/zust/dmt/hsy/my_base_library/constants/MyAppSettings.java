@@ -16,6 +16,5 @@ public final class MyAppSettings {
     }
 
     public static final String HTTP_URL = "http://192.168.0.103:3030";
-    public static final String HTTPS_URL = "https://192.168.1.106:3001";
-
+    public static final String HTTPS_URL = "https://192.168.43.17:3001";
 }

@@ -61,4 +61,11 @@ public final class MyExtrasHelper {
         extras.mBundle.putString(key, value);
         return extras;
     }
+
+    /**
+     * @return new {@link MyExtras} instance
+     */
+    public static MyExtras buildMyExtras() {
+        return new MyExtras();
+    }
 }

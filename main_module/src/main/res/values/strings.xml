@@ -7,8 +7,17 @@
     <string name="mm_string_universal_order_trail_first">采购入库初审</string>
     <string name="mm_string_universal_order_trail_last">采购入库终审</string>
     <string name="mm_string_universal_entry">入库</string>
+    <string name="mm_string_universal_entry_search">查看入库记录</string>
+    <string name="mm_string_universal_entry_apply">申请入库</string>
+    <string name="mm_string_universal_entry_confirm">确认入库</string>
     <string name="mm_string_universal_delivery">出库</string>
+    <string name="mm_string_universal_delivery_search">查看出库记录</string>
+    <string name="mm_string_universal_delivery_apply">申请出库</string>
+    <string name="mm_string_universal_delivery_confirm">确认出库</string>
     <string name="mm_string_universal_repair">维修</string>
+    <string name="mm_string_universal_repair_search">查看维修记录</string>
+    <string name="mm_string_universal_repair_apply">申请维修</string>
+    <string name="mm_string_universal_repair_confirm">确认维修</string>
     <string name="mm_string_universal_scrap">报废</string>
     <string name="mm_string_universal_scrap_search">查看报废记录</string>
     <string name="mm_string_universal_scrap_apply">申请报废</string>

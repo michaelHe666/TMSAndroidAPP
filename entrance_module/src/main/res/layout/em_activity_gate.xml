@@ -6,6 +6,12 @@
     android:background="@color/cm_color_universal_background"
     android:orientation="vertical">
 
+    <cn.edu.zust.dmt.hsy.entrance_module.views.customized.em_MyTreeView
+        android:id="@+id/em_activity_gate_my_tree_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:em_MyTreeViewBaseColor="@color/cm_color_universal_app_theme_color" />
+
     <Button
         android:id="@+id/em_activity_gate_login_button"
         style="@style/cm_style_universal_button_normal"

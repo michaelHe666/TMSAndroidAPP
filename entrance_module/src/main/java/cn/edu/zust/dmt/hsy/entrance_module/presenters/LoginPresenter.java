@@ -112,13 +112,9 @@ public final class LoginPresenter extends BasePresenter<LoginPresenterListener> 
         loginViewModelListener.getLoginClickableView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (!mLoginRepository.login(loginViewModelListener.getLoginCallback())) {
-//                    loginViewModelListener.sendLoginError();
-//                }
-                //todo: remove this method after network is done
-                loginViewModelListener.getLoginCallback()
-                        .onResult(new BaseNetworkResponse<>(1, ""
-                                , new LoginResponseData("", "")));
+                if (!mLoginRepository.login(loginViewModelListener.getLoginCallback())) {
+                    loginViewModelListener.getLoginError();
+                }
             }
         });
     }

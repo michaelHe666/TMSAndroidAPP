@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <View
         android:id="@+id/mm_fragment_mine_top_view"
@@ -14,6 +15,43 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mm_fragment_mine_photo_image_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/mm_fragment_mine_top_view"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintLeft_toLeftOf="@id/mm_fragment_mine_top_view"
+        app:layout_constraintRight_toRightOf="@id/mm_fragment_mine_top_view"
+        app:layout_constraintTop_toTopOf="@id/mm_fragment_mine_top_view"
+        app:layout_constraintWidth_percent="0.2"
+        style="@style/cm_style_universal_image_view"
+        tools:src="@drawable/mm_icon_activity_home_mine"/>
+
+    <TextView
+        android:id="@+id/mm_fragment_mine_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintBottom_toTopOf="@id/mm_fragment_mine_permission_text_view"
+        app:layout_constraintLeft_toRightOf="@id/mm_fragment_mine_photo_image_view"
+        app:layout_constraintRight_toRightOf="@id/mm_fragment_mine_top_view"
+        app:layout_constraintTop_toTopOf="@id/mm_fragment_mine_top_view"
+        style="@style/cm_style_universal_title_large"
+        tools:text="W3187"/>
+
+    <TextView
+        android:id="@+id/mm_fragment_mine_permission_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintBottom_toBottomOf="@id/mm_fragment_mine_top_view"
+        app:layout_constraintLeft_toLeftOf="@id/mm_fragment_mine_name_text_view"
+        app:layout_constraintTop_toBottomOf="@id/mm_fragment_mine_name_text_view"
+        style="@style/cm_style_universal_title"
+        tools:text="初级用户"/>
 
     <cn.edu.zust.dmt.hsy.main_module.views.combined.mm_MyMenuBar
         android:id="@+id/mm_fragment_mine_ui_my_menu_bar"

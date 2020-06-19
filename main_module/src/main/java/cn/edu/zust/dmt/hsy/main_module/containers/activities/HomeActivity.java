@@ -1,5 +1,6 @@
 package cn.edu.zust.dmt.hsy.main_module.containers.activities;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import cn.edu.zust.dmt.hsy.main_module.containers.fragments.MineFragment;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
 import cn.edu.zust.dmt.hsy.my_base_library.containers.fragments.BaseFragment;
+import cn.edu.zust.dmt.hsy.my_base_library.interfaces.others.BaseExtrasListener;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.NullPresenterListener;
 import cn.edu.zust.dmt.hsy.my_base_library.presenters.NullPresenter;
 
@@ -45,6 +47,8 @@ public final class HomeActivity extends MyActivity<NullPresenterListener, NullPr
     private TextView mManagementText;
     private TextView mMessageText;
     private TextView mMineText;
+
+    private MineFragment mMineFragment;
 
     @Override
     protected int getLayoutRId() {
@@ -74,6 +78,7 @@ public final class HomeActivity extends MyActivity<NullPresenterListener, NullPr
 
     @Override
     protected void loadActorsToViews() {
+        addHomeExtrasParser();
         mTopBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +97,8 @@ public final class HomeActivity extends MyActivity<NullPresenterListener, NullPr
         fragmentList.add(new FrontFragment());
         fragmentList.add(new ManagementFragment());
         fragmentList.add(new MessageFragment());
-        fragmentList.add(new MineFragment());
+        mMineFragment = new MineFragment();
+        fragmentList.add(mMineFragment);
         mViewPager2.setAdapter(new FragmentStateAdapter(this) {
             private List<BaseFragment<?, ?>> mFragmentList = fragmentList;
 
@@ -219,6 +225,18 @@ public final class HomeActivity extends MyActivity<NullPresenterListener, NullPr
             @Override
             public void onClick(View v) {
                 mViewPager2.setCurrentItem(3);
+            }
+        });
+    }
+
+    private void addHomeExtrasParser() {
+        addMyExtrasParser(new BaseExtrasListener() {
+            @Override
+            public void parseMyExtras(@NonNull Bundle myExtras) {
+                Bundle bundle = new Bundle();
+                bundle.putString("PERMISSION", myExtras.getString("PERMISSION"));
+                bundle.putString("USER_ID", myExtras.getString("USER_ID"));
+                mMineFragment.setArguments(bundle);
             }
         });
     }

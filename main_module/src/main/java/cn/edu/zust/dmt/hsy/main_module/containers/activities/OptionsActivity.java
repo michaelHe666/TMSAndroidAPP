@@ -1,6 +1,7 @@
 package cn.edu.zust.dmt.hsy.main_module.containers.activities;
 
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import cn.edu.zust.dmt.hsy.main_module.R;
 import cn.edu.zust.dmt.hsy.main_module.views.adapters.OptionButtonAdapter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.annotations.MyRouter;
 import cn.edu.zust.dmt.hsy.my_annotations_library.constants.MyRouterPaths;
+import cn.edu.zust.dmt.hsy.my_base_library.helpers.MyExtrasHelper;
 import cn.edu.zust.dmt.hsy.my_base_library.interfaces.presenter_listeners.NullPresenterListener;
 import cn.edu.zust.dmt.hsy.my_base_library.presenters.NullPresenter;
 
@@ -26,8 +28,14 @@ import cn.edu.zust.dmt.hsy.my_base_library.presenters.NullPresenter;
  **/
 @MyRouter(path = MyRouterPaths.OPTIONS_PATH)
 public final class OptionsActivity extends MyActivity<NullPresenterListener, NullPresenter> {
+
     private cm_MyTopBar mTopBar;
     private ListView mOptionsListView;
+
+    /**
+     * @description for {@link #mOptionsListView}
+     */
+    private List<OptionButtonAdapter.OptionButtonAttributes> mAttributesList = new ArrayList<>();
 
     @Override
     protected int getLayoutRId() {
@@ -56,20 +64,35 @@ public final class OptionsActivity extends MyActivity<NullPresenterListener, Nul
             }
         });
 
+        mTopBar.setTitle(R.string.mm_string_universal_entry);
+
         final List<OptionButtonAdapter.OptionButtonAttributes> attributesList = new ArrayList<>();
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
                 R.color.mm_color_fragment_management_order, R.drawable.mm_icon_activity_options_search,
-                R.string.mm_string_universal_order_search));
+                R.string.mm_string_universal_entry_search));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
                 R.color.mm_color_fragment_management_entry, R.drawable.mm_icon_activity_options_apply,
-                R.string.mm_string_universal_order_apply));
+                R.string.mm_string_universal_entry_apply));
         attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
                 R.color.mm_color_fragment_management_delivery, R.drawable.mm_icon_activity_options_first_audit,
-                R.string.mm_string_universal_order_trail_first));
-        attributesList.add(new OptionButtonAdapter.OptionButtonAttributes(
-                R.color.mm_color_fragment_management_repair, R.drawable.mm_icon_activity_options_final_audit,
-                R.string.mm_string_universal_order_trail_last));
+                R.string.mm_string_universal_entry_confirm));
 
         mOptionsListView.setAdapter(new OptionButtonAdapter(attributesList, this));
+        mOptionsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final MyExtrasHelper.MyExtras myExtras = MyExtrasHelper.buildMyExtras();
+                switch (position) {
+                    case 0:
+                    case 1:
+                        myExtras.addExtra("FORM", "0");
+                        break;
+                    case 2:
+                        myExtras.addExtra("FORM", "1");
+                        break;
+                }
+                callMyRouter(MyRouterPaths.FORM_PATH, myExtras);
+            }
+        });
     }
 }

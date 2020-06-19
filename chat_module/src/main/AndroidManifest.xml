@@ -4,7 +4,7 @@
     <application>
         <activity
             android:name=".containers.activities.ChatActivity"
-            android:launchMode="standard" />
+            android:launchMode="singleTop" />
         <activity android:name=".containers.activities.TestActivity" />
     </application>
 </manifest>
